@@ -1,21 +1,45 @@
+.btn-outline-primary {
+    --bs-btn-color: gold;
+    --bs-btn-hover-color: #fafafa;
+    --bs-btn-hover-bg: rgb(191, 164, 10);
+    --bs-btn-border-color: gold;
+    --bs-btn-hover-border-color: gold;
+    --bs-btn-active-bg: rgb(150, 129, 11);
+    --bs-btn-active-color: #ebebeb;
+    --bs-btn-active-border-color: rgb(150, 129, 11);
+}
+
 body {
-    max-width: 800px;
+    max-width: 65%;
     margin: auto;
-    background-color: #fff;
+    color: #fafafa;
+    background-color: #002147; /* Oxford blue */
     padding: 20px;
-    font-family: Arial, sans-serif;
-    color: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+a {
+    color: #fafafa;
+}
+
+a:hover {
+    color: #c5c5c5;
 }
 
 .form-section {
     padding: 15px;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
 .table-bordered td, .table-bordered th {
-    border: 1px solid #000 !important;
+    border: 1px solid white !important;
     text-align: center;
     vertical-align: middle;
     width: 40px;
@@ -33,5 +57,15 @@ label {
 }
 
 .form-control {
-    border: 1px solid black;
+    border: 1px solid white;
+}
+
+.custom-container {
+    border: 1px solid white;
+    border-radius: 1em;
+    padding: 40px;
+    margin-top: 20px;
+    background-color: #002855;
+    box-shadow: #001731 0px 0px 20px;
+
 }

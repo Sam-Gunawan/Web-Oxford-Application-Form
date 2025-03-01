@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form for Graduate Study</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            color: #000;
+        }
+        .form-section {
+            background: white;
+            padding: 15px;
+            border: 1px solid black;
+            margin-bottom: 20px;
+        }
+        .table-bordered td, .table-bordered th {
+            border: 1px solid #000 !important;
+            text-align: center;
+            vertical-align: middle;
+            width: 40px;
+            height: 40px;
+        }
+        legend {
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+        label {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        .form-control {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="text-center mb-4">APPLICATION FORM FOR GRADUATE STUDY 2020-21</h2>
+    
+    <div class="form-section text-center">
+        <p><strong>FOR OFFICE USE ONLY:</strong></p>
+        <table class="table table-bordered mx-auto" style="width: 300px;">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    
+    <p class="text-center">Before completing this form, please refer to the Graduate Admissions Application Guide (available at <a href="https://www.graduate.ox.ac.uk/applicationguide" target="_blank">www.graduate.ox.ac.uk/applicationguide</a>).</p>
+    <p class="text-center">Any errors resulting from failure to do so may delay your application.</p>
+    <p class="text-center fw-bold">PLEASE WRITE IN BLOCK CAPITALS USING BLACK INK. COMPLETE ALL SECTIONS.</p>
+    
+    <form>
+        <fieldset class="border p-4 form-section">
+            <legend>SECTION A: ABOUT YOUR COURSE</legend>
+            <p><i>This form may only be used to apply for one course. If you wish to apply for more than one course, you must submit a separate application form and pay the £75 application fee each time.</i></p>
+            <div class="mb-3">
+                <label for="courseCode" class="form-label">STATE THE COURSE CODE AS GIVEN ON THE COURSE PAGE</label>
+                <input type="text" class="form-control" id="courseCode" required>
+            </div>
+            <div class="mb-3">
+                <label for="courseTitle" class="form-label">TITLE OF THE COURSE</label>
+                <input type="text" class="form-control" id="courseTitle" required>
+            </div>
+        </fieldset>
+        
+        <fieldset class="border p-4 form-section">
+            <legend>SECTION B: COLLEGE PREFERENCE</legend>
+            <p>If you are applying to a course involving college membership, please indicate below whether you have a college preference or whether you wish the University to select a college on your behalf. It is not possible to amend your college preference once you have submitted your application.</p>
+            <p><i>Details of which colleges accept for which courses may be found on our website at <a href="https://www.graduate.ox.ac.uk/courses" target="_blank">www.graduate.ox.ac.uk/courses</a>.</i></p>
+            <div class="mb-3">
+                <input type="checkbox" id="noCollegePref" class="form-check-input">
+                <label for="noCollegePref" class="form-check-label">I have no college preference</label>
+            </div>
+            <div class="mb-3">
+                <label for="collegePref" class="form-label">My college preference is:</label>
+                <input type="text" class="form-control" id="collegePref">
+            </div>
+        </fieldset>
+        
+        <fieldset class="border p-4 form-section">
+            <legend>SECTION C: PERSONAL DETAILS</legend>
+            <p>Please enter your name exactly as it appears on your passport or other official document, including middle names. If you go by a name that is not listed on your official document(s), you can enter this in the Preferred Name field.</p>
+            <div class="mb-3">
+                <label for="givenName" class="form-label">GIVEN NAME (FORENAME)</label>
+                <input type="text" class="form-control" id="givenName" required>
+            </div>
+            <div class="mb-3">
+                <label for="preferredName" class="form-label">PREFERRED NAME</label>
+                <input type="text" class="form-control" id="preferredName">
+            </div>
+            <div class="mb-3">
+                <label for="middleNames" class="form-label">MIDDLE NAME(S)</label>
+                <input type="text" class="form-control" id="middleNames">
+            </div>
+            <div class="mb-3">
+                <label for="familyName" class="form-label">FAMILY NAME (SURNAME)</label>
+                <input type="text" class="form-control" id="familyName" required>
+            </div>
+            <div class="mb-3">
+                <label for="title" class="form-label">TITLE</label>
+                <input type="text" class="form-control" id="title">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">SEX</label>
+                <div>
+                    <input type="radio" id="female" name="sex" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="male" name="sex" value="male">
+                    <label for="male">Male</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="dob" class="form-label">DATE OF BIRTH (DD/MM/YYYY)</label>
+                <input type="text" class="form-control" id="dob" required>
+            </div>
+            <div class="mb-3">
+                <label for="prevFamilyName" class="form-label">PREVIOUS FAMILY NAME (SURNAME)</label>
+                <input type="text" class="form-control" id="prevFamilyName">
+            </div>
+            <div class="mb-3">
+                <label for="prevGivenName" class="form-label">PREVIOUS GIVEN NAME (FORENAME)</label>
+                <input type="text" class="form-control" id="prevGivenName">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">EFFECTIVE DATES (DD/MM/YYYY)</label>
+                <div class="row">
+                    <div class="col">
+                        <label for="effectiveFrom1" class="form-label">FROM</label>
+                        <input type="text" class="form-control" id="effectiveFrom1">
+                    </div>
+                    <div class="col">
+                        <label for="effectiveTo1" class="form-label">TO</label>
+                        <input type="text" class="form-control" id="effectiveTo1">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="effectiveFrom2" class="form-label">FROM</label>
+                        <input type="text" class="form-control" id="effectiveFrom2">
+                    </div>
+                    <div class="col">
+                        <label for="effectiveTo2" class="form-label">TO</label>
+                        <input type="text" class="form-control" id="effectiveTo2">
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+		
+        <fieldset class="border p-4 form-section">
+            <legend>SECTION D: CONTACT INFORMATION</legend>
+            <div class="row">
+                <div class="col">
+                    <label for="homeAddress" class="form-label">HOME ADDRESS</label>
+                    <input type="text" class="form-control" id="homeAddress">
+                </div>
+                <div class="col">
+                    <label for="correspondenceAddress" class="form-label">CORRESPONDENCE ADDRESS</label>
+                    <input type="text" class="form-control" id="correspondenceAddress">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="city1" class="form-label">CITY</label>
+                    <input type="text" class="form-control" id="city1">
+                </div>
+                <div class="col">
+                    <label for="city2" class="form-label">CITY</label>
+                    <input type="text" class="form-control" id="city2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="postcode1" class="form-label">POSTCODE/ZIP CODE</label>
+                    <input type="text" class="form-control" id="postcode1">
+                </div>
+                <div class="col">
+                    <label for="postcode2" class="form-label">POSTCODE/ZIP CODE</label>
+                    <input type="text" class="form-control" id="postcode2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="state1" class="form-label">STATE</label>
+                    <input type="text" class="form-control" id="state1">
+                </div>
+                <div class="col">
+                    <label for="state2" class="form-label">STATE</label>
+                    <input type="text" class="form-control" id="state2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="country1" class="form-label">COUNTRY</label>
+                    <input type="text" class="form-control" id="country1">
+                </div>
+                <div class="col">
+                    <label for="country2" class="form-label">COUNTRY</label>
+                    <input type="text" class="form-control" id="country2">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">EFFECTIVE DATES (DD/MM/YYYY)</label>
+                <div class="row">
+                    <div class="col">
+                        <label for="effectiveFrom" class="form-label">From:</label>
+                        <input type="text" class="form-control" id="effectiveFrom">
+                    </div>
+                    <div class="col">
+                        <label for="effectiveTo" class="form-label">To:</label>
+                        <input type="text" class="form-control" id="effectiveTo">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">TELEPHONE:</label>
+                <div class="row">
+                    <div class="col">
+                        <label for="countryCode" class="form-label">COUNTRY CODE (if outside UK)</label>
+                        <input type="text" class="form-control" id="countryCode">
+                    </div>
+                    <div class="col">
+                        <label for="areaCode" class="form-label">AREA CODE (if applicable)</label>
+                        <input type="text" class="form-control" id="areaCode">
+                    </div>
+                    <div class="col">
+                        <label for="phoneNumber" class="form-label">NUMBER</label>
+                        <input type="text" class="form-control" id="phoneNumber">
+                    </div>
+                </div>
+                <label for="altPhoneNumber" class="form-label mt-2">Alternative phone number</label>
+                <input type="text" class="form-control" id="altPhoneNumber">
+            </div>
+            <div class="mb-3">
+                <label for="emailAddress" class="form-label">EMAIL ADDRESS:</label>
+                <input type="text" class="form-control" id="emailAddress">
+                <label for="altEmailAddress" class="form-label mt-2">Alternative email address</label>
+                <input type="text" class="form-control" id="altEmailAddress">
+            </div>
+        </fieldset>
+		
+        <fieldset class="border p-4 form-section">
+            <legend>SECTION E: NOMINATED THIRD PARTY</legend>
+            <p>The University of Oxford will normally only discuss your application with you. If you wish to nominate a third party with whom we may discuss your application and accept direction on its handling, please provide their details. Note that a nominated third party will be able to amend or withdraw your application on your behalf.</p>
+            <p>Do you wish to provide details of a nominated third party?</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="thirdParty" id="thirdPartyYes" value="yes">
+                <label class="form-check-label" for="thirdPartyYes">Yes</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="thirdParty" id="thirdPartyNo" value="no">
+                <label class="form-check-label" for="thirdPartyNo">No</label>
+            </div>
+        </fieldset>
+		
+        <fieldset class="border p-4 form-section">
+            <legend>SECTION F: NATIONALITY</legend>
+            <p>The details you provide on this page will be used to determine your fee status and eligibility for many scholarships. The details you give below should reflect your current situation, at the date you submit your application form.</p>
+            <label for="countryOfBirth" class="form-label">COUNTRY OF BIRTH:</label>
+            <input type="text" class="form-control mb-3" id="countryOfBirth">
+            <label for="nationality" class="form-label">COUNTRY OF NATIONALITY/CITIZENSHIP:</label>
+            <input type="text" class="form-control mb-3" id="nationality">
+            <p>Do you expect to require a visa to enter the UK for your study?</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="visaRequirement" id="visaYes" value="yes">
+                <label class="form-check-label" for="visaYes">Yes</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="visaRequirement" id="visaNo" value="no">
+                <label class="form-check-label" for="visaNo">No</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="visaRequirement" id="visaUncertain" value="uncertain">
+                <label class="form-check-label" for="visaUncertain">Uncertain</label>
+            </div>
+            <p>If you expect to require a visa to enter the UK for your study, please provide details of the passport that you intend to use.</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>NATIONALITY</th>
+                        <th>START DATE OF NATIONALITY FROM (dd/mm/yyyy)</th>
+                        <th>PASSPORT NUMBER</th>
+                        <th>COUNTRY OF ISSUE</th>
+                        <th>PASSPORT EXPIRY DATE (dd/mm/yyyy)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="date" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="date" class="form-control"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>ORDINARY RESIDENCE AND LEAVE TO REMAIN</p>
+            <ul>
+                <li>Your country of ordinary residence is the country in which you are normally resident, out of choice and for a settled purpose, apart from temporary or occasional absences. It is not a country in which you are studying, working, or living temporarily.</li>
+                <li>EU nationals only: If you currently live in the UK for the purpose of full-time education only, you should enter the relevant UK region (England, Northern Ireland, Scotland, or Wales) as your current residence and the country where you otherwise reside as your previous residence. The end date for your previous residence should be entered as the day before you arrived in the UK.</li>
+                <li>If you have been ordinarily resident in a single country since birth, please enter your birth date in the 'From:' field for the 'current country of ordinary residence' question.</li>
+                <li>If you have been ordinarily resident in more than one country, your dates of residence must not overlap. You must include an end date for your previous country of ordinary residence, which must be at least one day before the start date of your current country of ordinary residence.</li>
+                <li>If you are resident in a country listed in Section O, you may be eligible for a fee waiver.</li>
+            </ul>
+			<label for="currentResidence">CURRENT COUNTRY OF ORDINARY RESIDENCE</label>
+            <input type="text" class="form-control mb-2" id="currentResidence">
+            <label for="previousResidence">PREVIOUS COUNTRY OF RESIDENCE</label>
+            <input type="text" class="form-control mb-2" id="previousResidence">
+            <p>I am an EU national resident in the UK for the main purpose of full-time education</p>
+            <input type="checkbox" id="euResidentYes"> Yes
+            <input type="checkbox" id="euResidentNo"> No
+            <p>If you are not a UK or EU Citizen but currently living in the UK, do you have Indefinite Leave to Remain status?</p>
+            <input type="checkbox" id="indefiniteLeaveYes"> Yes
+            <input type="checkbox" id="indefiniteLeaveNo"> No
+            <label for="leaveGrantedDate">If yes, when was it granted?</label>
+            <input type="date" class="form-control" id="leaveGrantedDate">
+        </fieldset>
+		
+        <fieldset class="border p-4 form-section">
+            <legend>SECTION G: ACCOMMODATION</legend>
+            <p>This section is for information only and does not constitute an application to University or college accommodation. For further information, please visit the Accommodation Office website (<a href="http://www.admin.ox.ac.uk/accommodation/">Accommodation Office</a>).</p>
+            <p>Do you intend to apply for accommodation owned by the college?</p>
+            <input type="checkbox" id="accommodationYes"> Yes
+            <input type="checkbox" id="accommodationNo"> No
+            <label for="accompanyingAdults">Excluding yourself, how many adults will be accompanying you?</label>
+            <input type="number" class="form-control" id="accompanyingAdults">
+            <label for="accompanyingChildren">Please provide the sex and date of birth of any accompanying children:</label>
+            <input type="text" class="form-control" id="accompanyingChildren">
+        </fieldset>
+        <fieldset class="border p-4 form-section">
+            <legend>SECTION H: REFEREES</legend>
+            <p>Please enter contact details for three referees below.</p>
+            <p>References should be academic or, where specifically permitted on the course page (<a href="http://www.graduate.ox.ac.uk/courses">Graduate Courses</a>), professional. Family members, friends, and neighbours may not act as referees.</p>
+            <p>It is a University requirement that three references are provided and that references are received in time for the deadline for your application to be considered. For more information on references, please see the <a href="http://www.graduate.ox.ac.uk/applicationguide">Application Guide</a>.</p>
+            <p>Please ask your referee to send the reference directly to us at <a href="mailto:graduate.admissions@admin.ox.ac.uk">graduate.admissions@admin.ox.ac.uk</a> quoting your full name and the course to which you are applying, and we will add it to your application.</p>
+            <p>References must be sent to us from your referee’s official (institutional or organisational) email address. Alternatively, sealed references may be enclosed with this application. In this case, each reference must be in a sealed envelope, signed by the referee across the seal of the envelope and their signature covered with clear adhesive tape.</p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Referee Title, Name, and Role</th>
+                            <th>Referee Institution/Professional Address</th>
+                            <th>Type of Reference</th>
+                            <th>Reference Submission Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td>
+                                <input type="checkbox"> Will submit by email
+                                <input type="checkbox"> Sealed reference enclosed
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+			
+        <fieldset class="border p-4 form-section">
+            <legend>SECTION I: DETAILS OF CURRENT & PREVIOUS EDUCATION</legend>
+            <p>Please enter your previous and current qualifications, newest first. Include all degree-level and above qualifications.</p>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>University/Institution attended</th>
+                        <th>Start date (dd/mm/yyyy)</th>
+                        <th>Date of completion/expected completion (dd/mm/yyyy)</th>
+                        <th>Qualification obtained or studying for</th>
+                        <th>Main subject</th>
+                        <th>Result/expected result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="date" class="form-control"></td>
+                        <td><input type="date" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>If you require a Tier 4 student visa, please give details below of any periods of study (including non-degree level courses), complete or incomplete, undertaken in the UK that are not already listed above.</p>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>University/Institution attended</th>
+                        <th>Start date (dd/mm/yyyy)</th>
+                        <th>Date of completion/expected completion (dd/mm/yyyy)</th>
+                        <th>Course title</th>
+                        <th>Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="date" class="form-control"></td>
+                        <td><input type="date" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Have you undertaken degree-level study at any institution, which you have not completed, excluding any qualification you are currently working towards?</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="incompleteDegree" id="incompleteDegreeYes" value="yes">
+                <label class="form-check-label" for="incompleteDegreeYes">Yes</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="incompleteDegree" id="incompleteDegreeNo" value="no">
+                <label class="form-check-label" for="incompleteDegreeNo">No</label>
+            </div>
+            <label for="incompleteDetails">If "Yes", please state the course(s) and the institution(s) and the reason(s) the qualification was not completed:</label>
+            <textarea class="form-control" id="incompleteDetails"></textarea>
+            <p>Are you planning to begin, or to continue studying for, a degree at any institution, at the same time as you would also be studying at Oxford for the course for which you are now applying?</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="dualStudy" id="dualStudyYes" value="yes">
+                <label class="form-check-label" for="dualStudyYes">Yes</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="dualStudy" id="dualStudyNo" value="no">
+                <label class="form-check-label" for="dualStudyNo">No</label>
+            </div>
+            <label for="dualStudyDetails">If "Yes", please provide details of the course and the institution and how you believe it will be possible to pursue both courses at the same time:</label>
+            <textarea class="form-control" id="dualStudyDetails"></textarea>
+        </fieldset>
+		
+       <fieldset class="border p-4 form-section">
+            <legend>SECTION J: GRE (IF APPLICABLE)</legend>
+            <p>For further information on whether a GRE score is required please see our <a href="www.graduate.ox.ac.uk/applicationguide">Application Guide</a>.</p>
+            <label for="greDate">GRE Date of Test:</label>
+            <input type="date" class="form-control" id="greDate">
+            <label for="verbalPercent">Verbal %:</label>
+            <input type="text" class="form-control" id="verbalPercent">
+            <label for="verbalScore">Verbal Score:</label>
+            <input type="text" class="form-control" id="verbalScore">
+            <label for="quantPercent">Quantitative %:</label>
+            <input type="text" class="form-control" id="quantPercent">
+            <label for="quantScore">Quantitative Score:</label>
+            <input type="text" class="form-control" id="quantScore">
+            <label for="analyticalPercent">Analytical Writing %:</label>
+            <input type="text" class="form-control" id="analyticalPercent">
+            <label for="analyticalScore">Analytical Writing Score:</label>
+            <input type="text" class="form-control" id="analyticalScore">
+        </fieldset>
+		
+        <fieldset class="border p-4 form-section">
+            <legend>SECTION K: ENGLISH LANGUAGE SKILLS</legend>
+            <label>Is English your first language?</label>
+            <input type="checkbox"> Yes <input type="checkbox"> No
+            <label>Have you completed a full-time qualification equivalent to a UK degree entirely taught and assessed in English?</label>
+            <input type="checkbox"> Yes <input type="checkbox"> No
+            <label>Have you completed a course under a United Kingdom Tier 4 child visa?</label>
+            <input type="checkbox"> Yes <input type="checkbox"> No
+        </fieldset>
+        <fieldset class="border p-4 form-section">
+            <legend>SECTION L: ENGLISH LANGUAGE PROFICIENCY</legend>
+            <p>If your first language is not English, or if your first language is English but you are not a national of the UK, Ireland or a majority English-speaking country recognised by the UK Home Office (<a href="www.graduate.ox.ac.uk/englishproficiency">English Proficiency</a>), you must either supply an English test result or upload a letter explaining why you are requesting a waiver to the English language test.</p>
+            <p>If you have IELTS (Academic), TOEFL or Cambridge Certificate test results which will be less than two years old when your course commences, please enter them below. The required scores must be met in a single test, not across multiple settings.</p>
+            
+            <table>
+                <tr>
+                    <th>Test Type</th>
+                    <th>Date Taken</th>
+                    <th>Overall Result</th>
+                    <th colspan="4">Component Scores</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>Listening</th>
+                    <th>Reading</th>
+                    <th>Writing</th>
+                    <th>Speaking</th>
+                </tr>
+                <tr>
+                    <td><input type="text" class="form-control" placeholder="e.g., TOEFL, IELTS"></td>
+                    <td><input type="date" class="form-control"></td>
+                    <td><input type="text" class="form-control"></td>
+                    <td><input type="text" class="form-control"></td>
+                    <td><input type="text" class="form-control"></td>
+                    <td><input type="text" class="form-control"></td>
+                    <td><input type="text" class="form-control"></td>
+                </tr>
+            </table>
+			
+            <label>I intend to submit a test waiver request with my supporting materials:</label>
+            <input type="checkbox"> Yes <input type="checkbox"> No
+            <p>For more information on test waivers, please see the <a href="www.graduate.ox.ac.uk/applicationguide">Application Guide</a>.</p>
+            <label>Knowledge of Other Languages:</label>
+            <p>If you have a working knowledge of languages other than English (including your native language), please specify and state whether your level of competence in Reading, Writing, Speaking, and Understanding is Advanced, Intermediate, or Basic.</p>
+            <label for="language">Language:</label>
+            <input type="text" class="form-control" id="language">
+            <div class="row">
+                <div class="col">
+                    <label for="readingLevel">Reading:</label>
+                    <input type="text" class="form-control" id="readingLevel">
+                </div>
+                <div class="col">
+                    <label for="writingLevel">Writing:</label>
+                    <input type="text" class="form-control" id="writingLevel">
+                </div>
+                <div class="col">
+                    <label for="speakingLevel">Speaking:</label>
+                    <input type="text" class="form-control" id="speakingLevel">
+                </div>
+                <div class="col">
+                    <label for="understandingLevel">Understanding:</label>
+                    <input type="text" class="form-control" id="understandingLevel">
+                </div>
+            </div>
+        </fieldset>
+		
+		<fieldset class="form-section">
+            <legend>Section M: Proposed funding arrangements</legend>
+            <p>If you are not offered a scholarship by the University, please indicate the main source(s) of funding you plan to use to fund your fees and living expenses. This will not affect the assessment of your application in any way. Please do not include any Oxford scholarships.</p>
+            <div class="form-group">
+                <label>I have information on my alternative funding arrangements.</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="fundingInfo" id="fundingInfoYes" value="yes">
+                    <label class="form-check-label" for="fundingInfoYes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="fundingInfo" id="fundingInfoNo" value="no">
+                    <label class="form-check-label" for="fundingInfoNo">No</label>
+                </div>
+            </div>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Proposed Funding Sources e.g. family, scholarship, etc. (If government funds or foundations, please specify)</th>
+                        <th>Amount of funding per year (£) (if known)</th>
+                        <th>Period Covered (e.g. 1yr, 2yrs etc.)</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="number" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="status1_1">
+                                <label class="form-check-label" for="status1_1">Intend to apply</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="status1_2">
+                                <label class="form-check-label" for="status1_2">Applied for</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="status1_3">
+                                <label class="form-check-label" for="status1_3">Firmly secured</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="number" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="status2_1">
+                                <label class="form-check-label" for="status2_1">Intend to apply</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="status2_2">
+                                <label class="form-check-label" for="status2_2">Applied for</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="status2_3">
+                                <label class="form-check-label" for="status2_3">Firmly secured</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="number" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="status3_1">
+                                <label class="form-check-label" for="status3_1">Intend to apply</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="status3_2">
+                                <label class="form-check-label" for="status3_2">Applied for</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="status3_3">
+                                <label class="form-check-label" for="status3_3">Firmly secured</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="number" class="form-control"></td>
+                        <td><input type="text" class="form-control"></td>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="status4_1">
+                                <label class="form-check-label" for="status4_1">Intend to apply</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="status4_2">
+                                <label class="form-check-label" for="status4_2">Applied for</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="status4_3">
+                                <label class="form-check-label" for="status4_3">Firmly secured</label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+		
+            <legend>Departmental studentship applications:</legend>
+            <div class="form-group">
+                <label>Are you applying for an advertised studentship(s) competition(s)?</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="studentshipApply" id="studentshipApplyYes" value="yes">
+                    <label class="form-check-label" for="studentshipApplyYes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="studentshipApply" id="studentshipApplyNo" value="no">
+                    <label class="form-check-label" for="studentshipApplyNo">No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="referenceCode">If yes, please provide the advertised reference code from the academic department webpages where the studentship is advertised:</label>
+                <input type="text" class="form-control" id="referenceCode">
+            </div>
+        
+            <legend>University of Oxford Scholarships:</legend>
+            <p>For many Oxford scholarships (www.graduate.ox.ac.uk/scholarships), all eligible applicants are considered automatically. However, if you are eligible and wish to be considered for one of the six scholarships listed below, you need to tick the relevant box(es). Where a scholarship is marked with a '*', you also need to supply an additional supporting document by attaching it in the Supporting Documents section of this form. You can check the eligibility criteria and requirements for supporting documents by visiting the relevant scholarship links below. Please note that the University reserves the right to consider any eligible candidates for Oxford scholarships.</p>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="hillFoundation">
+                <label class="form-check-label" for="hillFoundation">Hill Foundation (www.graduate.ox.ac.uk/hill)</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="ertegun">
+                <label class="form-check-label" for="ertegun">Mica and Ahmet Ertegun Postgraduate Scholarships in the Humanities* (www.graduate.ox.ac.uk/ertegun)</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="ocis">
+                <label class="form-check-label" for="ocis">Oxford Centre for Islamic Studies* (www.graduate.ox.ac.uk/ocis)</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="weidenfeld">
+                <label class="form-check-label" for="weidenfeld">Weidenfeld-Hoffmann Scholarships and Leadership Programme* (www.graduate.ox.ac.uk/weidenfeld)</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="oocdtp">
+                <label class="form-check-label" for="oocdtp">AHRC: OOC DTP* (https://www.oocdtp.ac.uk/)</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="granduniondtp">
+                <label class="form-check-label" for="granduniondtp">Grand Union DTP * (www.granduniondtp.ac.uk/how-apply)</label>
+            </div>
+        </fieldset>
+		
+        <fieldset class="form-section">
+            <legend>Section N: Supporting documents checklist</legend>
+            <p>Supporting documents are required with all applications.</p>
+            <p>All applications require supporting documents to be submitted to make them complete; please check which documents are required for the course for which you are applying (<a href="www.graduate.ox.ac.uk/courses" target="_blank">www.graduate.ox.ac.uk/courses</a>). If any required documents are missing, or do not follow the specifications in the ‘How to apply’ section of the course page, the department may not assess your application.</p>
+            <p>For the purpose of processing your application, your submitted documents will be scanned and merged into a single PDF document. By submitting your application, you agree to your documents being managed in this way.</p>
+
+            <legend>MANDATORY FOR ALL COURSES: Tick documents being added</legend>
+                <div class="form-group">
+                    <label>Transcripts: Transcripts comprising a detailed record of your higher education, including courses taken and grades achieved, are mandatory for all applications (up to five documents can be attached). The document(s) provided must be readable, but may show watermarks caused by copying/scanning. Transcripts produced in student self-service online systems are acceptable. Any screenshots must include your name and the name of the institution.</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="transcripts">
+                        <label class="form-check-label" for="transcripts"></label>
+                    </div>
+                    <p>Degree certificates will not be accepted in lieu of transcripts.</p>
+                    <p>Further information on transcript requirements is available via the Graduate Admissions website (<a href="www.graduate.ox.ac.uk/applicationguide" target="_blank">www.graduate.ox.ac.uk/applicationguide</a>).</p>
+                    <p>If you do not yet have a transcript or your institution provides electronic transcripts, you can submit the application form without it. However, the transcript must still be received by the relevant deadline for your application to be considered. If an electronic transcript will be provided, please register access to graduate.admissions@admin.ox.ac.uk and make it available for as long as possible.</p>
+                </div>
+                <div class="form-group">
+                    <label>CV/Résumé: All courses require the submission of a CV, which must be submitted with the application form.</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="cv">
+                        <label class="form-check-label" for="cv"></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Statement of purpose/Research proposal: please submit a statement of purpose and/or research proposal according to the specific requirements for your course - please check the relevant course page (<a href="www.graduate.ox.ac.uk/courses" target="_blank">www.graduate.ox.ac.uk/courses</a>) for details. A statement of purpose or research proposal is mandatory for all applications, and must be entirely your own original work, except where clearly stated otherwise.</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="statement">
+                        <label class="form-check-label" for="statement"></label>
+                    </div>
+                </div>
+                    <p>ADDITIONAL ITEMS THAT MAY BE MANDATORY FOR YOUR APPLICATION (CHECK YOUR COURSE REQUIREMENTS ON THE HOW TO APPLY TAB OF YOUR CHOSEN COURSE) <a href="www.ox.ac.uk/admissions/graduate/courses" target="_blank">www.ox.ac.uk/admissions/graduate/courses</a></p>
+            <p>All material must be entirely your own work, except where clearly indicated.</p>
+
+            <div class="form-group">
+                <label>Written work 1</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="writtenWork1">
+                    <label class="form-check-label" for="writtenWork1"></label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Written work 2</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="writtenWork2">
+                    <label class="form-check-label" for="writtenWork2"></label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>If your course permits one longer piece of written work instead of two shorter pieces (you can check this in the How to Apply section for your course on its course page at <a href="www.graduate.ox.ac.uk/courses" target="_blank">www.graduate.ox.ac.uk/courses</a>), please tick this box:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="longerWork">
+                    <label class="form-check-label" for="longerWork"></label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Portfolio/audio-visual media/maths test/music scores</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="portfolio">
+                    <label class="form-check-label" for="portfolio"></label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>English Language Test Result (e.g. TOEFL, IELTS, etc.)</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="englishTest">
+                    <label class="form-check-label" for="englishTest"></label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>GRE admissions test certificate(s): (See Section J for further details)</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="greTest">
+                    <label class="form-check-label" for="greTest"></label>
+                </div>
+            </div>
+
+
+            <legend>Other items (please tick box(es) as appropriate:</legend>
+                <div class="form-group">
+                    <p>If you ticked “Yes” to English Language Test Waiver, please add a brief letter outlining the reasons why you should be exempted from the requirement - see the Application Guide <a href="www.graduate.ox.ac.uk/applicationguide" target="_blank">www.graduate.ox.ac.uk/applicationguide</a> for further information. If you do not need to provide an English language test result or are not requesting a test waiver, please do not submit a document.</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="englishWaiverLetter">
+                        <label class="form-check-label" for="englishWaiverLetter"></label>
+                    </div>
+                </div>
+				
+			<legend>Scholarship application(s)</legend>
+			<div class="form-group">
+			<p> If you are applying for one or more University of Oxford scholarships listed in Section M that require you to submit a supporting statement to complete your scholarship application, please add a separate supporting statement for each scholarship you have ticked. You must read the relevant scholarship profile(s) (www.ox.ac.uk/feesandfunding/prospectivegrad/scholarships) for full details about the awards, the required format for your supporting statement and the eligibility requirements before completing your scholarship application. Number of scholarship applications being added:</p>
+				<div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="scholarshipApplication">
+                    <label class="form-check-label" for="scholarshipApplication"></label>
+                </div>
+			</div>
+		</fieldset>
+		
+		<fieldset class="form-section">
+            <legend>Section O: Application fee payment</legend>
+            <p>The application fee is £75 per application. Payment can be made by any MasterCard, Visa, Visa debit, Visa Electron or Maestro card. Check your bank card has one of these logos.</p>
+            <p>If you intend to submit more than one application you must make separate payments and provide us with the order number for each application.</p>
+
+            <h4>To make a payment online:</h4>
+            <ol>
+                <li>Please go to <a href="www.graduate.ox.ac.uk/applicationfee" target="_blank">www.graduate.ox.ac.uk/applicationfee</a> and make a purchase of the application fee. Click on ‘Add to Basket’ and then proceed to make payment. If you have not used the Online Stores before, you will need to create an account, and provide some personal details and the name of the course to which you are applying.</li>
+                <li>Once you have paid your application fee, enter the six digit application fee order number (from confirmation of purchase email) in the box below – all have the prefix “OXF”: Please check the order number you have entered carefully, as it will be audited; any application with an invalid order number will not normally be considered.</li>
+                <li>We will contact you by email if there is any issue with your payment.</li>
+            </ol>
+
+            <div class="form-group">
+                <label for="orderNumber">OXF</label>
+                <input type="text" class="form-control" id="orderNumber" placeholder="Enter order number">
+            </div>
+
+            <p>It is acceptable for someone else to pay the application fee on your behalf. When creating the account, they should enter their own details rather than those of the applicant. Please advise them that once they have clicked "Add to Basket" they will be required to provide some personal information about you to allow the Graduate Admissions Office to match the payment to your application: your name, date of birth and the full title of the course and course code to which you are applying.</p>
+
+            <h4>To make payment by Western Union:</h4>
+            <p>If you are not able to pay the application fee online or by cheque, please contact the Graduate Admissions Office on <a href="mailto:graduate.admissions@admin.ox.ac.uk">graduate.admissions@admin.ox.ac.uk</a> or +44 (0) 1865 270059 for further information about how to make the payment by Western Union.</p>
+
+            <h4>To make a payment by cheque:</h4>
+            <p>Please enclose payment (in £ UK Sterling, drawn on a UK bank and made payable to “University of Oxford”).</p>
+            <p>Please write your name, date of birth and course name on the reverse of your cheque.</p>
+
+           <h4>Fee Waivers:</h4>
+            <p>Fee waivers may be applied if your current country of ordinary residence is part of the World Bank Low Income Group. The eligible countries are:</p>
+            <p>Afghanistan Chad Guinea Madagascar Niger Syrian Arab Yemen, Rep.</p>
+            <p>Benin Congo, Dem. Rep. Guinea-Bissau Malawi Rwanda Tajikistan</p>
+            <p>Burkina Faso Eritrea Haiti Mali Sierra Leone Tanzania</p>
+            <p>Burundi Ethiopia Korea, Dem. People's Rep. Mozambique Somalia Togo</p>
+            <p>Central African Republic Gambia, The Liberia Nepal South Sudan Uganda</p>
+
+            <p>Fee waivers are only possible where you are currently <strong>resident</strong> in one of the above countries, meet the entry requirements and cannot pay the application fee.</p>
+
+            <h4>Application Fee Waiver:</h4>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="feeWaiver" id="noWaiver" value="no">
+                <label class="form-check-label" for="noWaiver">I do not need a fee waiver</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="feeWaiver" id="waiver" value="yes">
+                <label class="form-check-label" for="waiver">I need a fee waiver</label>
+            </div>
+
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="confirmAfford">
+                    <label class="form-check-label" for="confirmAfford">I confirm that I cannot afford to pay the application fee and would not be able to apply to the University without an application fee waiver.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="confirmEntry">
+                    <label class="form-check-label" for="confirmEntry">I confirm that I will meet the entry requirements for my course as published on the course entry requirements page.</label>
+                </div>
+            </div>
+
+            <p>Please note that if you are applying for a course in one of the Centres for Doctoral Training (CDT) or Doctoral Training Partnership (DTP), you will be required to pay the application fee for the first application. You may, however, submit up to two further applications for related courses from a set of permitted options without paying additional application fees. Please see the Application Basics tab of the Guide <a href="www.ox.ac.uk/admissions/graduate/applying-to-oxford/application-guide" target="_blank">www.ox.ac.uk/admissions/graduate/applying-to-oxford/application-guide</a> for further information.</p>
+        </fieldset>
+		
+		<fieldset class="form-section">
+            <legend>Section P: Final checklist</legend>
+            <p>Please confirm that you have:</p>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="filledSections">
+                <label class="form-check-label" for="filledSections">Filled out all required sections of the application form</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="gatheredMaterials">
+                <label class="form-check-label" for="gatheredMaterials">Gathered together all supporting materials required for your course</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="requestedReferences">
+                <label class="form-check-label" for="requestedReferences">Requested references from your named referees and told them the correct deadline</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="enclosedFee">
+                <label class="form-check-label" for="enclosedFee">Enclosed the application fee of £75, provided the payment order number or requested a relevant fee waiver</label>
+            </div>
+
+            <p><strong>Before reading and signing the declaration below, please complete Appendix A</strong></p>
+        </fieldset>
+		
+		<fieldset class="form-section">
+            <legend>Section Q: Data Protection Notice and Declaration</legend>
+            <p>Please read the following Data Protection Notice and Declaration carefully. By signing the Declaration you confirm your acceptance of the statements which form the Declaration. If you do not sign this form, we cannot process your application.</p>
+		
+			<h4>DATA PROTECTION NOTICE</h4>
+			<p>Personal data will be collected, stored and retained in accordance with the General Data Protection Regulation and related UK data protection legislation. Please read the University's Data Protection Notice (Appendix B) before accepting the terms and conditions and submitting your application.</p>
+        
+			<h4>DECLARATION</h4>
+			<p>I confirm that the information I have provided on this application form is (to the best of my knowledge) true, accurate, current and complete; and I agree to notify the University promptly if any information contained on this application form should change, in order to keep it true, accurate, current and complete.</p> 
+			<p>I confirm that all supporting work submitted as part of this application is entirely my own original work, except where clearly stated otherwise, and does not include any plagiarised elements.</p>
+			<p>I accept that if I become a student at the University of Oxford the terms of the University’s Statue XVI(https://www.admin.ox.ac.uk/statutes/790-121.shtml) relating to intellectual property will apply to me, and that the University will be entitledin accordance with those terms to claim ownership of intellectual property which I produce.</p>
+			<p>PLEASE NOTE: All admissions decisions taken by the University of Oxford and its Colleges rely on the statements made on the application form and on the supporting documents supplied by you and your referees. This information will be held and used for the purpose of processing your application for study, for student administration and, where relevant, for funding purposes.</p>
+			<p>If the University, or any College of the University, believes that any information or statement, including references, contained on your application form may not be true, accurate, current and complete, or that any document submitted in support of your application may not be entirely your own original work, except where clearly stated otherwise, it may take any necessary steps, including contacting third parties, toverify that information or statement, or to confirm that any supporting document is entirely your own original work, except where clearly stated otherwise.</p>
+			<p>As part of the admissions process the University may use a plagiarism detection system. This system screens any written work submitted as part of your application for plagiarism, paraphrasing and collusion. The plagiarism detection system will store on its database any written work submitted for screening. For the University’s definition of plagiarism and more information on how the plagiarism detection system works please see the Application Guide (https://www.ox.ac.uk/admissions/graduate/applying-to-oxford/university-policies/plagiarism?wssl=1)</p>
+			<p>If, in the opinion of the University, or any College of the University, any information or statement, including references, provided on this	application form is not true, accurate, current and complete, or any supporting document is not entirely your own original work, except where clearly stated otherwise, the University, or any College of the University, retains the right to reject your application. If you have been made an offer by the University, or any College of the University, then the University, or any College of the University, may in these circumstances withdraw or amend that offer, or terminate your contact with the University or College if you have accepted your offer. If you have been admitted as a student, you may be subject to disciplinary action which could result in your expulsion from the University and your College.</p>
+			<p>Please sign in the box below and print your name to accept this declaration:</p>
+		
+			<div class="form-group">
+                <label for="signature">SIGNATURE:</label>
+                <input type="text" class="form-control" id="signature">
+            </div>
+
+            <div class="form-group">
+                <label for="date">DATE:</label>
+                <input type="date" class="form-control" id="date">
+            </div>
+
+            <div class="form-group">
+                <label for="printName">PLEASE PRINT NAME:</label>
+                <input type="text" class="form-control" id="printName">
+            </div>
+        </fieldset>
+		
+		<fieldset class="form-section">
+            <legend>Appendix A: Additional Information</legend>
+            <p>The information you provide in this section will not form part of the selection process and will not be seen by anyone involved in assessing your application.</p>
+            <p>The University of Oxford embraces diversity and seeks to achieve equity in the experience, progression and achievement of all our students. The personal data we collect from applicants and current students enables us to meet our statutory obligations under the Equality Act and assess the impact of our policies and practices on people from different equality groups and put in place appropriate provision and support for all students. We recognise that these are sensitive questions, but hope you will feel able to provide this information, in confidence, to support our efforts to create a more inclusive, diverse and equitable Oxford. Please see the Equality and Diversity Unit website www.admin.ox.ac.uk/eop/ for more information about equality at Oxford.</p>
+            <p>Your personal information will be treated in accordance with the General Data Protection Regulation (GDPR) and related UK data protection legislation. Full details are set out in the University's Postgraduate Applicant Privacy Policy (Appendix B).</p>
+
+            <h4>Section 1: Ethnicity and diversity</h4>
+            <p>We recognise that these are sensitive questions, but hope you will feel able to provide this information, in confidence, to support our efforts to create a more inclusive, diverse and equitable Oxford.</p>
+
+            <div class="form-group">
+                <label>With which ethnic group do you most identify?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ethnicity" id="arab" value="arab">
+                    <label class="form-check-label" for="arab">Arab</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ethnicity" id="asianIndian" value="asianIndian">
+                    <label class="form-check-label" for="asianIndian">Asian or Asian British - Indian</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ethnicity" id="asianPakistani" value="asianPakistani">
+                    <label class="form-check-label" for="asianPakistani">Asian or Asian British - Pakistani</label>
+                </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ethnicity" id="asianBangladeshi" value="asianBangladeshi">
+                    <label class="form-check-label" for="asianBangladeshi">Asian or Asian British - Bangladeshi</label>
+                </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ethnicity" id="chinese" value="chinese">
+                    <label class="form-check-label" for="chinese">Chinese</label>
+                </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ethnicity" id="otherAsian" value="otherAsian">
+                    <label class="form-check-label" for="otherAsian">Other Asian background</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ethnicity" id="blackCaribbean" value="blackCaribbean">
+                    <label class="form-check-label" for="blackCaribbean">Black or Black British – Caribbean</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ethnicity" id="blackAfrican" value="blackAfrican">
+                    <label class="form-check-label" for="blackAfrican">Black or Black British - African</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ethnicity" id="otherBlack" value="otherBlack">
+                    <label class="form-check-label" for="otherBlack">Other Black background</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ethnicity" id="gypsyTraveller" value="gypsyTraveller">
+                    <label class="form-check-label" for="gypsyTraveller">Gypsy or Traveller</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ethnicity" id="mixedWhiteAsian" value="mixedWhiteAsian">
+                    <label class="form-check-label" for="mixedWhiteAsian">Mixed – White and Asian</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ethnicity" id="mixedOther" value="mixedOther">
+                    <label class="form-check-label" for="mixedOther">Other mixed background</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ethnicity" id="white" value="white">
+                    <label class="form-check-label" for="white">White</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ethnicity" id="notKnown" value="notKnown">
+                    <label class="form-check-label" for="notKnown">Not known</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ethnicity" id="preferNot" value="preferNot">
+                    <label class="form-check-label" for="preferNot">Prefer not to say</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+				<label>What is your religion or belief?</label>
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="religion" id="noReligion" value="noReligion">
+					<label class="form-check-label" for="noReligion">No religion</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="religion" id="buddhist" value="buddhist">
+					<label class="form-check-label" for="buddhist">Buddhist</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="religion" id="christian" value="christian">
+					<label class="form-check-label" for="christian">Christian</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="religion" id="hindu" value="hindu">
+					<label class="form-check-label" for="hindu">Hindu</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="religion" id="jewish" value="jewish">
+					<label class="form-check-label" for="jewish">Jewish</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="religion" id="muslim" value="muslim">
+					<label class="form-check-label" for="muslim">Muslim</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="religion" id="sikh" value="sikh">
+					<label class="form-check-label" for="sikh">Sikh</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="religion" id="otherReligion" value="otherReligion">
+					<label class="form-check-label" for="otherReligion">Other religion</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="religion" id="preferNotReligion" value="preferNotReligion">
+					<label class="form-check-label" for="preferNotReligion">Prefer not to say</label>
+				</div>
+			</div>
+			
+		<div class="form-group">
+			<label>What is your sexual orientation?</label>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="sexualOrientation" id="heterosexual" value="heterosexual">
+				<label class="form-check-label" for="heterosexual">Heterosexual</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="sexualOrientation" id="gayMan" value="gayMan">
+				<label class="form-check-label" for="gayMan">Gay man</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="sexualOrientation" id="gayWoman" value="gayWoman">
+				<label class="form-check-label" for="gayWoman">Gay woman/lesbian</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="sexualOrientation" id="bisexual" value="bisexual">
+				<label class="form-check-label" for="bisexual">Bisexual</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="sexualOrientation" id="otherSexualOrientation" value="otherSexualOrientation">
+				<label class="form-check-label" for="otherSexualOrientation">Other sexual orientation</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="sexualOrientation" id="preferNotSexualOrientation" value="preferNotSexualOrientation">
+				<label class="form-check-label" for="preferNotSexualOrientation">Prefer not to say</label>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label>What is your gender?</label>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="gender" id="male" value="male">
+				<label class="form-check-label" for="male">Male</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="gender" id="female" value="female">
+				<label class="form-check-label" for="female">Female</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="gender" id="otherGender" value="otherGender">
+				<label class="form-check-label" for="otherGender">Other</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="gender" id="preferNotGender" value="preferNotGender">
+				<label class="form-check-label" for="preferNotGender">Prefer not to say</label>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label>Do you have day-to-day caring responsibilities for:</label>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="" id="child">
+				<label class="form-check-label" for="child">A child/children</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="" id="disabledAdult">
+				<label class="form-check-label" for="disabledAdult">A disabled adult</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="" id="olderAdult">
+				<label class="form-check-label" for="olderAdult">An older adult</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="" id="otherCare">
+				<label class="form-check-label" for="otherCare">Other</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="" id="noCare">
+				<label class="form-check-label" for="noCare">None</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="" id="preferNotCare">
+				<label class="form-check-label" for="preferNotCare">Prefer not to say</label>
+			</div>
+		</div>	
+		
+            <h4>Section 2: Socio-economic background</h4>
+
+            <div class="form-group">
+                <label>Were you educated in the UK for your secondary education? ('Secondary refers to ages 11-18, in Scotland 11-17/12-18)</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ukEducation" id="ukEducationYes" value="yes">
+                    <label class="form-check-label" for="ukEducationYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ukEducation" id="ukEducationNo" value="no">
+                    <label class="form-check-label" for="ukEducationNo">No</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ukEducation" id="ukEducationPreferNot" value="preferNot">
+                    <label class="form-check-label" for="ukEducationPreferNot">Prefer not to say</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>If your secondary school was in the UK: What school/college did you attend in the last year of your GCSE or equivalent (normally at age 16)?</label>
+                <input type="text" class="form-control" id="gcseSchoolName">
+            </div>
+
+            <div class="form-group">
+                <label>Postcode of school</label>
+                <input type="text" class="form-control" id="gcseSchoolPostcode">
+            </div>
+
+            <div class="form-group">
+                <label>If your secondary school was in the UK: How would you best describe this school? (A selective school, eg a grammar school, is where entry is on the basis of passing an examination)</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gcseSchoolType" id="gcseSelectiveState" value="selectiveState">
+                    <label class="form-check-label" for="gcseSelectiveState">Selective State school</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gcseSchoolType" id="gcseNonSelectiveState" value="nonSelectiveState">
+                    <label class="form-check-label" for="gcseNonSelectiveState">Non-selective state school</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gcseSchoolType" id="gcseIndependent" value="independent">
+                    <label class="form-check-label" for="gcseIndependent">Independent fee-paying school</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gcseSchoolType" id="gcseOther" value="other">
+                    <label class="form-check-label" for="gcseOther">Other</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>If your school/college was in the UK: What school/college did you attend in the last year of your A-levels or equivalent (normally at age 18)?</label>
+                <input type="text" class="form-control" id="alevelSchoolName">
+            </div>
+
+            <div class="form-group">
+                <label>Postcode of school</label>
+                <input type="text" class="form-control" id="alevelSchoolPostcode">
+            </div>
+
+            <div class="form-group">
+                <label>If your school/college was in the UK: How would you best describe this school?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alevelSchoolType" id="alevelSelectiveState" value="selectiveState">
+                    <label class="form-check-label" for="alevelSelectiveState">Selective State school</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alevelSchoolType" id="alevelNonSelectiveState" value="nonSelectiveState">
+                    <label class="form-check-label" for="alevelNonSelectiveState">Non-selective state school</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alevelSchoolType" id="alevelIndependent" value="independent">
+                    <label class="form-check-label" for="alevelIndependent">Independent fee-paying school</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alevelSchoolType" id="alevelOther" value="other">
+                    <label class="form-check-label" for="alevelOther">Other</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>If your school/college was in the UK: What was your home postcode in the last year of secondary education before you started your undergraduate degree (normally at age 18)?</label>
+                <input type="text" class="form-control" id="homePostcode">
+            </div>
+			
+			     <div class="form-group">
+                <label>If your primary or secondary education was in the UK, were you ever entitled to free school meals? (Students at state schools in the UK may receive free meals at school where their family received certain other income-related state benefits)</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="freeSchoolMeals" id="freeMealsYes" value="yes">
+                    <label class="form-check-label" for="freeMealsYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="freeSchoolMeals" id="freeMealsNo" value="no">
+                    <label class="form-check-label" for="freeMealsNo">No</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="freeSchoolMeals" id="freeMealsUnsure" value="unsure">
+                    <label class="form-check-label" for="freeMealsUnsure">Unsure</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="freeSchoolMeals" id="freeMealsPreferNot" value="preferNot">
+                    <label class="form-check-label" for="freeMealsPreferNot">Prefer not to say</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Do any of your parents/guardians have an undergraduate degree?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="parentsUndergradDegree" id="parentsDegreeYes" value="yes">
+                    <label class="form-check-label" for="parentsDegreeYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="parentsUndergradDegree" id="parentsDegreeNo" value="no">
+                    <label class="form-check-label" for="parentsDegreeNo">No</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="parentsUndergradDegree" id="parentsDegreeDontKnow" value="dontKnow">
+                    <label class="form-check-label" for="parentsDegreeDontKnow">Don't know</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="parentsUndergradDegree" id="parentsDegreePreferNot" value="preferNot">
+                    <label class="form-check-label" for="parentsDegreePreferNot">Prefer not to say</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Which of the following socio-economic categories best describes the jobs of your parents or guardians during your final year of secondary education?</label>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Parent/Guardian 1</th>
+                            <th>Parent/Guardian 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Higher managerial, administrative and professional occupations</td>
+                            <td><input type="radio" name="parent1Job" value="higherManagerial"></td>
+                            <td><input type="radio" name="parent2Job" value="higherManagerial"></td>
+                        </tr>
+                        <tr>
+                            <td>Lower managerial, administrative and professional occupations</td>
+                            <td><input type="radio" name="parent1Job" value="lowerManagerial"></td>
+                            <td><input type="radio" name="parent2Job" value="lowerManagerial"></td>
+                        </tr>
+                        <tr>
+                            <td>Intermediate occupations</td>
+                            <td><input type="radio" name="parent1Job" value="intermediate"></td>
+                            <td><input type="radio" name="parent2Job" value="intermediate"></td>
+                        </tr>
+                        <tr>
+                            <td>Small employers and own account workers</td>
+                            <td><input type="radio" name="parent1Job" value="smallEmployers"></td>
+                            <td><input type="radio" name="parent2Job" value="smallEmployers"></td>
+                        </tr>
+                        <tr>
+                            <td>Lower supervisory and technical occupations</td>
+                            <td><input type="radio" name="parent1Job" value="lowerSupervisory"></td>
+                            <td><input type="radio" name="parent2Job" value="lowerSupervisory"></td>
+                        </tr>
+                        <tr>
+                            <td>Routine occupations</td>
+                            <td><input type="radio" name="parent1Job" value="routine"></td>
+                            <td><input type="radio" name="parent2Job" value="routine"></td>
+                        </tr>
+                        <tr>
+                            <td>Never worked and long-term unemployed</td>
+                            <td><input type="radio" name="parent1Job" value="neverWorked"></td>
+                            <td><input type="radio" name="parent2Job" value="neverWorked"></td>
+                        </tr>
+                        <tr>
+                            <td>Prefer not to say</td>
+                            <td><input type="radio" name="parent1Job" value="preferNot"></td>
+                            <td><input type="radio" name="parent2Job" value="preferNot"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+			            <div class="form-group">
+                <label>Did you undertake your undergraduate degree in the UK?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="undergradUK" id="undergradUKYes" value="yes">
+                    <label class="form-check-label" for="undergradUKYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="undergradUK" id="undergradUKNo" value="no">
+                    <label class="form-check-label" for="undergradUKNo">No</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="undergradUK" id="undergradUKPreferNot" value="preferNot">
+                    <label class="form-check-label" for="undergradUKPreferNot">Prefer not to say</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>If yes, did you take out a student loan for all or part of your undergraduate degree?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="studentLoan" id="studentLoanYes" value="yes">
+                    <label class="form-check-label" for="studentLoanYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="studentLoan" id="studentLoanNo" value="no">
+                    <label class.form-check-label" for="studentLoanNo">No</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="studentLoan" id="studentLoanPreferNot" value="preferNot">
+                    <label class="form-check-label" for="studentLoanPreferNot">Prefer not to say</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>If your undergraduate degree was in the UK, did you qualify for (income-assessed) UK government support for your undergraduate degree when you applied to your regional funding agency? (eg Student Finance England, Student Awards Agency for Scotland) (If you entered university before August 2016 and received a maintenance grant (not a maintenance loan), then please tick yes. If you entered university after August 2016, was your household income assessed as £40,000 or less (which will be stated in the letter from your student finance agency).</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="govSupport" id="govSupportYes" value="yes">
+                    <label class="form-check-label" for="govSupportYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="govSupport" id="govSupportNo" value="no">
+                    <label class="form-check-label" for="govSupportNo">No</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="govSupport" id="govSupportPreferNot" value="preferNot">
+                    <label class="form-check-label" for="govSupportPreferNot">Prefer not to say</label>
+                </div>
+            </div>
+			            <div class="form-group">
+                <label>What were your main sources of funding for your living costs during your undergraduate degree? (Please indicate all sources contributing at least £1,000 per year)</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="govLoan">
+                    <label class="form-check-label" for="govLoan">Government grant/loan</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="termTimeWork">
+                    <label class="form-check-label" for="termTimeWork">Term-time working</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="personalSavings">
+                    <label class="form-check-label" for="personalSavings">Personal savings</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="parentFinancial">
+                    <label class="form-check-label" for="parentFinancial">Parent/guardian financial assistance</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="scholarship">
+                    <label class="form-check-label" for="scholarship">Scholarship</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="uniBursary">
+                    <label class="form-check-label" for="uniBursary">Needs-based University bursary</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="preferNotFunding">
+                    <label class="form-check-label" for="preferNotFunding">Prefer not to say</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="otherFunding">
+                    <label class="form-check-label" for="otherFunding">Other - specify below</label>
+                </div>
+                <input type="text" class="form-control" id="otherFundingDetails" placeholder="Specify other funding sources">
+            </div>
+
+            <div class="form-group">
+                <label>Have you spent more than three months in the care of your state or local authority (including foster care, kinship care, residential care or similar government-sponsored care schemes)? (Being in care means looked after by the state or state-appointed guardians for an extended period rather than by your parents, other relatives or guardians)</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="stateCare" id="stateCareYes" value="yes">
+                    <label class="form-check-label" for="stateCareYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="stateCare" id="stateCareNo" value="no">
+                    <label class="form-check-label" for="stateCareNo">No</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="stateCare" id="stateCarePreferNot" value="preferNot">
+                    <label class="form-check-label" for="stateCarePreferNot">Prefer not to say</label>
+                </div>
+            </div>
+        </fieldset>
+		
+		<fieldset class="form-section">
+            <h4>Section 3: Disability</h4>
+
+            <p>We welcome applications from disabled people. Please tell us if you have a disability, including sensory or mobility impairments, long-term mental health conditions, longstanding illnesses or health conditions, autism spectrum conditions, or specific learning difficulties such as dyslexia, dyspraxia and ADHD, so that we can tell you about what study support is available if you are offered a place here.</p>
+
+            <p>We will not take this information into account when assessing your application, which will be judged on academic merit and potential alone. Your personal information will be treated in accordance with the General Data Protection Regulation (GDPR) and related UK data protection legislation. Full details are set out in the University's Postgraduate Applicant Privacy Policy (<a href="https://compliance.admin.ox.ac.uk/postgraduate-applicant-privacy-policy" target="_blank">https://compliance.admin.ox.ac.uk/postgraduate-applicant-privacy-policy</a>).</p>
+
+            <p>If you accept a place here, we will need to share this information with key individuals in academic, administrative and support roles in order to provide effective support. This will mean sharing your information with our Disability Advisory Service so that they may work with you to put in place any necessary adjustments or provide study support.</p>
+
+            <p>You should contact the Disability Advisory Service (<a href="www.ox.ac.uk/students/welfare/disability" target="_blank">www.ox.ac.uk/students/welfare/disability</a>) as soon as possible if you wish to discuss this section, or anything to do with provision for disability-related support for your course.</p>
+			
+			            <p>Please select all that apply.</p>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="noDisability">
+                <label class="form-check-label" for="noDisability">No known disability</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="preferNotDisability">
+                <label class="form-check-label" for="preferNotDisability">Prefer not to say</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="learningDifficulty">
+                <label class="form-check-label" for="learningDifficulty">A specific learning difficulty such as dyslexia, dyspraxia or ADHD</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="communicationImpairment">
+                <label class="form-check-label" for="communicationImpairment">A social/communication impairment such as an autism spectrum condition or disorder</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="longstandingIllness">
+                <label class="form-check-label" for="longstandingIllness">A longstanding illness or health condition such as epilepsy, diabetes, Crohn's disease, or asthma</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="mentalHealthCondition">
+                <label class="form-check-label" for="mentalHealthCondition">A long-term mental health condition, such as bipolar disorder, obsessive compulsive disorder, an eating disorder, depression, an anxiety disorder, or schizophrenia</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="physicalImpairment">
+                <label class="form-check-label" for="physicalImpairment">A physical impairment or mobility issues, such as difficulty using arms or hands, or requiring use of a wheelchair, crutches or other mobility aid</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="hearingImpairment">
+                <label class="form-check-label" for="hearingImpairment">Deaf or a hearing impairment</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="visualImpairment">
+                <label class="form-check-label" for="visualImpairment">Blind or a serious visual impairment uncorrected by glasses</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="otherDisability">
+                <label class="form-check-label" for="otherDisability">A disability, impairment or medical condition that is not listed</label>
+            </div>
+            <div class="form-group">
+                <label for="otherDisabilityDetails">If not listed, please specify</label>
+                <textarea class="form-control" id="otherDisabilityDetails" rows="3"></textarea>
+            </div>
+
+            <p>If you have selected a disability above - Do you have any additional support needs?</p>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="wheelchair">
+                <label class="form-check-label" for="wheelchair">Require use of a wheelchair or other mobility aid</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="livingAccommodation">
+                <label class="form-check-label" for="livingAccommodation">Require living accommodation with specialist equipment (eg. hoists, height-adjustable beds, adapted bathroom facilities)</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="stepFreeAccess">
+                <label class="form-check-label" for="stepFreeAccess">Require step-free/level access or use of a lift</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="assistanceAnimal">
+                <label class="form-check-label" for="assistanceAnimal">Require use of a registered/licensed assistance animal for visual, hearing, mobility, or medical needs</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="personalCare">
+                <label class="form-check-label" for="personalCare">Require personal care assistance for daily living activities</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="communicationAids">
+                <label class="form-check-label" for="communicationAids">Require use of communication aids (eg. BSL interpreter, hearing support system)</label>
+            </div>
+			</fieldset>
+			
+			<fieldset class="form-section">
+				<legend>Appendix B: Postgraduate Applicant Privacy Policy</legend>
+
+				<h4>1. What is the purpose of this document?</h4>
+				<p>The University of Oxford is committed to protecting the privacy and security of your personal information ('personal data'). This privacy policy describes how we collect and use your personal data during the application process, both before and after you submit your application, in accordance with the General Data Protection Regulation (GDPR) and related UK data protection legislation.</p>
+				<p>This policy applies to prospective postgraduate students. In addition, each college[1] will have its own privacy notice. It is important that you read this policy, together with any other privacy policy we may provide on specific occasions when we are collecting or processing information about you, so that you are aware of how and why we are using the information. We may update this policy at any time.</p>
+				<p>[1] 'College' means any college or Permanent Private Hall, including Ripon College, Cuddesdon.</p>
+
+				<h4>2. Glossary</h4>
+				<p>Where we refer in this policy to your 'personal data', we mean any recorded information that is about you and from which you can be identified. It does not include data where your identity has been removed (anonymous data).</p>
+				<p>Where we refer to the 'processing' of your personal data, we mean anything that we do with that information, including collection, use, storage, disclosure, deletion or retention.</p>
+
+				<h4>3. Who is using your personal data?</h4>
+				<p>The University of Oxford[2] is the "data controller" for the information that we obtain from you or others as a result of your application for graduate study. This means that we decide how to use it and are responsible for looking after it in accordance with the GDPR.</p>
+				<p>Access to your data will be provided to the staff, including those based in the University's colleges[1], who need to view it as part of their work in carrying out the purposes set out in Section 6. We also share it with the third parties described in section 8.</p>
+				<p>[2] The University's legal title is the Chancellor, Masters and Scholars of the University of Oxford.</p>
+				
+				<h4>4. The types of data we hold about you</h4>
+				<p>The information we hold about you may include the following:</p>
+				<ul>
+					<li>Personal details such as name, title, address, telephone number, email address, date of birth, sex and gender identity, ID photograph (including within received documents), marital status, information about household income, and details of dependants;</li>
+					<li>Education and employment information (including the school(s), sixth form college(s) and other colleges or universities you have attended and places where you have worked, the courses you have completed, dates of study and examination results);</li>
+					<li>Other personal background information collected during the admissions process, e.g. whether you have been in care, your socio-economic classification and details of your parents' occupation and education;</li>
+					<li>Information about your use of our IT systems;</li>
+					<li>Visa, passport and immigration information;</li>
+					<li>Funding and financial support information;</li>
+					<li>Your feedback on the application process and university services collected through surveys such as (but not limited to) those sent to applicants and offer-holders;</li>
+					<li>Attendance records at University-organised recruitment events, and photographic data of such events captured for the purpose of live streaming and/or future publicity materials; and</li>
+					<li>Information about your use of our information and communications systems, including your communication preferences and website interaction (cookies and similar technologies).</li>
+					<li>Information about your socio-economic background</li>
+				</ul>
+
+				<p>We may also process the following "special categories" of more sensitive personal data:</p>
+				<ul>
+					<li>Information about your race or ethnicity, sexual orientation and religious beliefs;</li>
+					<li>Information about your health, including any disability and/or medical condition;</li>
+					<li>Information about criminal convictions and offences (if applicable to your course).</li>
+				</ul>
+
+				<p>Special category data will not be available to those assessing your application and will only be used in accordance with section 7.</p>
+
+				<h4>5. How did the University obtain your data?</h4>
+	
+				<p class="section-content">
+					We collect the vast majority of the information directly from you, such as during your registration to use our online application form, through the application process and after you submit your application. We may also collect additional information from third parties, including referees, former schools, colleges and universities, and government departments and agencies.
+				</p>
+
+				<h4 class="section-title">6. How the University uses your data</h4>
+				<p class="section-content">
+					Before you submit your application, we process your data in order to data for the purpose of processing and assessing your application for study, and for purposes related to your application, such as assessing your eligibility for funding and your financial status.
+				</p>
+
+				<p class="section-content">
+					We set out below those circumstances where it is necessary for us to process your data. (These circumstances are not mutually exclusive; we may use the same information under more than one heading.)
+				</p>
+
+				<h4 class="section-title">6.1 Because we have a contractual obligation to consider your application</h4>
+				<p class="section-content">
+					Information processed for this purpose includes the data listed in section 4 above.
+				</p>
+				<p class="section-content">
+					We also need to process data under this heading where the University is working with a third party in order to offer you services, for example, those offered by colleges, sponsors (such as research councils), other universities or scholarship benefactors. See section 8 for a fuller list of examples of third party sharing.
+				</p>
+
+				<h4 class="section-title">6.2 Where we need to comply with a legal obligation</h4>
+				<p class="section-content">
+					Information processed for this purpose includes, but is not limited to, information relating to the monitoring of equal opportunities. We are also required by law to provide data to various Government departments through the <a href="#">Higher Education Statistics Agency (HESA)</a>.
+				</p>
+
+				<h4 class="section-title">6.3 Where it is necessary to meet our legitimate interests</h4>
+				<p class="section-content">
+					We also need to process your data in order to meet our legitimate interests or the legitimate interests of others. Examples include, but are not limited to, the following:
+					<ul>
+						<li>sending you communications containing information on how to complete your application;</li>
+						<li>inviting you to take part in applicant surveys or enabling third parties to conduct applicant surveys on our behalf;</li>
+						<li>notifying you of changes to course information.</li>
+					</ul>
+				</p>
+			</div>
+			
+			<div class="container">
+				<h4 class="section-title">6.4 Where we have your consent</h4>
+				<p class="section-content">
+					There may be situations where we ask for your consent to process your data, for example, the socio-economic questions in the application form and pre-application communications for student recruitment purposes (you will always be able to opt out of receiving such communications).
+				</p>
+
+				<h4 class="section-title">If you fail to provide personal information under 6.1 or 6.2 above</h4>
+				<p class="section-content">
+					If you fail to provide certain information when requested under the circumstances described in 6.1 and 6.2 above, we may not be able to meet our contractual obligation to consider your application or to comply with our other legal obligations.
+				</p>
+
+				<h4 class="section-title">Change of purpose</h4>
+				<p class="section-content">
+					We will only process your personal data for the purposes for which we collected it, unless we reasonably consider that we need to use it for another related reason and that reason is compatible with the original purpose. If we need to use your data for an unrelated purpose, we will seek your consent to use it for that new purpose.
+				</p>
+				<p class="section-content">
+					Please note that we may process your data without your knowledge or consent where this is required or permitted by law.</p>
+				<h4 class="section-title">7. Special category data and criminal conviction data</h4>
+				<p>Special category data and criminal conviction data require a higher level of protection. Listed below are examples of processing activities that we regularly undertake in respect of these types of data. In addition to the activities listed below, it may sometimes be necessary to process this sort of information for exceptional reasons, for example, because it is necessary to protect your vital interests or those of another person. We may also process your special category data to identify your eligibility for certain scholarships (e.g. female only STEM scholarships).</p>
+				<h4 class="section-title">7.1 Disability</h4>
+				<p>We will process data about any disability in order to make any arrangements or adjustments required in relation to your application (e.g. to arrange access for interviews) and/or to monitor equal opportunities. This processing is necessary to meet our legal obligations.</p>
+				<h4 class="section-title">7.2 Criminal conduct</h4>
+				<p>Data about certain unspent criminal convictions, including whether or not you have such a conviction, is gathered during the process of applying for a course with us once you have been offered a place. Data about barring decisions will only be collected if you have applied for and been accepted onto certain courses, and where we are legally required to do so. Processing of this nature is carried out in order to protect our legitimate interests including to protect members of the University community from a foreseeable risk of harm. For certain courses this processing is also necessary to meet our legal obligations. Such processing will be subject to suitable safeguards.</p>
+				<h4 class="section-title">7.3 Racial or ethnic origin, sexual orientation and religious belief</h4>
+				<p>Data about your racial and ethnic origin, religious belief or sexual orientation will only be processed where you have volunteered it, in order to identify your eligibility for certain scholarships in accordance with our legitimate interests, and where we need to process it in order to meet our statutory obligations under equalities and other legislation. This processing is considered to meet a substantial public interest. </p>
+				<h4 class="section-title">8. Data sharing with third parties</h4>
+				<p>In order to perform our contractual and other legal responsibilities or purposes, we may, need to share your information with the following types of organisation:</p>
+				<ol>
+					<li>Colleges;</li>
+					<li>External organisations providing services to us, for example our enquiry management and plagiarism detection system;</li>
+					<li>External organisations offering University-sponsored services including student surveys;</li>
+					<li>The governmental departments or agencies responsible for immigration and student loans;</li>
+					<li>Third parties including your former employer(s) or educational establishment(s) to obtain a reference or to verify the accuracy of a reference or other information you have submitted with or in support of your application;</li>
+					<li>If you have or are seeking a particular relationship with a third party, for example, because of an exchange scheme;</li>
+					<li>Sponsors or benefactors of funding and financial support;</li>
+					<li>Other Higher Education institutions as part of formal partnerships.</li>
+					<li>Where information is shared with third parties, we will seek to share the minimum amount necessary.</li>
+				</ol>
+				<p>All third-party service providers that process data on our behalf are required to take appropriate security measures to protect your data in line with our policies. We do not allow them to use your data for their own purposes. We permit them to process your data only for specified purposes and in accordance with our instructions.</p>
+				
+				<h4 class="section-title">9. Transfer of your data outside of the European Economic Area (EEA)[3]</h4>
+				<p class="section-content">
+					There may be occasions when we transfer your data outside the EEA, for example, to obtain a reference or to verify information in your application. Such transfers will only take place if one of the following applies:
+					<ul>
+						<li>the country receiving the data is considered by the EU to provide an adequate level of data protection;</li>
+						<li>the organisation receiving the data is covered by an arrangement recognised by the EU as providing an adequate standard of data protection e.g. transfers to companies that are certified under the EU-US Privacy Shield; the transfer has your consent;</li>
+						<li>the transfer is necessary for the performance of a contract with you or to take steps requested by you prior to entering into that contract; or</li>
+						<li>the transfer is governed by approved contractual clauses.</li>
+					</ul>
+				</p>
+				<p class="section-content">
+					[3] The EU plus Norway, Liechtenstein and Iceland.
+				</p>
+
+				<h4 class="section-title">10. Retention Period</h4>
+				<p class="section-content">
+					We will retain your data only for as long as we need it to meet our purposes, including any relating to legal, accounting, or reporting requirements. Details of the retention periods for different types of student data are available at <a href="https://compliance.admin.ox.ac.uk/">https://compliance.admin.ox.ac.uk/</a>.
+				</p>
+				<p class="section-content">
+					If you enrol as a student, your data will be processed in accordance with our student privacy policy which is available at <a href="https://compliance.admin.ox.ac.uk/student-privacy-policy">https://compliance.admin.ox.ac.uk/student-privacy-policy</a>.
+				</p>
+
+				<h4 class="section-title">11. Your rights</h4>
+				<p class="section-content">
+					Under certain circumstances, by law you have the right to:
+					<ul>
+						<li><strong>Request access to your data</strong> (commonly known as a "subject access request"). This enables you to receive a copy of your data and to check that we are lawfully processing it.</li>
+						<li><strong>Request correction of your data.</strong> This enables you to ask us to correct any incomplete or inaccurate data we hold about you.</li>
+						<li><strong>Request erasure of your data.</strong> This enables you to ask us to delete or remove your data in certain circumstances, for example, if you consider that there is no good reason for us continuing to process it. You also have the right to ask us to delete or remove your data where you have exercised your right to object to processing (see below).</li>
+						<li><strong>Object to processing of your data</strong> where we are relying on our legitimate interests (or those of a third party) and there is something about your particular situation which makes you want to object to processing on this ground. You also have the right to object where we are processing your data for direct marketing purposes.</li>
+						<li><strong>Request the restriction of processing of your data.</strong> This enables you to ask us to suspend the processing of your data, for example if you want us to establish its accuracy or the reason for processing it.</li>
+						<li><strong>Request the transfer of your data to another party.</strong></li>
+					</ul>
+				</p>
+				<p class="section-content">
+					Depending on the circumstances and the nature of your request it may not be possible for us to do what you have asked, for example, where there is a statutory or contractual requirement for us to process your data and it would not be possible to fulfil our legal obligations if we were to stop. However, where you have consented to the processing (for example, where you have asked us to send you certain types of communication), you can withdraw your consent at any time, by emailing us at graduate.admissions@admin.ox.ac.uk. In this event, we will stop the processing as soon as we can. If you choose to withdraw consent it will not invalidate past processing and it may impact our ability to provide particular additional services to you. Further information on your rights is available from the Information Commissioner’s Office(ICO) https://ico.org.uk/ . If you want to exercise any of the rights described above or are dissatisfied with the way we have used your information, please contact the University’s Information Compliance Team at data.protection@admin.ox.ac.uk. The same address can be used to contact the University’s Data Protection Officer. We will seek to deal with your request without undue delay, and in any event in accordance with the requirements of the GDPR. Please note that we may keep a record of your communications to help us resolve any issues which you raise. If you remain dissatisfied, you have the right to lodge a complaint with the ICO at https://ico.org.uk/concerns/.
+				</p>
+				<h4 class="section-title">12. Keeping your data up-to-date</h4>
+				<p>It is important that the data we hold about you is accurate and current. You can access, amend and delete your data yourself until the point at which you submit your application to the University. Please keep us informed of any changes after you submit your application.</p>
+				<h4 class="section-title">13. Changes to this privacy policy</h4>
+				<p>We reserve the right to update this privacy policy at any time, and will seek to inform you of substantial updates. We may also notify you in other ways from time to time about the processing of your personal data.</p>
+			</fieldset>
+		
+		<button type="submit" class="btn btn-dark w-100">SUBMIT APPLICATION</button>
+    </form>
+</body>
+</html>

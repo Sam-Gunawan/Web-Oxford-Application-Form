@@ -9,6 +9,18 @@
     --bs-btn-active-border-color: rgb(150, 129, 11);
 }
 
+.btn-primary {
+    --bs-btn-color: #fafafa;
+    --bs-btn-bg: #091235
+    --bs-btn-hover-color: #fafafa;
+    --bs-btn-hover-bg: #002147;
+    --bs-btn-border-color: #002147;
+    --bs-btn-hover-border-color: #002147;
+    --bs-btn-active-bg: #001731;
+    --bs-btn-active-color: #fafafa;
+    --bs-btn-active-border-color: #001731;
+}
+
 body {
     max-width: 65%;
     margin: auto;
@@ -29,13 +41,6 @@ a {
 
 a:hover {
     color: #c5c5c5;
-}
-
-.form-section {
-    padding: 15px;
-    border: 1px solid white;
-    border-radius: 10px;
-    margin-bottom: 20px;
 }
 
 .table-bordered td, .table-bordered th {

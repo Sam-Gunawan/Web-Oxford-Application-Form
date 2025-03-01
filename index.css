@@ -1,0 +1,37 @@
+body {
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #000;
+}
+
+.form-section {
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.table-bordered td, .table-bordered th {
+    border: 1px solid #000 !important;
+    text-align: center;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+}
+
+legend {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+label {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.form-control {
+    border: 1px solid black;
+}

@@ -41,6 +41,11 @@ legend {
     text-transform: uppercase;
 }
 
+p {
+    font-size: 1em;
+    opacity: 0.85;
+}
+
 a {
     color: #fafafa;
 }
@@ -83,11 +88,19 @@ header img:hover {
 
 .form-label {
     color: #fafafaaa;
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 .label-input-group:focus-within .form-label{
     color: #fafafa;
+}
+
+.form-check-input {
+    --bs-form-check-bg: #002147;
+}
+
+.form-check-input:checked {
+    background-color: rgb(214, 182, 0);
 }
 
 .progress {

@@ -131,3 +131,7 @@ header img:hover {
     width: 40px;
     height: 40px;
 }
+
+.full-opacity {
+    opacity: 1 !important;
+}

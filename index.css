@@ -43,7 +43,11 @@ legend {
 
 p {
     font-size: 1em;
-    opacity: 0.85;
+    opacity: 0.8;
+}
+
+p.home-text {
+    opacity: 1;
 }
 
 a {

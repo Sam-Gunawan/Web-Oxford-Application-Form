@@ -96,7 +96,8 @@ header img:hover {
     font-size: 1em;
 }
 
-.label-input-group:focus-within .form-label, .label-heading{
+.label-input-group:focus-within .form-label,
+.label-heading {
     opacity: 1;
 }
 

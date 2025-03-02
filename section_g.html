@@ -15,7 +15,27 @@
 
     <form>
         <fieldset class="border p-4 custom-container">
-            
+            <legend>SECTION G: ACCOMMODATION</legend>
+            <p>This section is for information only and does not constitute an application to University or college accommodation. For further information, please visit the Accommodation Office website (<a href="http://www.admin.ox.ac.uk/accommodation/">Accommodation Office</a>).</p>
+            <p class="mb-1 full-opacity">Do you intend to apply for accommodation owned by the college?</p>
+            <div class="mb-3 label-input-group d-flex">
+                <div class="form-check col-1">
+                    <input class="form-check-input" type="radio" id="accommodationYes" name="accommodation">
+                    <label class="form-check-label" for="accommodationYes">Yes</label>
+                </div>
+                <div class="form-check col-1">
+                    <input class="form-check-input" type="radio" id="accommodationNo" name="accommodation">
+                    <label class="form-check-label" for="accommodationNo">No</label>
+                </div>
+            </div>
+            <div class="mb-3 label-input-group">
+                <label class="form-label" for="accompanyingAdults">Excluding yourself, how many adults will be accompanying you?</label>
+                <input type="number" class="form-control" id="accompanyingAdults">
+            </div>
+            <div class="mb-3 label-input-group">
+                <label class="form-label" for="accompanyingChildren">Please provide the sex and date of birth of any accompanying children:</label>
+                <input type="text" class="form-control" id="accompanyingChildren">
+            </div>
         </fieldset>
     </form>
 

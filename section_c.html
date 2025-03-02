@@ -17,6 +17,63 @@
     <form>
         <fieldset class="border p-4 custom-container">
             <!-- TEMPAT ISI FORMNYA, COPAS DARI <legend>-->
+            <legend>SECTION C: PERSONAL DETAILS</legend>
+            <p>Please enter your name exactly as it appears on your passport or other official document, including middle names. If you go by a name that is not listed on your official document(s), you can enter this in the Preferred Name field.</p>
+            <div class="mb-3 label-input-group col">
+                <label for="givenName" class="form-label">Given name (forename)</label>
+                <input type="text" class="form-control" id="givenName" required>
+            </div>
+            <div class="mb-3 label-input-group">
+                <label for="preferredName" class="form-label">Preferred name</label>
+                <input type="text" class="form-control" id="preferredName">
+            </div>
+            <div class="mb-3 label-input-group">
+                <label for="middleNames" class="form-label">Middle name(s)</label>
+                <input type="text" class="form-control" id="middleNames">
+            </div>
+            <div class="mb-3 label-input-group">
+                <label for="familyName" class="form-label">Family name (surname)</label>
+                <input type="text" class="form-control" id="familyName" required>
+            </div>
+            <div class="row mb-3">
+                <div class="label-input-group col-4">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title">
+                </div>
+                <div class="label-input-group col-4">
+                    <label class="form-label">Sex</label>
+                    <select id="sex" name="sex" class="form-select">
+                        <option value="notChosen" selected>...</option>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                    </select>
+                </div>
+                <div class="label-input-group col-4">
+                    <label for="dob" class="form-label">Date of birth (dd/mm/yyyy)</label>
+                    <input type="date" class="form-control" id="dob" required>
+                </div>
+            </div>
+            <div class="mb-3 label-input-group">
+                <label for="prevFamilyName" class="form-label">Previous family name (surname)</label>
+                <input type="text" class="form-control" id="prevFamilyName">
+            </div>
+            <div class="mb-3 label-input-group">
+                <label for="prevGivenName" class="form-label">Previous given name (forename)</label>
+                <input type="text" class="form-control" id="prevGivenName">
+            </div>
+            <div class="mb-3">
+                <label class="form-label label-heading">Effective dates (dd/mm/yyyy)</label>
+                <div class="row">
+                    <div class="col label-input-group">
+                        <label for="effectiveFrom1" class="form-label">From</label>
+                        <input type="date" class="form-control" id="effectiveFrom1">
+                    </div>
+                    <div class="col label-input-group">
+                        <label for="effectiveTo1" class="form-label">To</label>
+                        <input type="date" class="form-control" id="effectiveTo1">
+                    </div>
+                </div>
+            </div>
         </fieldset>
     </form>
 

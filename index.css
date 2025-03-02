@@ -41,7 +41,7 @@ legend {
     text-transform: uppercase;
 }
 
-p {
+p, li {
     font-size: 1em;
     opacity: 0.8;
 }
@@ -91,12 +91,14 @@ header img:hover {
 }
 
 .form-label {
-    color: #fafafaaa;
+    color: #fafafa;
+    opacity: 0.8;
     font-size: 1em;
 }
 
-.label-input-group:focus-within .form-label{
-    color: #fafafa;
+.label-input-group:focus-within .form-label,
+.label-heading {
+    opacity: 1;
 }
 
 .form-check-input {
@@ -105,6 +107,17 @@ header img:hover {
 
 .form-check-input:checked {
     background-color: rgb(214, 182, 0);
+}
+
+.form-select {
+    background-color: #002147;
+    color: #fafafa;
+    border-color: rgba(255, 255, 255, 0.499);
+}
+
+.form-select:focus {
+    box-shadow: var(--shadow-elevation-medium);
+    border-color: rgb(255, 233, 111); 
 }
 
 .progress {
@@ -117,4 +130,8 @@ header img:hover {
     vertical-align: middle;
     width: 40px;
     height: 40px;
+}
+
+.full-opacity {
+    opacity: 1 !important;
 }

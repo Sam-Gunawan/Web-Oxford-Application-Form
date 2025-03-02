@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- JUDUL DIGANTI -> Section '...' -->
+    <title>Oxford Graduate Form - Section C</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="d-flex justify-content-center align-items-center p-3">
+        <a href="index.html" data-bs-toggle="tooltip" title="Back to Home"><img src="./assets/Oxford-University-Circlet.svg.png" alt="University of Oxford Logo" width="100"></a>
+    </header>
+
+    <form>
+        <fieldset class="border p-4 custom-container">
+            <!-- TEMPAT ISI FORMNYA, COPAS DARI <legend>-->
+                <legend>Section M: Proposed funding arrangements</legend>
+                <p>If you are not offered a scholarship by the University, please indicate the main source(s) of funding you plan to use to fund your fees and living expenses. This will not affect the assessment of your application in any way. Please do not include any Oxford scholarships.</p>
+                <div class="form-group">
+                    <label>I have information on my alternative funding arrangements.</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="fundingInfo" id="fundingInfoYes" value="yes">
+                        <label class="form-check-label" for="fundingInfoYes">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="fundingInfo" id="fundingInfoNo" value="no">
+                        <label class="form-check-label" for="fundingInfoNo">No</label>
+                    </div>
+                </div>
+    
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Proposed Funding Sources e.g. family, scholarship, etc. (If government funds or foundations, please specify)</th>
+                            <th>Amount of funding per year (£) (if known)</th>
+                            <th>Period Covered (e.g. 1yr, 2yrs etc.)</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="number" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="status1_1">
+                                    <label class="form-check-label" for="status1_1">Intend to apply</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="status1_2">
+                                    <label class="form-check-label" for="status1_2">Applied for</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="status1_3">
+                                    <label class="form-check-label" for="status1_3">Firmly secured</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="number" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="status2_1">
+                                    <label class="form-check-label" for="status2_1">Intend to apply</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="status2_2">
+                                    <label class="form-check-label" for="status2_2">Applied for</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="status2_3">
+                                    <label class="form-check-label" for="status2_3">Firmly secured</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="number" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="status3_1">
+                                    <label class="form-check-label" for="status3_1">Intend to apply</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="status3_2">
+                                    <label class="form-check-label" for="status3_2">Applied for</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="status3_3">
+                                    <label class="form-check-label" for="status3_3">Firmly secured</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control"></td>
+                            <td><input type="number" class="form-control"></td>
+                            <td><input type="text" class="form-control"></td>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="status4_1">
+                                    <label class="form-check-label" for="status4_1">Intend to apply</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="status4_2">
+                                    <label class="form-check-label" for="status4_2">Applied for</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="status4_3">
+                                    <label class="form-check-label" for="status4_3">Firmly secured</label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+                <legend>Departmental studentship applications:</legend>
+                <div class="form-group">
+                    <label>Are you applying for an advertised studentship(s) competition(s)?</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="studentshipApply" id="studentshipApplyYes" value="yes">
+                        <label class="form-check-label" for="studentshipApplyYes">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="studentshipApply" id="studentshipApplyNo" value="no">
+                        <label class="form-check-label" for="studentshipApplyNo">No</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="referenceCode">If yes, please provide the advertised reference code from the academic department webpages where the studentship is advertised:</label>
+                    <input type="text" class="form-control" id="referenceCode">
+                </div>
+            
+                <legend>University of Oxford Scholarships:</legend>
+                <p>For many Oxford scholarships (www.graduate.ox.ac.uk/scholarships), all eligible applicants are considered automatically. However, if you are eligible and wish to be considered for one of the six scholarships listed below, you need to tick the relevant box(es). Where a scholarship is marked with a '*', you also need to supply an additional supporting document by attaching it in the Supporting Documents section of this form. You can check the eligibility criteria and requirements for supporting documents by visiting the relevant scholarship links below. Please note that the University reserves the right to consider any eligible candidates for Oxford scholarships.</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="hillFoundation">
+                    <label class="form-check-label" for="hillFoundation">Hill Foundation (www.graduate.ox.ac.uk/hill)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="ertegun">
+                    <label class="form-check-label" for="ertegun">Mica and Ahmet Ertegun Postgraduate Scholarships in the Humanities* (www.graduate.ox.ac.uk/ertegun)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="ocis">
+                    <label class="form-check-label" for="ocis">Oxford Centre for Islamic Studies* (www.graduate.ox.ac.uk/ocis)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="weidenfeld">
+                    <label class="form-check-label" for="weidenfeld">Weidenfeld-Hoffmann Scholarships and Leadership Programme* (www.graduate.ox.ac.uk/weidenfeld)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="oocdtp">
+                    <label class="form-check-label" for="oocdtp">AHRC: OOC DTP* (https://www.oocdtp.ac.uk/)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="granduniondtp">
+                    <label class="form-check-label" for="granduniondtp">Grand Union DTP * (www.granduniondtp.ac.uk/how-apply)</label>
+                </div>
+        </fieldset>
+    </form>
+
+    <footer>
+        <div class="container mt-4">
+            <div class="progress rounded-pill">
+                <!-- WIDTH, ARIA-VALUENOW DIGANTI -->
+                <!-- SESUAIIN AMA HURUF, INI KARENA C JADI "3", WIDTH JADI 3/17 = 17.6%-->
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 76.5%;" aria-valuenow="13" aria-valuemin="0" aria-valuemax="17"></div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <!-- GANTI HREF SESUAI SECTION SEBEULMNYA -->
+                <a href="section_l.html" class="btn btn-outline-danger rounded-pill">
+                    <span class="bi bi-arrow-left"></span>
+                </a>
+                <!-- GANTI NOMOR SESUAI URUTAN SECTION -->
+                <!-- GANTI HREF SESUAI SECTION SELANJUTNYA -->
+                <p class="mb-0">13 of 17</p>
+                <a href="section_n.html" class="btn btn-outline-primary rounded-pill">
+                    <span class="bi bi-arrow-right"></span>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

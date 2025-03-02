@@ -1,0 +1,103 @@
+:root {
+    --shadow-color: 214deg 100% 2%;
+    --shadow-elevation-low:
+        0px 0.3px 0.3px hsl(var(--shadow-color) / 0.34),
+        0px 0.6px 0.7px -1.2px hsl(var(--shadow-color) / 0.34),
+        0px 1.3px 1.5px -2.5px hsl(var(--shadow-color) / 0.34);
+    --shadow-elevation-medium:
+        0px 0.3px 0.3px hsl(var(--shadow-color) / 0.36),
+        0px 1.1px 1.2px -0.8px hsl(var(--shadow-color) / 0.36),
+        0px 2.7px 3px -1.7px hsl(var(--shadow-color) / 0.36),
+        0px 6.6px 7.4px -2.5px hsl(var(--shadow-color) / 0.36);
+}
+
+.btn-outline-primary {
+    --bs-btn-color: gold;
+    --bs-btn-hover-color: #fafafa;
+    --bs-btn-hover-bg: rgb(191, 164, 10);
+    --bs-btn-border-color: gold;
+    --bs-btn-hover-border-color: gold;
+    --bs-btn-active-bg: rgb(150, 129, 11);
+    --bs-btn-active-color: #ebebeb;
+    --bs-btn-active-border-color: rgb(150, 129, 11);
+}
+
+body {
+    max-width: 65%;
+    margin: auto;
+    color: #fafafa;
+    background-color: #002147; /* Oxford blue */
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+legend {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+a {
+    color: #fafafa;
+}
+
+a:hover {
+    color: #c5c5c5;
+}
+
+header img {
+    transition: 0.1s
+}
+
+header img:hover {
+    cursor: pointer;
+    scale: 1.05;
+}
+
+.custom-container {
+    border: 1px solid white;
+    border-radius: 1em;
+    padding: 40px;
+    margin-top: 20px;
+    background-color: #002855;
+    box-shadow: #001731 0px 0px 20px;
+
+}
+
+.form-control {
+    background-color: #002147;
+    color: #fafafa;
+    border-color: rgba(255, 255, 255, 0.499);
+}
+
+.form-control:focus {
+    background-color: #00234a;
+    color: #fafafa;
+    border-color: rgb(255, 233, 111);
+    box-shadow: var(--shadow-elevation-medium);
+}
+
+.form-label {
+    color: #fafafaaa;
+    font-size: 0.9em;
+}
+
+.label-input-group:focus-within .form-label{
+    color: #fafafa;
+}
+
+.progress {
+    background-color: #001731;
+}
+
+.table-bordered td, .table-bordered th {
+    border: 1px solid white !important;
+    text-align: center;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+}

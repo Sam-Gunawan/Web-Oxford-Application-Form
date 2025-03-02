@@ -41,7 +41,7 @@ legend {
     text-transform: uppercase;
 }
 
-p {
+p, li {
     font-size: 1em;
     opacity: 0.8;
 }

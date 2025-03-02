@@ -94,6 +94,11 @@ header img:hover {
     box-shadow: var(--shadow-elevation-medium);
 }
 
+.form-control::placeholder {
+    color: #fafafa;
+    opacity: 0.6;
+}
+
 .form-label {
     color: #fafafa;
     opacity: 0.8;

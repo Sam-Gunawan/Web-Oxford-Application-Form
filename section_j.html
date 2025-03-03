@@ -16,29 +16,34 @@
     <form>
         <fieldset class="border p-4 custom-container">
             <legend>SECTION J: GRE (IF APPLICABLE)</legend>
-            <p>For further information on whether a GRE score is required please see our <a href="www.graduate.ox.ac.uk/applicationguide">Application Guide</a>.</p>
-            <label for="greDate">GRE Date of Test:</label>
-            <input type="date" class="form-control" id="greDate">
-            <label for="verbalPercent">Verbal %:</label>
-            <input type="text" class="form-control" id="verbalPercent">
-            <label for="verbalScore">Verbal Score:</label>
-            <input type="text" class="form-control" id="verbalScore">
+            <p>For further information on whether a GRE score is required please see our <a href="https://www.graduate.ox.ac.uk/applicationguide" target="_blank">Application Guide</a>.</p>
+            <div class="mb-3 label-input-group">
+                <label class="form-label" for="greDate">GRE Date of Test</label>
+                <input type="date" class="form-control" id="greDate">
             </div>
             <div class="mb-3 label-input-group">
-            <label for="quantPercent" class="form-label">Quantitative %</label>
-            <input type="text" class="form-control" id="quantPercent">
+                <label class="form-label" for="verbalPercent">Verbal %</label>
+                <input type="number" class="form-control" id="verbalPercent">
             </div>
             <div class="mb-3 label-input-group">
-            <label for="quantScore" class="form-label">Quantitative Score</label>
-            <input type="text" class="form-control" id="quantScore">
+                <label class="form-label" for="verbalScore">Verbal Score</label>
+                <input type="number" class="form-control" id="verbalScore">
             </div>
             <div class="mb-3 label-input-group">
-            <label for="analyticalPercent" class="form-label">Analytical Writing %</label>
-            <input type="text" class="form-control" id="analyticalPercent">
+                <label for="quantPercent" class="form-label">Quantitative %</label>
+                <input type="number" class="form-control" id="quantPercent">
             </div>
             <div class="mb-3 label-input-group">
-            <label for="analyticalScore" class="form-label">Analytical Writing Score</label>
-            <input type="text" class="form-control" id="analyticalScore">
+                <label for="quantScore" class="form-label">Quantitative Score</label>
+                <input type="number" class="form-control" id="quantScore">
+            </div>
+            <div class="mb-3 label-input-group">
+                <label for="analyticalPercent" class="form-label">Analytical Writing %</label>
+                <input type="number" class="form-control" id="analyticalPercent">
+            </div>
+            <div class="mb-3 label-input-group">
+                <label for="analyticalScore" class="form-label">Analytical Writing Score</label>
+                <input type="number" class="form-control" id="analyticalScore">
             </div>
         </fieldset>
     </form>

@@ -16,7 +16,7 @@
     <form>
         <fieldset class="border p-4 custom-container">
             <legend>SECTION G: ACCOMMODATION</legend>
-            <p>This section is for information only and does not constitute an application to University or college accommodation. For further information, please visit the Accommodation Office website (<a href="http://www.admin.ox.ac.uk/accommodation/">Accommodation Office</a>).</p>
+            <p>This section is for information only and does not constitute an application to University or college accommodation. For further information, please visit the <a href="http://www.admin.ox.ac.uk/accommodation/" target="_blank">Accommodation Office website</a>.</p>
             <p class="mb-1 full-opacity">Do you intend to apply for accommodation owned by the college?</p>
             <div class="mb-3 label-input-group d-flex">
                 <div class="form-check col-1">
@@ -32,9 +32,24 @@
                 <label class="form-label" for="accompanyingAdults">Excluding yourself, how many adults will be accompanying you?</label>
                 <input type="number" class="form-control" id="accompanyingAdults">
             </div>
-            <div class="mb-3 label-input-group">
-                <label class="form-label" for="accompanyingChildren">Please provide the sex and date of birth of any accompanying children:</label>
-                <input type="text" class="form-control" id="accompanyingChildren">
+            <p class="mb-1 full-opacity">Please provide the name, sex, and date of birth of any accompanying children</p>
+            <div class="mb-3 row">
+                <div class="label-input-group col-4">
+                    <label for="childName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="childName">
+                </div>
+                <div class="label-input-group col-4">
+                    <label class="form-label">Sex</label>
+                    <select id="sex" name="sex" class="form-select">
+                        <option value="notChosen" selected>...</option>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                    </select>
+                </div>
+                <div class="label-input-group col-4">
+                    <label for="dob" class="form-label">Date of birth (dd/mm/yyyy)</label>
+                    <input type="date" class="form-control" id="dob" required>
+                </div>
             </div>
         </fieldset>
     </form>

@@ -46,11 +46,11 @@ $applications = [
   <div class="parent-container bg-white">
 
     <!-- nav section -->
-    <div class="d-flex flex-column grid-nav bg-secondary text-white d-flex align-items-center justify-content-center"> <!-- the nav container -->
+    <div class="d-flex flex-column grid-nav bg-primary text-white d-flex align-items-center justify-content-center"> <!-- the nav container -->
         <div class="bg-white p-3 d-flex rounded align-items-center justify-content-center" style="max-height: 33.3%; width: 100%;">
           <img src="../../assets/images/Oxford-University-Circlet.svg.png" alt="Oxford Logo" style="max-height: 100%; max-width: 100%; object-fit: contain;">
         </div>
-        <div class="mt-4 nav-content d-flex flex-column flex-grow-1 pt-4 gap-2 text-dark w-100">
+        <div class="mt-4 nav-content d-flex flex-column flex-grow-1 pt-4 gap-2 text-white w-100">
             <span class="nav-item border-bottom p-2">Application List</span>
             <span class="nav-item border-bottom p-2">Reviewer List</span>
             <span class="nav-item border-bottom p-2">Statistic</span>

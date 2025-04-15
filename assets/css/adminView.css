@@ -71,6 +71,7 @@ body {
 .nav-item:hover{
     transition: all ease-in-out 0.2s;
     background-color: var(--bs-hover2); 
+    color: var(--bs-error);
     width: 100%;
     /* background-color: #FFFFFF; */
     cursor: pointer;

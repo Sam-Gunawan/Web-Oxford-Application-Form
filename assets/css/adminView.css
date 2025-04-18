@@ -10,14 +10,26 @@
 .bg-primary {
     background-color: var(--bs-primary) !important;
 }
+.color-primary {
+    color: var(--bs-primary) !important;
+}
 .bg-secondary {
     background-color: var(--bs-secondary) !important;
+}
+.color-secondary {
+    color: var(--bs-secondary) !important;
 }
 .bg-white {
     background-color: var(--bs-white) !important;
 }
+.color-white {
+    color: var(--bs-white) !important;
+}
 .bg-error {
     background-color: var(--bs-error) !important;
+}
+.color-error {
+    color: var(--bs-error) !important;
 }
 
 body {
@@ -92,4 +104,26 @@ a.nav-item{
 
 .card-body{
     gap: 10vw;
+}
+
+
+
+/* for table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+}
+
+th {
+    text-align: left;
+    height: 5vh;
+    background-color: var(--bs-secondary);
+    font-weight: bold;
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid #ccc;
 }

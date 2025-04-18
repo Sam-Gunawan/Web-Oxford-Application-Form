@@ -35,19 +35,20 @@ $user = [
                 <a href="?page=users" class="nav-item border-bottom p-2 text-decoration-none">User List</a>
                 <a href="?page=statistics" class="nav-item border-bottom p-2 text-decoration-none">Statistic</a>
             <?php elseif ($user['role'] === 'reviewer'): ?>
-                <p>You can review submitted forms.</p>
+                <a class="nav-item border-bottom p-2 text-decoration-none">Application List</a>
             <?php elseif ($user['role'] === 'student'): ?>
-                <p>You can submit your application form.</p>
+                <a class="nav-item border-bottom p-2 text-decoration-none">Application List</a>
+                <a class="nav-item border-bottom p-2 text-decoration-none">Application Draft</a>
             <?php endif; ?>
         </div>
     </div>
 
     <!-- title section -->
     <div class="grid-title text-dark d-flex align-items-center justify-content-between">
-      <div class="title-text display-3" style="color: black">Welcome <?= htmlspecialchars($user['name']) ?></div>
+      <div class="title-text display-3 color-primary">Welcome <?= htmlspecialchars($user['name']) ?></div>
       <div class="top-nav h-50 d-flex align-items-center gap-3">
-        <i class="fa-regular fa-bell fa-3x" style="color: black"></i>
-        <i class="fa-regular fa-circle-user fa-3x" style="color: black"></i>
+        <i class="fa-regular fa-bell fa-3x color-primary"></i>
+        <i class="fa-regular fa-circle-user fa-3x color-primary"></i>
       </div>
     </div>
 
@@ -73,11 +74,11 @@ $user = [
                     break;
 
                 case 'reviewer':
-                    include('reviewerView/dashboard.php');
+                    include('reviewerView/applicationList.php');
                     break;
 
                 case 'student':
-                    include('studentView/form.php');
+                    include('studentView/applicationList.php');
                     break;
 
                 default:

@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirect requests for existing files and directories directly
+# This is so images, css, js, etc. are served normally
+RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2|ttf|eot)$ [NC]
+RewriteRule ^ - [L]
+
+# Exclude clean login URI / direct file access from redirect
+# When the browser is redirected to /pages/login, this rule sends the request
+# internally to pages/login.php for execution
+RewriteRule ^pages/login$ pages/login.php [L]
+RewriteRule ^pages/login\.php$ - [L]
+
+# Redirect every other URI to index.php
+RewriteRule ^(.*)$ index.php [L]
+RewriteRule ^(.*)$ index.php [L]

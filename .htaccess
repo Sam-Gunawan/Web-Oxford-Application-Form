@@ -6,12 +6,21 @@ RewriteBase /
 RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2|ttf|eot)$ [NC]
 RewriteRule ^ - [L]
 
-# Exclude clean login URI / direct file access from redirect
+# Exclude clean login URI / direct file access to login/signup from redirection
 # When the browser is redirected to /pages/login, this rule sends the request
-# internally to pages/login.php for execution
-RewriteRule ^pages/login$ pages/login.php [L]
-RewriteRule ^pages/login\.php$ - [L]
+# internally to pages/templates/login.php for execution
+
+RewriteRule ^login$ /pages/login [R=301,L,NC]
+RewriteRule ^pages/login\.php$ /pages/login [R=301,L,NC]
+RewriteRule ^pages/templates/login$ /pages/login [R=301,L,NC]
+RewriteRule ^pages/templates/login\.php$ - [L]
+RewriteRule ^pages/login$ pages/templates/login.php [L]
+
+RewriteRule ^signup$ /pages/signup [R=301,L,NC]
+RewriteRule ^pages/signup\.php$ /pages/signup [R=301,L,NC]
+RewriteRule ^pages/templates/signup$ /pages/signup [R=301,L,NC]
+RewriteRule ^pages/templates/signup\.php$ - [L]
+RewriteRule ^pages/signup$ pages/templates/signup.php [L]
 
 # Redirect every other URI to index.php
-RewriteRule ^(.*)$ index.php [L]
 RewriteRule ^(.*)$ index.php [L]

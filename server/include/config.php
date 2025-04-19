@@ -7,13 +7,10 @@
 	define("DASHBOARD_URL", PAGES_ROOT_URL . "/dashboard");
 	define("DASHBOARD_PAGE_URL", DASHBOARD_URL . "/dashboard.php");
 	define("SERVER_AUTH_URL", SERVER_ROOT_URL . "/auth");
-	define("LOGIN_PAGE_URL", PAGES_ROOT_URL . "/login");
+	define("TEMPLATES_URL", PAGES_ROOT_URL . "/templates");
+	define("LOGIN_PAGE_URL", TEMPLATES_URL . "/login.php");
+	define("SIGNUP_PAGE_URL", TEMPLATES_URL . "/signup.php");
 	
-	function ends_with($haystack, $needle) {
-		$length = strlen($needle);
-		return $length > 0 ? substr($haystack, -$length) === $needle : true;
-	}
-
 	class Logger {
 		private static ?string $default_log_dir = "C:/xampp/apache/logs/";
 	
@@ -26,7 +23,7 @@
 		// Made private as you'll call the public level methods (info, error, etc.)
 		private static function __log(string $level, string $msg, ?string $file = null): bool {
 			$timestamp = date('Y-m-d H:i:s');
-			$fmt_msg = "[{$timestamp}] [{$level}] {$msg}";
+			$fmt_msg = "[{$timestamp}] [{$level}] {$msg}\n";
 	
 			// Use the provided file path, or the default file path if set
 			$target_file = $file ?? self::$default_log_dir;
@@ -38,7 +35,6 @@
 					mkdir($log_directory, 0775, true);
 				}
 				// Log to the specified file
-				echo  $target_file . "oxford-web-" . strtolower($level) . ".log" ."<br>";
 				return error_log($fmt_msg, 3, $target_file . "oxford-web-" . strtolower($level) . ".log");
 			} else {
 				// If no file is specified and no default is set, log to PHP's default error destination

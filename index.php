@@ -8,26 +8,29 @@
 	
 	// Public paths (accessible without authentication)
 	$public_paths = [
-		LOGIN_PAGE_URL
+		"/login" => 1,
+		"/pages/login" => 2,
+		"/pages/templates/login" => 3,
+		LOGIN_PAGE_URL => 4,
+		"/signup" => 5,
+		"/pages/signup" => 6,
+		"/pages/templates/signup" => 7,	
+		SIGNUP_PAGE_URL => 8,	
 	];
 	
-	$is_public = false;
+	$clean_uri = str_ends_with($request_uri, ".php") ? substr($request_uri, 0, -4) : $request_uri;
+	Logger::info("Original URI: {$request_uri}, Cleaned URI: {$clean_uri}");
 
-	foreach ($public_paths as $path) {
-		// Simple check: does the request URI start with a public path?
-		// More robust routing systems would do exact matches or use regex
-		if (strpos($request_uri, $path) === 0) {
-			$is_public = true;
-			break;
-		}
-	}
+	// Check if URI exists in the public path array
+	$is_public = array_key_exists($request_uri, $public_paths);
 	
 	// Check if logged in
 	// TODO: check if path exists or not
 	if (!isset($_SESSION['role']) && !$is_public) {
 		// User is not logged in AND the requested page is not a public path
-		Logger::info("Rerouting to " . LOGIN_PAGE_URL);
-		header("Location: " . LOGIN_PAGE_URL);
+		Logger::info("User role is not set.");
+		Logger::info("Rerouting to " . "/pages/login");
+		header("Location: " . "/pages/login");
 		exit();
 	}
 
@@ -49,9 +52,18 @@
 		} 
 
 		case "/login":
-		case "/login.php": {
-			Logger::info("Rerouting to " . LOGIN_PAGE_URL);
-			header("Location: " . LOGIN_PAGE_URL);
+		case "/pages/login":
+		case "/pages/templates/login": {
+			Logger::info("Rerouting to " . "/pages/login");
+			header("Location: " . "/pages/login");
+			exit();	
+		}
+		
+		case "/signup":
+		case "/pages/signup":
+		case "/pages/templates/signup": {
+			Logger::info("Rerouting to " . "/pages/signup");
+			header("Location: " . "/pages/signup");
 			exit();	
 		}
 		// TODO: add other routes

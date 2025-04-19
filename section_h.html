@@ -15,112 +15,80 @@
 
     <form>
         <fieldset class="border p-4 custom-container">
-            <legend>SECTION H: REFEREES</legend>
-            <p>Please enter contact details for three referees below.</p>
-            <p>References should be academic or, where specifically permitted on the <a href="http://www.graduate.ox.ac.uk/courses" target="_blank">courses page</a>, professional. Family members, friends, and neighbours may not act as referees.</p>
-            <p>It is a University requirement that three references are provided and that references are received in time for the deadline for your application to be considered. For more information on references, please see the <a href="http://www.graduate.ox.ac.uk/applicationguide" target="_blank">Application Guide</a>.</p>
-            <p>Please ask your referee to send the reference directly to us at <a href="mailto:graduate.admissions@admin.ox.ac.uk">graduate.admissions@admin.ox.ac.uk</a> quoting your full name and the course to which you are applying, and we will add it to your application.</p>
-            <p>References must be sent to us from your referee's official (institutional or organisational) email address. Alternatively, sealed references may be enclosed with this application. In this case, each reference must be in a sealed envelope, signed by the referee across the seal of the envelope and their signature covered with clear adhesive tape.</p>
-
-            <hr>
-            <h3>Referee 1</h3>
-            <div class="mb-3">
-                <div class="row mb-3">
-                    <div class="col label-input-group">
-                        <label for="refereeName1" class="form-label">Title, Name, and Role</label>
-                        <input type="text" class="form-control" id="refereeName1">
-                    </div>
-                    <div class="col label-input-group">
-                        <label for="refereeAddress1" class="form-label">Institution/Professional Address</label>
-                        <input type="text" class="form-control" id="refereeAddress1">
-                    </div>
+            <legend>SECTION H: ENGLISH LANGUAGE PROFICIENCY</legend>
+            <p>If your first language is not English, or if your first language is English but you are not a national of the UK, Ireland or a majority English-speaking country recognised by the UK Home Office (<a href="https://www.graduate.ox.ac.uk/englishproficiency" target="_blank">English Proficiency</a>), you must either supply an English test result or upload a letter explaining why you are requesting a waiver to the English language test.</p>
+            <p>If you have IELTS (Academic), TOEFL or Cambridge Certificate test results which will be less than two years old when your course commences, please enter them below. The required scores must be met in a single test, not across multiple settings.</p>
+            
+            <div class="row mb-3">
+                <div class="col label-input-group">
+                    <label class="form-label">Test Type</label>
+                    <input type="text" class="form-control" placeholder="TOEFL, IELTS">
                 </div>
-                <div class="row">
-                    <div class="col-4 label-input-group">
-                        <label for="refereeType1" class="form-label">Type of Reference</label>
-                        <input type="text" class="form-control" id="refereeType1">
+                <div class="col label-input-group">
+                    <label class="form-label">Date Taken</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="col label-input-group">
+                    <label class="form-label">Overall Result</label>
+                    <input type="number" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col label-input-group">
+                    <label class="form-label">Listening</label>
+                    <input type="number" class="form-control">
+                </div>
+                <div class="col label-input-group">
+                    <label class="form-label">Reading</label>
+                    <input type="number" class="form-control">
+                </div>
+                <div class="col label-input-group">
+                    <label class="form-label">Writing</label>
+                    <input type="number" class="form-control">
+                </div>
+                <div class="col label-input-group">
+                    <label class="form-label">Speaking</label>
+                    <input type="number" class="form-control">
+                </div>
+            </div>
+            
+            <div class="mb-1">
+                <p class="mb-0 full-opacity">I intend to submit a test waiver request with my supporting materials:</p>
+                <p class="mb-1"><i>For more information on test waivers, please see the <a href="https://www.graduate.ox.ac.uk/applicationguide" target="_blank">Application Guide</a>.</i></p>
+                <div class="d-flex">
+                    <div class="form-check col-1">
+                        <input class="form-check-input" type="radio" id="waiverYes" name="waiver">
+                        <label class="form-check-label" for="waiverYes">Yes</label>
                     </div>
-                    <div class="col-8">
-                        <label class="form-label full-opacity">Reference Submission Type</label>
-                        <div class="d-flex">
-                            <div class="form-check col-5">
-                                <input class="form-check-input" type="checkbox" id="emailSubmission1">
-                                <label class="form-check-label" for="emailSubmission1">Will submit by email</label>
-                            </div>
-                            <div class="form-check col">
-                                <input class="form-check-input" type="checkbox" id="sealedSubmission1">
-                                <label class="form-check-label" for="sealedSubmission1">Sealed reference enclosed</label>
-                            </div>
-                        </div>
+                    <div class="form-check col-1">
+                        <input class="form-check-input" type="radio" id="waiverNo" name="waiver">
+                        <label class="form-check-label" for="waiverNo">No</label>
                     </div>
                 </div>
             </div>
 
-            <hr>
-            <h3>Referee 2</h3>
-            <div class="mb-3">
-                <div class="row mb-3">
-                    <div class="col label-input-group">
-                        <label for="refereeName2" class="form-label">Title, Name, and Role</label>
-                        <input type="text" class="form-control" id="refereeName2">
-                    </div>
-                    <div class="col label-input-group">
-                        <label for="refereeAddress2" class="form-label">Institution/Professional Address</label>
-                        <input type="text" class="form-control" id="refereeAddress2">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-4 label-input-group">
-                        <label for="refereeType2" class="form-label">Type of Reference</label>
-                        <input type="text" class="form-control" id="refereeType2">
-                    </div>
-                    <div class="col-8">
-                        <label class="form-label full-opacity">Reference Submission Type</label>
-                        <div class="d-flex">
-                            <div class="form-check col-5">
-                                <input class="form-check-input" type="checkbox" id="emailSubmission2">
-                                <label class="form-check-label" for="emailSubmission2">Will submit by email</label>
-                            </div>
-                            <div class="form-check col">
-                                <input class="form-check-input" type="checkbox" id="sealedSubmission2">
-                                <label class="form-check-label" for="sealedSubmission2">Sealed reference enclosed</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <p class="mt-5 mb-2 full-opacity">Knowledge of Other Languages</p>
+            <p>If you have a working knowledge of languages other than English (including your native language), please specify and state whether your level of competence in Reading, Writing, Speaking, and Understanding is Advanced, Intermediate, or Basic.</p>
+            <div class="mb-3 label-input-group">
+                <label for="language" class="form-label">Language</label>
+                <input type="text" class="form-control" id="language">
             </div>
-
-            <hr>
-            <h3>Referee 3</h3>
-            <div class="mb-3">
-                <div class="row mb-3">
-                    <div class="col label-input-group">
-                        <label for="refereeName3" class="form-label">Title, Name, and Role</label>
-                        <input type="text" class="form-control" id="refereeName3">
-                    </div>
-                    <div class="col label-input-group">
-                        <label for="refereeAddress3" class="form-label">Institution/Professional Address</label>
-                        <input type="text" class="form-control" id="refereeAddress3">
-                    </div>
+            <div class="mb-3 row">
+                <div class="col label-input-group">
+                    <label for="readingLevel" class="form-label">Reading</label>
+                    <input type="number" class="form-control" id="readingLevel">
                 </div>
-                <div class="row">
-                    <div class="col-4 label-input-group">
-                        <label for="refereeType3" class="form-label">Type of Reference</label>
-                        <input type="text" class="form-control" id="refereeType3">
-                    </div>
-                    <div class="col-8">
-                        <label class="form-label full-opacity">Reference Submission Type</label>
-                        <div class="d-flex">
-                            <div class="form-check col-5">
-                                <input class="form-check-input" type="checkbox" id="emailSubmission3">
-                                <label class="form-check-label" for="emailSubmission3">Will submit by email</label>
-                            </div>
-                            <div class="form-check col">
-                                <input class="form-check-input" type="checkbox" id="sealedSubmission3">
-                                <label class="form-check-label" for="sealedSubmission3">Sealed reference enclosed</label>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col label-input-group">
+                    <label for="writingLevel" class="form-label">Writing</label>
+                    <input type="number" class="form-control" id="writingLevel">
+                </div>
+                <div class="col label-input-group">
+                    <label for="speakingLevel" class="form-label">Speaking</label>
+                    <input type="number" class="form-control" id="speakingLevel">
+                </div>
+                <div class="col label-input-group">
+                    <label for="understandingLevel" class="form-label">Understanding</label>
+                    <input type="number" class="form-control" id="understandingLevel">
                 </div>
             </div>
         </fieldset>
@@ -129,19 +97,18 @@
     <footer>
         <div class="container mt-4">
             <div class="progress rounded-pill">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: 47%;" aria-valuenow="8" aria-valuemin="0" aria-valuemax="17"></div>
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 61.5%;" aria-valuenow="12" aria-valuemin="0" aria-valuemax="17"></div>
             </div>
             <div class="d-flex justify-content-between align-items-center mt-3">
                 <a href="section_g.html" class="btn btn-outline-danger rounded-pill">
                     <span class="bi bi-arrow-left"></span>
                 </a>
-                <p class="mb-0">8 of 17</p>
+                <p class="mb-0">8 of 13</p>
                 <a href="section_i.html" class="btn btn-outline-primary rounded-pill">
                     <span class="bi bi-arrow-right"></span>
                 </a>
             </div>
         </div>
     </footer>
-
 </body>
 </html>

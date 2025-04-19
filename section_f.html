@@ -15,118 +15,232 @@
 
     <form>
         <fieldset class="border p-4 custom-container">
-            <legend>SECTION F: NATIONALITY</legend>
-            <p>The details you provide on this page will be used to determine your fee status and eligibility for many scholarships. The details you give below should reflect your current situation, at the date you submit your application form.</p>
-            <div class="mb-2 row">
-                <div class="label-input-group col">
-                    <label for="countryOfBirth" class="form-label">Country of birth</label>
-                    <input type="text" class="form-control" id="countryOfBirth">
+            <legend>SECTION F: DETAILS OF CURRENT & PREVIOUS EDUCATION</legend>
+
+            <p class="full-opacity">Please enter your previous and current qualifications, newest first. Include all degree-level and above qualifications.</p>           
+
+            <hr>
+            <h3>Education 1</h3>
+            <div class="row mb-3">
+                <div class="col label-input-group">
+                    <label class="form-label" for="university1">University/Institution attended</label>
+                    <input type="text" class="form-control" id="university1">
                 </div>
-                <div class="label-input-group col">
-                    <label for="nationality" class="form-label">Country of nationality/citizenship</label>
-                    <input type="text" class="form-control mb-3" id="nationality">
+                <div class="col label-input-group">
+                    <label class="form-label" for="startDate1">Start date (dd/mm/yyyy)</label>
+                    <input type="date" class="form-control" id="startDate1">
+                </div>
+                <div class="col label-input-group">
+                    <label class="form-label" for="completionDate1">Completion date (dd/mm/yyyy)</label>
+                    <input type="date" class="form-control" id="completionDate1">
                 </div>
             </div>
+            <div class="row mb-3">
+                <div class="col label-input-group">
+                    <label class="form-label" for="qualification1">Qualification obtained</label>
+                    <input type="text" class="form-control" id="qualification1">
+                </div>
+                <div class="col label-input-group">
+                    <label class="form-label" for="subject1">Main subject</label>
+                    <input type="text" class="form-control" id="subject1">
+                </div>
+                <div class="col label-input-group">
+                    <label class="form-label" for="result1">Result/expected result</label>
+                    <input type="text" class="form-control" id="result1">
+                </div>
+            </div>
+
+            <hr>
+            <h3>Education 2</h3>
+            <div class="row mb-3">
+                <div class="col label-input-group">
+                    <label class="form-label" for="university2">University/Institution attended</label>
+                    <input type="text" class="form-control" id="university2">
+                </div>
+                <div class="col label-input-group">
+                    <label class="form-label" for="startDate2">Start date (dd/mm/yyyy)</label>
+                    <input type="date" class="form-control" id="startDate2">
+                </div>
+                <div class="col label-input-group">
+                    <label class="form-label" for="completionDate2">Completion date (dd/mm/yyyy)</label>
+                    <input type="date" class="form-control" id="completionDate2">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col label-input-group">
+                    <label class="form-label" for="qualification2">Qualification obtained</label>
+                    <input type="text" class="form-control" id="qualification2">
+                </div>
+                <div class="col label-input-group">
+                    <label class="form-label" for="subject2">Main subject</label>
+                    <input type="text" class="form-control" id="subject2">
+                </div>
+                <div class="col label-input-group">
+                    <label class="form-label" for="result2">Result/expected result</label>
+                    <input type="text" class="form-control" id="result2">
+                </div>
+            </div>
+
+            <hr>
+            <h3>Education 3</h3>
+            <div class="row mb-3">
+                <div class="col label-input-group">
+                    <label class="form-label" for="university3">University/Institution attended</label>
+                    <input type="text" class="form-control" id="university3">
+                </div>
+                <div class="col label-input-group">
+                    <label class="form-label" for="startDate3">Start date (dd/mm/yyyy)</label>
+                    <input type="date" class="form-control" id="startDate3">
+                </div>
+                <div class="col label-input-group">
+                    <label class="form-label" for="completionDate3">Completion date (dd/mm/yyyy)</label>
+                    <input type="date" class="form-control" id="completionDate3">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col label-input-group">
+                    <label class="form-label" for="qualification3">Qualification obtained</label>
+                    <input type="text" class="form-control" id="qualification3">
+                </div>
+                <div class="col label-input-group">
+                    <label class="form-label" for="subject3">Main subject</label>
+                    <input type="text" class="form-control" id="subject3">
+                </div>
+                <div class="col label-input-group">
+                    <label class="form-label" for="result3">Result/expected result</label>
+                    <input type="text" class="form-control" id="result3">
+                </div>
+            </div>
+
+            <p class="full-opacity mt-5">If you require a Tier 4 student visa, please give details below of any periods of study (including non-degree level courses), complete or incomplete, undertaken in the UK that are not already listed above.</p>
             
-            <label class="form-label" style="opacity: 1;">Do you expect to require a visa to enter the UK for your study?</label>
-            <div class="d-flex mb-3">
-                <div class="form-check col-1">
-                    <input class="form-check-input" type="radio" name="visaRequirement" id="visaYes" value="yes">
-                    <label class="form-check-label" for="visaYes">Yes</label>
+            <hr>
+            <h3>Period of Study 1</h3>
+            <div class="row mb-3">
+                <div class="col label-input-group">
+                    <label class="form-label" for="universityStudy1">University/Institution attended</label>
+                    <input type="text" class="form-control" id="universityStudy1">
                 </div>
-                <div class="form-check col-1">
-                    <input class="form-check-input" type="radio" name="visaRequirement" id="visaNo" value="no">
-                    <label class="form-check-label" for="visaNo">No</label>
+                <div class="col label-input-group">
+                    <label class="form-label" for="startDateStudy1">Start date (dd/mm/yyyy)</label>
+                    <input type="date" class="form-control" id="startDateStudy1">
                 </div>
-                <div class="form-check col-1">
-                    <input class="form-check-input" type="radio" name="visaRequirement" id="visaUncertain" value="uncertain">
-                    <label class="form-check-label" for="visaUncertain">Uncertain</label>
+                <div class="col label-input-group">
+                    <label class="form-label" for="completionDateStudy1">Completion date (dd/mm/yyyy)</label>
+                    <input type="date" class="form-control" id="completionDateStudy1">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col label-input-group">
+                    <label class="form-label" for="courseTitle1">Course title</label>
+                    <input type="text" class="form-control" id="courseTitle1">
+                </div>
+                <div class="col label-input-group">
+                    <label class="form-label" for="level1">Level</label>
+                    <input type="text" class="form-control" id="level1">
                 </div>
             </div>
 
-            <p>If you expect to require a visa to enter the UK for your study, please provide details of the passport that you intend to use.</p>
-
-            <div class="d-flex mb-3 row">
-                <div class="col-6 mb-3 label-input-group">
-                    <label for="nationality" class="form-label">Nationality</label>
-                    <input type="text" class="form-control" id="nationality">
+            <hr>
+            <h3>Period of Study 2</h3>
+            <div class="row mb-3">
+                <div class="col label-input-group">
+                    <label class="form-label" for="universityStudy2">University/Institution attended</label>
+                    <input type="text" class="form-control" id="universityStudy2">
                 </div>
-                <div class="col-6 mb-3 label-input-group">
-                    <label for="startDate" class="form-label">Start date of nationality from (dd/mm/yyyy)</label>
-                    <input type="date" class="form-control" id="startDate">
+                <div class="col label-input-group">
+                    <label class="form-label" for="startDateStudy2">Start date (dd/mm/yyyy)</label>
+                    <input type="date" class="form-control" id="startDateStudy2">
                 </div>
-                <div class="col-6 mb-3 label-input-group">
-                    <label for="passportNumber" class="form-label">Passport number</label>
-                    <input type="text" class="form-control" id="passportNumber">
+                <div class="col label-input-group">
+                    <label class="form-label" for="completionDateStudy2">Completion date (dd/mm/yyyy)</label>
+                    <input type="date" class="form-control" id="completionDateStudy2">
                 </div>
-                <div class="col-6 mb-3 label-input-group">
-                    <label for="countryOfIssue" class="form-label">Country of issue</label>
-                    <input type="text" class="form-control" id="countryOfIssue">
+            </div>
+            <div class="row mb-3">
+                <div class="col label-input-group">
+                    <label class="form-label" for="courseTitle2">Course title</label>
+                    <input type="text" class="form-control" id="courseTitle2">
                 </div>
-                <div class="col-6 mb-3 label-input-group">
-                    <label for="expiryDate" class="form-label">Passport expiry date (dd/mm/yyyy)</label>
-                    <input type="date" class="form-control" id="expiryDate">
+                <div class="col label-input-group">
+                    <label class="form-label" for="level2">Level</label>
+                    <input type="text" class="form-control" id="level2">
                 </div>
             </div>
 
-            <p>ORDINARY RESIDENCE AND LEAVE TO REMAIN</p>
-            <ul>
-                <li>Your country of ordinary residence is the country in which you are normally resident, out of choice and for a settled purpose, apart from temporary or occasional absences. It is not a country in which you are studying, working, or living temporarily.</li>
-                <li>EU nationals only: If you currently live in the UK for the purpose of full-time education only, you should enter the relevant UK region (England, Northern Ireland, Scotland, or Wales) as your current residence and the country where you otherwise reside as your previous residence. The end date for your previous residence should be entered as the day before you arrived in the UK.</li>
-                <li>If you have been ordinarily resident in a single country since birth, please enter your birth date in the 'From:' field for the 'current country of ordinary residence' question.</li>
-                <li>If you have been ordinarily resident in more than one country, your dates of residence must not overlap. You must include an end date for your previous country of ordinary residence, which must be at least one day before the start date of your current country of ordinary residence.</li>
-                <li>If you are resident in a country listed in Section O, you may be eligible for a fee waiver.</li>
-            </ul>
+            <hr>
+            <h3>Period of Study 3</h3>
+            <div class="row mb-3">
+                <div class="col label-input-group">
+                    <label class="form-label" for="universityStudy3">University/Institution attended</label>
+                    <input type="text" class="form-control" id="universityStudy3">
+                </div>
+                <div class="col label-input-group">
+                    <label class="form-label" for="startDateStudy3">Start date (dd/mm/yyyy)</label>
+                    <input type="date" class="form-control" id="startDateStudy3">
+                </div>
+                <div class="col label-input-group">
+                    <label class="form-label" for="completionDateStudy3">Completion date (dd/mm/yyyy)</label>
+                    <input type="date" class="form-control" id="completionDateStudy3">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col label-input-group">
+                    <label class="form-label" for="courseTitle3">Course title</label>
+                    <input type="text" class="form-control" id="courseTitle3">
+                </div>
+                <div class="col label-input-group">
+                    <label class="form-label" for="level3">Level</label>
+                    <input type="text" class="form-control" id="level3">
+                </div>
+            </div>
+
+            <p class="mb-1 mt-5 full-opacity">Have you undertaken degree-level study at any institution, which you have not completed, excluding any qualification you are currently working towards?</p>
+            <div class="d-flex mb-2">
+                <div class="form-check col-1">
+                    <input class="form-check-input" type="radio" name="incompleteDegree" id="incompleteDegreeYes" value="yes">
+                    <label class="form-check-label" for="incompleteDegreeYes">Yes</label>
+                </div>
+                <div class="form-check col-1">
+                    <input class="form-check-input" type="radio" name="incompleteDegree" id="incompleteDegreeNo" value="no">
+                    <label class="form-check-label" for="incompleteDegreeNo">No</label>
+                </div>
+            </div>
+            <div class="mb-3 label-input-group">
+                <label class="form-label" for="incompleteDetails">If "Yes", please state the course(s) and the institution(s) and the reason(s) the qualification was not completed:</label>
+                <textarea class="form-control" id="incompleteDetails"></textarea>
+            </div>
+
+            <p class="mb-1 full-opacity">Are you planning to begin, or to continue studying for, a degree at any institution, at the same time as you would also be studying at Oxford for the course for which you are now applying?</p>
+            <div class="d-flex mb-2">
+                <div class="form-check col-1">
+                    <input class="form-check-input" type="radio" name="dualStudy" id="dualStudyYes" value="yes">
+                    <label class="form-check-label" for="dualStudyYes">Yes</label>
+                </div>
+                <div class="form-check col-1">
+                    <input class="form-check-input" type="radio" name="dualStudy" id="dualStudyNo" value="no">
+                    <label class="form-check-label" for="dualStudyNo">No</label>
+                </div>
+            </div>
 
             <div class="mb-3 label-input-group">
-                <label for="currentResidence" class="form-label">Current country of ordinary residence</label>
-                <input type="text" class="form-control mb-2" id="currentResidence">
+                <label class="form-label" for="dualStudyDetails">If "Yes", please provide details of the course and the institution and how you believe it will be possible to pursue both courses at the same time:</label>
+                <textarea class="form-control" id="dualStudyDetails"></textarea>
             </div>
-            <div class="mb-3 label-input-group">
-                <label for="previousResidence" class="form-label">Previous country of residence</label>
-                <input type="text" class="form-control mb-2" id="previousResidence">
-            </div>
-            
-            <p class="mb-1 full-opacity">I am an EU national resident in the UK for the main purpose of full-time education</p>
-            <div class="d-flex mb-3">
-                <div class="form-check col-1">
-                    <input class="form-check-input" type="radio" name="euResident" id="euResidentYes" value="yes">
-                    <label class="form-check-label" for="euResidentYes">Yes</label>
-                </div>
-                <div class="form-check col-1">
-                    <input class="form-check-input" type="radio" name="euResident" id="euResidentNo" value="no">
-                    <label class="form-check-label" for="euResidentNo">No</label>
-                </div>
-            </div>
-            
-            <p class="mb-1 full-opacity">If you are not a UK or EU Citizen but currently living in the UK, do you have Indefinite Leave to Remain status?</p>
-            <div class="d-flex mb-3">
-                <div class="form-check col-1">
-                    <input class="form-check-input" type="radio" name="indefiniteLeave" id="indefiniteLeaveYes" value="yes">
-                    <label class="form-check-label" for="indefiniteLeaveYes">Yes</label>
-                </div>
-                <div class="form-check col-1">
-                    <input class="form-check-input" type="radio" name="indefiniteLeave" id="indefiniteLeaveNo" value="no">
-                    <label class="form-check-label" for="indefiniteLeaveNo">No</label>
-                </div>
-            </div>
-            <div class="mb-3 label-input-group">
-                <label for="leaveGrantedDate" class="form-label">If yes, when was it granted?</label>
-                <input type="date" class="form-control" id="leaveGrantedDate">
-            </div>
+        </fieldset>
         </fieldset>
     </form>
 
     <footer>
         <div class="container mt-4">
             <div class="progress rounded-pill">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: 35.3%;" aria-valuenow="6" aria-valuemin="0" aria-valuemax="17"></div>
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 46.1%;" aria-valuenow="9" aria-valuemin="0" aria-valuemax="17"></div>
             </div>
             <div class="d-flex justify-content-between align-items-center mt-3">
                 <a href="section_e.html" class="btn btn-outline-danger rounded-pill">
                     <span class="bi bi-arrow-left"></span>
                 </a>
-                <p class="mb-0">6 of 17</p>
+                <p class="mb-0">6 of 13</p>
                 <a href="section_g.html" class="btn btn-outline-primary rounded-pill">
                     <span class="bi bi-arrow-right"></span>
                 </a>

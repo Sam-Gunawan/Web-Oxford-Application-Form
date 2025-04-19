@@ -60,13 +60,13 @@ $user = [
                     $page = $_GET['page'] ?? 'applications';
                     switch ($page) {
                         case 'applications':
-                            include('adminView/applicationList.php');
+                            include('admin-view/application-list.php');
                             break;
                         case 'users':
-                            include('adminView/userList.php');
+                            include('admin-view/user-list.php');
                             break;
                         case 'statistics':
-                            include('adminView/adminStatistic.php');
+                            include('admin-view/admin-statistic.php');
                             break;
                         default:
                             echo "<div class='p-4'>Admin page not found.</div>";
@@ -74,11 +74,11 @@ $user = [
                     break;
 
                 case 'reviewer':
-                    include('reviewerView/applicationList.php');
+                    include('reviewer-view/application-list.php');
                     break;
 
                 case 'student':
-                    include('studentView/applicationList.php');
+                    include('student-view/application-list.php');
                     break;
 
                 default:

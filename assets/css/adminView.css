@@ -1,0 +1,129 @@
+:root {
+    --bs-primary: #002147; 
+    --bs-secondary: #E0DEDA; 
+    --bs-white: #F3F1EB;
+    --bs-error: #BE1034;
+    --bs-hover1: #E0DEDA;
+    --bs-hover2: #F3F1EB;
+}
+
+.bg-primary {
+    background-color: var(--bs-primary) !important;
+}
+.color-primary {
+    color: var(--bs-primary) !important;
+}
+.bg-secondary {
+    background-color: var(--bs-secondary) !important;
+}
+.color-secondary {
+    color: var(--bs-secondary) !important;
+}
+.bg-white {
+    background-color: var(--bs-white) !important;
+}
+.color-white {
+    color: var(--bs-white) !important;
+}
+.bg-error {
+    background-color: var(--bs-error) !important;
+}
+.color-error {
+    color: var(--bs-error) !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+.parent-container {
+
+    padding: 40px;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+
+}
+
+.btn:hover{
+    opacity: 0.5;
+    transition: all ease-in-out 0.3s;
+}
+  
+.grid-nav, .grid-content, .grid-title{
+    border-radius: 10px;
+}
+
+.grid-nav {
+    padding: 20px;
+    grid-area: 1 / 1 / 10 / 2;
+    
+}
+
+.grid-content {
+    grid-area: 2 / 2 / 10 / 6;
+    padding: 20px;
+}
+
+.grid-title {
+    grid-area: 1 / 2 / 2 / 6;
+    padding-left: 20px;
+}
+  
+a.nav-item{
+    border-radius: 4px; 
+    color: white;
+}
+.nav-item:hover{
+    transition: all ease-in-out 0.2s;
+    background-color: var(--bs-hover2); 
+    color: var(--bs-error);
+    width: 100%;
+    /* background-color: #FFFFFF; */
+    cursor: pointer;
+}
+
+
+/* below for content css  */
+.content-item:hover {
+    transition: all ease-in-out 0.2s;
+    background-color:  var(--bs-hover1) !important;
+  }
+  
+.content-info{
+    /* width: 33.3%; */
+    text-align: start;
+}
+
+.card-body{
+    gap: 10vw;
+}
+
+
+
+/* for table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+}
+
+th {
+    text-align: left;
+    height: 5vh;
+    background-color: var(--bs-secondary);
+    font-weight: bold;
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid #ccc;
+}

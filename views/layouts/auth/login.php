@@ -1,5 +1,3 @@
-<?php require_once($_SERVER["DOCUMENT_ROOT"] . "/backend/auth/login-handler.php"); ?>
-
 <!DOCTYPE HTML>
 <html lang="en" data-bs-theme="dark">
 	<head>
@@ -9,7 +7,7 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	<body>
-		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> ?>" method="POST">
+		<form action="<?php echo htmlspecialchars("/views/login"); ?>" method="post">
 			<label for="user-email">E-mail</label>
 			<input id="user-email" type="email" name="user-email" placeholder="E-mail" maxlength="320" required>
 			<label for="user-password">Password</label>

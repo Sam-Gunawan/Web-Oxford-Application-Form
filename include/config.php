@@ -1,17 +1,16 @@
 <?php 
 	declare(strict_types=1);
 
-	define("SERVER_ROOT_URL", "/server");
 	define("PAGES_ROOT_URL", "/views");
 	define("FORM_PAGE_URL", PAGES_ROOT_URL . "/forms");
-	define("DASHBOARD_URL", PAGES_ROOT_URL . "/dashboard");
-	define("DASHBOARD_PAGE_URL", DASHBOARD_URL . "/dashboard.php");
-	define("SERVER_AUTH_URL", SERVER_ROOT_URL . "/auth");
 	define("LAYOUTS_URL", PAGES_ROOT_URL . "/layouts");
+	define("DASHBOARD_PAGE_URL", LAYOUTS_URL . "/dashboard.php");
 	define("AUTH_PAGES_URL", LAYOUTS_URL . "/auth");
+	define("REVIEWER_PAGES_URL", LAYOUTS_URL . "/reviewer-view");
 	define("LOGIN_PAGE_URL", AUTH_PAGES_URL . "/login.php");
 	define("SIGNUP_PAGE_URL", AUTH_PAGES_URL . "/signup.php");
-	
+	define("REPLY_PAGE_URL", REVIEWER_PAGES_URL . "/reply.php");
+
 	class Logger {
 		private static ?string $default_log_dir = "C:/xampp/apache/logs/";
 	
@@ -36,7 +35,7 @@
 					mkdir($log_directory, 0775, true);
 				}
 				// Log to the specified file
-				return error_log($fmt_msg, 3, $target_file . "oxford-web-" . strtolower($level) . ".log");
+				return error_log($fmt_msg, 3, $target_file . "oxfordweb-server-log.log");
 			} else {
 				// If no file is specified and no default is set, log to PHP's default error destination
 				return error_log($fmt_msg);

@@ -1,15 +1,12 @@
 <?php
 	// Include config file
-	require_once __DIR__ . '/server/include/config.php';
+	require_once $_SERVER["DOCUMENT_ROOT"] . '/server/include/config.php';
 	session_start();
 
 	// Get the requested URI
 	$request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-
-	echo "URI: " . $request_uri . "<br>";
-	echo "URI: " . LOGIN_PAGE_URL . "<br>";
 	
-		// Public paths (accessible without authentication)
+	// Public paths (accessible without authentication)
 	$public_paths = [
 		LOGIN_PAGE_URL
 	];
@@ -25,31 +22,45 @@
 		}
 	}
 	
-	// Check if logged in or
+	// Check if logged in
+	// TODO: check if path exists or not
 	if (!isset($_SESSION['role']) && !$is_public) {
 		// User is not logged in AND the requested page is not a public path
+		Logger::info("Rerouting to " . LOGIN_PAGE_URL);
 		header("Location: " . LOGIN_PAGE_URL);
 		exit();
-	}
-	
-	function ends_with($haystack, $needle) {
-		$length = strlen($needle);
-		return $length > 0 ? substr($haystack, -$length) === $needle : true;
 	}
 
 	// Route to different pages
-	if ($request_uri === '/' || $request_uri === '/dashboard' || $request_uri === '/dashboard.php') {
-		require __DIR__ . '/pages/dashboard.php';
-	} elseif (ends_with($request_uri, "login") || ends_with($request_uri, "login.php")) {
-		header("Location: " . LOGIN_PAGE_URL);
-		exit();
+	switch ($request_uri) {
+		case "/":
+		case "/dashboard":
+		case "/dashboard.php": {
+			Logger::info("Rerouting to " . DASHBOARD_PAGE_URL);
+			header("Location: " . DASHBOARD_PAGE_URL);
+			exit();	
+		}
+
+		case "/form":
+		case "/form.php": {
+			Logger::info("Rerouting to " . FORM_PAGE_URL);
+			header("Location: " . FORM_PAGE_URL);
+			exit();
+		} 
+
+		case "/login":
+		case "/login.php": {
+			Logger::info("Rerouting to " . LOGIN_PAGE_URL);
+			header("Location: " . LOGIN_PAGE_URL);
+			exit();	
+		}
+		// TODO: add other routes
+		
+		// Return error code 404 if no route matched
+		default: {
+			Logger::error("Cannot find " . $request_uri);
+			header("HTTP/1.0 404 Not Found");
+			echo "Page Not Found";
+		} break;
 	}
-	// TODO: add other routes
-	
-	// Return error code 404 if no route matched
-	else {
-		header("HTTP/1.0 404 Not Found");
-		echo "Page Not Found";
-	}
-	
 ?>

@@ -1,78 +1,70 @@
 <?php
 	// Include config file
-	require_once(__DIR__ . '/backend/include/config.php');
+	require_once(__DIR__ . "/include/config.php");
+	require_once(__DIR__ . "/include/auth.php");
 	session_start();
 
-	function handle_login_request(): bool {
-		$filters = array(
-			"user-email" => array (
-				"filter" => FILTER_VALIDATE_EMAIL,
-				"flags" => FILTER_NULL_ON_FAILURE
-			),
-			"user-password" => array (
-				"filter" => FILTER_UNSAFE_RAW,
-				"flags" => FILTER_NULL_ON_FAILURE
-				)
-		);
-		$filtered_body = filter_input_array(INPUT_POST, $filters, false);
-		$email = $filtered_body["user-email"];
-		$password_hash = password_hash($filtered_body["user-password"], PASSWORD_ARGON2ID);
-
-		Logger::debug("E-mail: " . $email);
-		Logger::debug("Password Hash: " . $password_hash);
-
-		// TODO: Add more checks (email not found, wrong password)
-		if ($email === false || $email === null) {
-			$_SESSION["login_error_message"] = "Invalid email";
-			return false;
-		} 
-
-		if ($password_hash === false || $password_hash === null) {
-			$_SESSION["login_error_message"] = "Invalid password";
-			return false;
-		}		
-
-		$_SESSION["role"] = "reviewer";
-		return true;
-	}
-
 	// Get the requested URI
-	$request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+	$request_uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
 	$clean_uri = $request_uri;
-	if ($clean_uri !== '/' && substr($clean_uri, -1) === '/') {
+	if ($clean_uri !== "/" && substr($clean_uri, -1) === "/") {
 		$clean_uri = substr($clean_uri, 0, -1);
 	}
-	if (str_ends_with($clean_uri, '.php')) {
+	if (str_ends_with($clean_uri, ".php")) {
 		$clean_uri = substr($clean_uri, 0, -4);
 	}
 	Logger::info("Original URI: {$request_uri}, Cleaned URI: {$clean_uri}");
 	
-	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+	if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		// Check the $clean_uri to determine which POST handler logic to execute
 		switch ($clean_uri) {
-			case '/views/login': {
+			case "/views/login": {
 				$login_result = handle_login_request(); 
 				Logger::debug("Login Result: " . ($login_result ? "True" : "False"));
 				if ($login_result === true) { 
-					Logger::info("Login successful for user: " . ($_SESSION['user-email'] ?? 'N/A'));
+					Logger::info("Login successful for user: " . ($_SESSION["user-email"] ?? "N/A"));
 					// Redirect to the dashboard after successful login
 					header("Location: /dashboard", true, 303);
 					// IMPORTANT: Stop execution after redirect
 					exit(); 
 					
 				} else {
-					Logger::warn("Login failed for URL: " . $request_uri . ". Error: " . ($login_result ?: 'Unknown error'));
+					Logger::warn("Login failed for URL: " . $request_uri . ". Error: " . ($login_result ?: "Unknown error"));
 					// Store the error message in the session to display on the login form page
-					$_SESSION['login_error_message'] = ($login_result ?: "Login failed. Please try again.");
+					$_SESSION["login_error_message"] = ($login_result ?: "Login failed. Please try again.");
 					
 					// DO NOT REDIRECT ON FAILURE. Let the script fall through to
 					// the authentication check and router, which will display the login form
 					// and the error message from the session.
 				}
 			} break;
+
+			case "/views/signup": {
+				$signup_result = handle_signup_request(); 
+				Logger::debug("Signup Result: " . ($signup_result ? "True" : "False"));
+				if ($signup_result === true) { 
+					Logger::info("Signup successful for user: " . ($_SESSION["user-email"] ?? "N/A"));
+					// Redirect to the dashboard after successful login
+					header("Location: /dashboard", true, 303);
+					// IMPORTANT: Stop execution after redirect
+					exit(); 
+					
+				} else {
+					Logger::warn("Signup failed for URL: " . $request_uri . ". Error: " . ($signup_result ?: "Unknown error"));
+					// Store the error message in the session to display on the signup form page
+					$_SESSION["signup_error_message"] = ($signup_result ?: "Signup failed. Please try again.");
+					
+					// DO NOT REDIRECT ON FAILURE. Let the script fall through to
+					// the authentication check and router, which will display the signup form
+					// and the error message from the session.
+				}
+			} break;
 	
 			// TODO: Add cases for other POST handlers (/form-submit, /api/save-data)
+			case "/views/forms": {
+				
+			} break;
 	
 			default: {
 				// Handle unexpected POST requests to URLs not designed for POST
@@ -82,23 +74,29 @@
 			} exit(); // Exit from file
 		}
 	}
+
+	// TODO: DEBUG ONLY. REMOVE ON PROD
+	if ($clean_uri === "/views/login" || $clean_uri === "/views/signup") {
+		Logger::debug("Forcing new session for {$clean_uri}");
+		debug_reset_session();
+	}
 	
 	// Handle failed validation after login check
 
 	// Public paths (accessible without authentication)
 	$public_paths = [
-		'/views/login' => 1,       // THE login page clean URL
-		'/views/signup' => 2,      // Registration page clean URL
+		"/views/login" => 1,       // THE login page clean URL
+		"/views/signup" => 2,      // Registration page clean URL
 		// TODO: Add other URLs
 	];
 
 	// Check if URI exists in the public path array
-	$is_public = array_key_exists($clean_uri, $public_paths);
+	$is_public = isset($clean_uri[$public_paths]);
 	
 	Logger::debug("Is public: " . ($is_public ? "True" : "False"));
-	Logger::debug("Role: " . (isset($_SESSION['role']) ? $_SESSION['role'] : "None"));
+	Logger::debug("Role: " . (isset($_SESSION["role"]) ? $_SESSION["role"] : "None"));
 
-	if (!isset($_SESSION['role']) && !$is_public) {
+	if (!isset($_SESSION["role"]) && !$is_public) {
 		Logger::info("Access denied to protected page: " . $clean_uri . ". Redirecting to login.");
 		// Redirect to the login page clean URL
 		header("Location: /views/login", true, 303); 
@@ -106,20 +104,20 @@
 	}
 
 	$login_error_message = "";
-	if (isset($_SESSION['login_error_message'])) {
-		$login_error_message = $_SESSION['login_error_message'];
-		unset($_SESSION['login_error_message']); // Clear it after getting it for display
+	if (isset($_SESSION["login_error_message"])) {
+		$login_error_message = $_SESSION["login_error_message"];
+		unset($_SESSION["login_error_message"]); // Clear it after getting it for display
 	}
 
 	switch ($clean_uri) {
-		case '/': {
+		case "/": {
 			require_once(__DIR__ . DASHBOARD_PAGE_URL);
 		} break;
 	
-		case '/views/login': {
+		case "/views/login": {
 			// The user is allowed to see the login page.
 			// If logged in and accessing /views/login, you might redirect to dashboard instead
-			if (isset($_SESSION['role'])) {
+			if (isset($_SESSION["role"])) {
 				 Logger::info("Logged-in user tried to access login page. Redirecting to dashboard.");
 				 header("Location: /dashboard", true, 303); // Adjust dashboard URL if needed
 				 exit(); // Stop execution
@@ -129,11 +127,11 @@
 			require_once(__DIR__ . LOGIN_PAGE_URL); // Include )the login form template
 		} break;
 	
-		case '/views/signup': {
+		case "/views/signup": {
 			require_once(__DIR__ . SIGNUP_PAGE_URL); // Include )signup template	
 		} break;
 	
-		case '/dashboard': {
+		case "/dashboard": {
 			// This case is only reached if the authentication check above PASSED.
 			// Check here if additional authorization is needed for dashboard (e.g., admin role)
 			require_once(__DIR__ . DASHBOARD_PAGE_URL); 

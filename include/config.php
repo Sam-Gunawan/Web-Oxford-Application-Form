@@ -1,12 +1,10 @@
 <?php 
 	declare(strict_types=1);
 
-	define("SERVER_ROOT_URL", "/server");
 	define("PAGES_ROOT_URL", "/views");
 	define("FORM_PAGE_URL", PAGES_ROOT_URL . "/forms");
 	define("LAYOUTS_URL", PAGES_ROOT_URL . "/layouts");
 	define("DASHBOARD_PAGE_URL", LAYOUTS_URL . "/dashboard.php");
-	define("SERVER_AUTH_URL", SERVER_ROOT_URL . "/auth");
 	define("AUTH_PAGES_URL", LAYOUTS_URL . "/auth");
 	define("LOGIN_PAGE_URL", AUTH_PAGES_URL . "/login.php");
 	define("SIGNUP_PAGE_URL", AUTH_PAGES_URL . "/signup.php");

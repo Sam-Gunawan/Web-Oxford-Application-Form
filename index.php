@@ -1,6 +1,6 @@
 <?php
 	// Include config file
-	require_once $_SERVER["DOCUMENT_ROOT"] . '/server/include/config.php';
+	require_once $_SERVER["DOCUMENT_ROOT"] . '/backend/include/config.php';
 	session_start();
 
 	// Get the requested URI
@@ -9,13 +9,15 @@
 	// Public paths (accessible without authentication)
 	$public_paths = [
 		"/login" => 1,
-		"/pages/login" => 2,
-		"/pages/templates/login" => 3,
-		LOGIN_PAGE_URL => 4,
-		"/signup" => 5,
-		"/pages/signup" => 6,
-		"/pages/templates/signup" => 7,	
-		SIGNUP_PAGE_URL => 8,	
+		"/views/login" => 2,
+		"/views/layouts/login" => 3,
+		"/views/layouts/auth/login" => 4,
+		LOGIN_PAGE_URL => 5,
+		"/signup" => 6,
+		"/views/signup" => 7,
+		"/views/layouts/signup" => 8,	
+		"/views/layouts/auth/signup" => 9,	
+		SIGNUP_PAGE_URL => 10,	
 	];
 	
 	$clean_uri = str_ends_with($request_uri, ".php") ? substr($request_uri, 0, -4) : $request_uri;
@@ -29,12 +31,12 @@
 	if (!isset($_SESSION['role']) && !$is_public) {
 		// User is not logged in AND the requested page is not a public path
 		Logger::info("User role is not set.");
-		Logger::info("Rerouting to " . "/pages/login");
-		header("Location: " . "/pages/login");
+		Logger::info("Rerouting to " . "/views/login");
+		header("Location: " . "/views/login");
 		exit();
 	}
 
-	// Route to different pages
+	// Route to different views
 	switch ($request_uri) {
 		case "/":
 		case "/dashboard":
@@ -52,18 +54,18 @@
 		} 
 
 		case "/login":
-		case "/pages/login":
-		case "/pages/templates/login": {
-			Logger::info("Rerouting to " . "/pages/login");
-			header("Location: " . "/pages/login");
+		case "/views/login":
+		case "/views/layouts/login": {
+			Logger::info("Rerouting to " . "/views/login");
+			header("Location: " . "/views/login");
 			exit();	
 		}
 		
 		case "/signup":
-		case "/pages/signup":
-		case "/pages/templates/signup": {
-			Logger::info("Rerouting to " . "/pages/signup");
-			header("Location: " . "/pages/signup");
+		case "/views/signup":
+		case "/views/layouts/signup": {
+			Logger::info("Rerouting to " . "/views/signup");
+			header("Location: " . "/views/signup");
 			exit();	
 		}
 		// TODO: add other routes

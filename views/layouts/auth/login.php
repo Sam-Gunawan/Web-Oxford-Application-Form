@@ -1,4 +1,4 @@
-<?php require_once($_SERVER["DOCUMENT_ROOT"] . "/server/auth/login-handler.php"); ?>
+<?php require_once($_SERVER["DOCUMENT_ROOT"] . "/backend/auth/login-handler.php"); ?>
 
 <!DOCTYPE HTML>
 <html lang="en" data-bs-theme="dark">
@@ -17,6 +17,6 @@
 			<button type="submit">Submit</button>
 			<button type="reset">Reset</button>
 		</form>
-		<p>Don't have an account? <a href="<?php echo htmlspecialchars("/pages/signup"); ?>">Sign Up</a></p>
+		<p>Don't have an account? <a href="<?php echo htmlspecialchars("/views/signup"); ?>">Sign Up</a></p>
 	</body>
 </html>

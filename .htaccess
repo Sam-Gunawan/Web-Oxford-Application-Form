@@ -7,20 +7,23 @@ RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2|tt
 RewriteRule ^ - [L]
 
 # Exclude clean login URI / direct file access to login/signup from redirection
-# When the browser is redirected to /pages/login, this rule sends the request
-# internally to pages/templates/login.php for execution
+# When the browser is redirected to views/login, this rule sends the request
+# internally to views/layouts/login.php for execution
 
-RewriteRule ^login$ /pages/login [R=301,L,NC]
-RewriteRule ^pages/login\.php$ /pages/login [R=301,L,NC]
-RewriteRule ^pages/templates/login$ /pages/login [R=301,L,NC]
-RewriteRule ^pages/templates/login\.php$ - [L]
-RewriteRule ^pages/login$ pages/templates/login.php [L]
+RewriteRule ^login$ views/login [R=301,L,NC]
+RewriteRule ^views/login\.php$ views/login [R=301,L,NC]
+RewriteRule ^views/layouts/login$ views/login [R=301,L,NC]
+RewriteRule ^views/layouts/login\.php$ views/login [R=301,L,NC]
+RewriteRule ^views/layouts/auth/login\.php$ - [L]
+RewriteRule ^views/login$ views/layouts/auth/login.php [L]
 
-RewriteRule ^signup$ /pages/signup [R=301,L,NC]
-RewriteRule ^pages/signup\.php$ /pages/signup [R=301,L,NC]
-RewriteRule ^pages/templates/signup$ /pages/signup [R=301,L,NC]
-RewriteRule ^pages/templates/signup\.php$ - [L]
-RewriteRule ^pages/signup$ pages/templates/signup.php [L]
+RewriteRule ^signup$ views/signup [R=301,L,NC]
+RewriteRule ^views/signup\.php$ views/signup [R=301,L,NC]
+RewriteRule ^views/layouts/signup$ views/signup [R=301,L,NC]
+RewriteRule ^views/layouts/signup$ views/signup [R=301,L,NC]
+RewriteRule ^views/layouts/signup\.php$ views/signup [L]
+RewriteRule ^views/layouts/auth/signup\.php$ - [L]
+RewriteRule ^views/signup$ views/layouts/auth/signup.php [L]
 
 # Redirect every other URI to index.php
 RewriteRule ^(.*)$ index.php [L]

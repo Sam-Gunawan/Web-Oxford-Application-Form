@@ -10,20 +10,15 @@ RewriteRule ^ - [L]
 # When the browser is redirected to views/login, this rule sends the request
 # internally to views/layouts/login.php for execution
 
-RewriteRule ^login$ views/login [R=301,L,NC]
-RewriteRule ^views/login\.php$ views/login [R=301,L,NC]
-RewriteRule ^views/layouts/login$ views/login [R=301,L,NC]
-RewriteRule ^views/layouts/login\.php$ views/login [R=301,L,NC]
-RewriteRule ^views/layouts/auth/login\.php$ - [L]
-RewriteRule ^views/login$ views/layouts/auth/login.php [L]
+# Redirects various login URL formats to the clean /views/signup 
+# Covered links: /login, /login.php, /views/login.php, /views/layouts/login, /views/layouts/login.php, /views/layouts/auth/login, /views/layouts/auth/login.php
+RewriteRule ^(login|views/layouts/login|views/layouts/auth/login)(\.php)?$ /views/login [R=301,L,NC]
 
-RewriteRule ^signup$ views/signup [R=301,L,NC]
-RewriteRule ^views/signup\.php$ views/signup [R=301,L,NC]
-RewriteRule ^views/layouts/signup$ views/signup [R=301,L,NC]
-RewriteRule ^views/layouts/signup$ views/signup [R=301,L,NC]
-RewriteRule ^views/layouts/signup\.php$ views/signup [L]
-RewriteRule ^views/layouts/auth/signup\.php$ - [L]
-RewriteRule ^views/signup$ views/layouts/auth/signup.php [L]
+# Redirects various signup URL formats to the clean /views/signup 
+# Covered links: /signup, /signup.php, /views/signup.php, /views/layouts/signup, /views/layouts/signup.php, /views/layouts/auth/signup, /views/layouts/auth/signup.php
+RewriteRule ^(signup|views/layouts/signup|views/layouts/auth/signup)(\.php)?$ /views/signup [R=301,L,NC]
+
+RewriteRule ^index\.php$ - [L]
 
 # Redirect every other URI to index.php
 RewriteRule ^(.*)$ index.php [L]

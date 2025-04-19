@@ -1,0 +1,29 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirect requests for existing files and directories directly
+# This is so images, css, js, etc. are served normally
+RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2|ttf|eot)$ [NC]
+RewriteRule ^ - [L]
+
+# Exclude clean login URI / direct file access to login/signup from redirection
+# When the browser is redirected to views/login, this rule sends the request
+# internally to views/layouts/login.php for execution
+
+RewriteRule ^login$ views/login [R=301,L,NC]
+RewriteRule ^views/login\.php$ views/login [R=301,L,NC]
+RewriteRule ^views/layouts/login$ views/login [R=301,L,NC]
+RewriteRule ^views/layouts/login\.php$ views/login [R=301,L,NC]
+RewriteRule ^views/layouts/auth/login\.php$ - [L]
+RewriteRule ^views/login$ views/layouts/auth/login.php [L]
+
+RewriteRule ^signup$ views/signup [R=301,L,NC]
+RewriteRule ^views/signup\.php$ views/signup [R=301,L,NC]
+RewriteRule ^views/layouts/signup$ views/signup [R=301,L,NC]
+RewriteRule ^views/layouts/signup$ views/signup [R=301,L,NC]
+RewriteRule ^views/layouts/signup\.php$ views/signup [L]
+RewriteRule ^views/layouts/auth/signup\.php$ - [L]
+RewriteRule ^views/signup$ views/layouts/auth/signup.php [L]
+
+# Redirect every other URI to index.php
+RewriteRule ^(.*)$ index.php [L]

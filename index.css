@@ -76,8 +76,9 @@ header img:hover {
     border-radius: 1em;
     padding: 40px;
     margin-top: 20px;
-    background-color: #002855;
+    background: transparent;
     box-shadow: #001731 0px 0px 20px;
+    backdrop-filter: blur(15px);
 
 }
 

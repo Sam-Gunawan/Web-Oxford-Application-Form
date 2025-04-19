@@ -20,6 +20,7 @@
 		if ($email && $password_hash) {
 			Logger::info("User {$email} logged in");
 		} else {
+			
 		}
 	}
 ?>

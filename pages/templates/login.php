@@ -1,12 +1,13 @@
-<?php require_once $_SERVER["DOCUMENT_ROOT"] . "/server/auth/login-handler.php"; ?>
+<?php require_once($_SERVER["DOCUMENT_ROOT"] . "/server/auth/login-handler.php"); ?>
 
 <!DOCTYPE HTML>
 <html lang="en" data-bs-theme="dark">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Login</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Login</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	</head>
 	<body>
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> ?>" method="POST">
 			<label for="user-email">E-mail</label>
@@ -16,7 +17,6 @@
 			<button type="submit">Submit</button>
 			<button type="reset">Reset</button>
 		</form>
-		<p>Don't have an account? <a href="<?php echo htmlspecialchars("pages/signup"); ?>">Sign Up</a></p>
+		<p>Don't have an account? <a href="<?php echo htmlspecialchars("/pages/signup"); ?>">Sign Up</a></p>
 	</body>
-</head>
 </html>

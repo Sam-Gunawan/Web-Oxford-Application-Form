@@ -37,6 +37,7 @@
 			return false;
 		}
 
+		$_SESSION["role"] = "student";
 		return true;
 	}
 
@@ -58,6 +59,7 @@
 			return false;
 		}		
 
+		// TODO: Determine role based on account
 		$_SESSION["role"] = "reviewer";
 		return true;
 	}

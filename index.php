@@ -39,7 +39,10 @@
 					// and the error message from the session.
 				}
 			} break;
-
+			case "/views/form-submit": {
+				// TODO: Handle form submission
+				
+			} break;
 			case "/views/signup": {
 				$signup_result = handle_signup_request(); 
 				Logger::debug("Signup Result: " . ($signup_result ? "True" : "False"));
@@ -85,13 +88,13 @@
 
 	// Public paths (accessible without authentication)
 	$public_paths = [
-		"/views/login" => 1,       // THE login page clean URL
+		"/views/login" => 1,       // Login page clean URL
 		"/views/signup" => 2,      // Registration page clean URL
 		// TODO: Add other URLs
 	];
 
 	// Check if URI exists in the public path array
-	$is_public = isset($clean_uri[$public_paths]);
+	$is_public = isset($public_paths[$clean_uri]);
 	
 	Logger::debug("Is public: " . ($is_public ? "True" : "False"));
 	Logger::debug("Role: " . (isset($_SESSION["role"]) ? $_SESSION["role"] : "None"));
@@ -114,6 +117,12 @@
 			require_once(__DIR__ . DASHBOARD_PAGE_URL);
 		} break;
 	
+		case "/views/reply" : {
+			// header("Location: /reply", true, 303);
+			
+			// require_once(__DIR__ . "/include/reply.php");
+		} break;
+
 		case "/views/login": {
 			// The user is allowed to see the login page.
 			// If logged in and accessing /views/login, you might redirect to dashboard instead

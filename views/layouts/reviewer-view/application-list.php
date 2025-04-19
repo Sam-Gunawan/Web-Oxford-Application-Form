@@ -27,6 +27,21 @@ $applications = [
   ]
 ];
 
+$actions = [
+	"Message" => [
+		"classes" => "bg-primary text-white",
+		"query" => "?action=message"
+	], 
+	"Approve" => [
+		"classes" => "bg-primary text-white",
+		"query" => "?action=approve"
+	], 
+	"Reject" => [
+		"classes" => "bg-error text-white",	
+		"query" => "?action=reject"
+	]
+];
+
 ?>
 
 <?php foreach ($applications as $app): ?>
@@ -66,9 +81,12 @@ $applications = [
                 </div>
             </div>
             <div class="d-flex align-items-center gap-3 w-100 justify-content-end px-5 py-3 border-top border-white">
-                <button class="btn bg-primary text-white" style="width: 8%;">Message</button>
-                <button class="btn bg-primary text-white" style="width: 8%;">Approve</button>
-                <button class="btn bg-error text-white" style="width: 8%;">Reject</button>
+				<?php 
+					foreach ($actions as $action => $attrs) {
+						echo "<a ". "href=/views/reply" . $attrs["query"] . " class=\"btn " . $attrs["classes"]. 
+						"\" style=\"width: 8%; min-width: 16ch;\">" . $action . "</a>";
+					}
+				?>
             </div>
         </div>
 

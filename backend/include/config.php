@@ -2,14 +2,15 @@
 	declare(strict_types=1);
 
 	define("SERVER_ROOT_URL", "/server");
-	define("PAGES_ROOT_URL", "/pages");
-	define("FORM_PAGE_URL", PAGES_ROOT_URL . "/form");
+	define("PAGES_ROOT_URL", "/views");
+	define("FORM_PAGE_URL", PAGES_ROOT_URL . "/forms");
 	define("DASHBOARD_URL", PAGES_ROOT_URL . "/dashboard");
 	define("DASHBOARD_PAGE_URL", DASHBOARD_URL . "/dashboard.php");
 	define("SERVER_AUTH_URL", SERVER_ROOT_URL . "/auth");
-	define("TEMPLATES_URL", PAGES_ROOT_URL . "/templates");
-	define("LOGIN_PAGE_URL", TEMPLATES_URL . "/login.php");
-	define("SIGNUP_PAGE_URL", TEMPLATES_URL . "/signup.php");
+	define("LAYOUTS_URL", PAGES_ROOT_URL . "/layouts");
+	define("AUTH_PAGES_URL", LAYOUTS_URL . "/auth");
+	define("LOGIN_PAGE_URL", AUTH_PAGES_URL . "/login.php");
+	define("SIGNUP_PAGE_URL", AUTH_PAGES_URL . "/signup.php");
 	
 	class Logger {
 		private static ?string $default_log_dir = "C:/xampp/apache/logs/";

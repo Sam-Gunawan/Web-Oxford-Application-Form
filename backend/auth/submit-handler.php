@@ -1,5 +1,5 @@
 <?php 
-	require_once("/server/include/config.php");
+	require_once($_SERVER["DOCUMENT_ROOT"] . "/backend/include/config.php");
 	session_start();
 
 	if (!isset($_SESSION['role'])) {

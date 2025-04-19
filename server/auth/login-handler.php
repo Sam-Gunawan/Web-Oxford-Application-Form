@@ -18,9 +18,9 @@
 		$email = $filtered_body["user-email"];
 
 		if ($email && $password_hash) {
-			Logger::info("User {$email} logged in");
-		} else {
 			
+		} else {
+
 		}
 	}
 ?>

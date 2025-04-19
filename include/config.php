@@ -6,8 +6,10 @@
 	define("LAYOUTS_URL", PAGES_ROOT_URL . "/layouts");
 	define("DASHBOARD_PAGE_URL", LAYOUTS_URL . "/dashboard.php");
 	define("AUTH_PAGES_URL", LAYOUTS_URL . "/auth");
+	define("REVIEWER_PAGES_URL", LAYOUTS_URL . "/reviewer-view");
 	define("LOGIN_PAGE_URL", AUTH_PAGES_URL . "/login.php");
 	define("SIGNUP_PAGE_URL", AUTH_PAGES_URL . "/signup.php");
+	define("REPLY_PAGE_URL", REVIEWER_PAGES_URL . "/reply.php");
 
 	class Logger {
 		private static ?string $default_log_dir = "C:/xampp/apache/logs/";

@@ -118,9 +118,10 @@
 		} break;
 	
 		case "/views/reply" : {
-			// header("Location: /reply", true, 303);
+			// TODO: add variable to session to check if has user have drafted action.
+			require_once(__DIR__ . "/include/reply.php");
 			
-			// require_once(__DIR__ . "/include/reply.php");
+			require_once(__DIR__ . REPLY_PAGE_URL);
 		} break;
 
 		case "/views/login": {

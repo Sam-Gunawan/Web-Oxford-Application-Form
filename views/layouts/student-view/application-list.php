@@ -1,5 +1,8 @@
 
 <?php
+require_once(__DIR__ . "/../../../include/auth.php");
+forbid();
+
 //TODO: temporary data for now. take real data from database later
 $applications = [
   [

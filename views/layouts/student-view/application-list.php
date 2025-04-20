@@ -1,5 +1,11 @@
 
 <?php
+if (!defined("SERVER")) {
+	http_response_code(403);
+	die();
+}
+
+
 //TODO: temporary data for now. take real data from database later
 $applications = [
   [

@@ -1,12 +1,16 @@
 <?php
-	// Include config file
 	require_once(__DIR__ . "/include/config.php");
+	// Include config file
 	require_once(__DIR__ . "/include/auth.php");
+	require_once(__DIR__ . "/include/router.php");
+	if (!CLEAN_URI) {
+		forbid();
+	}
 	session_start();
 
 	// Get the requested URI
 	$request_uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
-
+	
 	$clean_uri = $request_uri;
 	if ($clean_uri !== "/" && substr($clean_uri, -1) === "/") {
 		$clean_uri = substr($clean_uri, 0, -1);
@@ -14,7 +18,7 @@
 	if (str_ends_with($clean_uri, ".php")) {
 		$clean_uri = substr($clean_uri, 0, -4);
 	}
-	Logger::info("Original URI: {$request_uri}, Cleaned URI: {$clean_uri}");
+	Logger::info("Requested URI: {$request_uri}, Cleaned URI: {$clean_uri}");
 	
 	if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		// Check the $clean_uri to determine which POST handler logic to execute
@@ -128,9 +132,9 @@
 			// The user is allowed to see the login page.
 			// If logged in and accessing /views/login, you might redirect to dashboard instead
 			if (isset($_SESSION["role"])) {
-				 Logger::info("Logged-in user tried to access login page. Redirecting to dashboard.");
-				 header("Location: /dashboard", true, 303); // Adjust dashboard URL if needed
-				 exit(); // Stop execution
+					Logger::info("Logged-in user tried to access login page. Redirecting to dashboard.");
+					header("Location: /dashboard", true, 303); // Adjust dashboard URL if needed
+					exit(); // Stop execution
 			}
 			// If not logged in (and allowed to see login), include the login form template
 			// The $loginErrorMessage variable (from failed POST) is available here.

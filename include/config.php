@@ -1,6 +1,13 @@
 <?php 
 	declare(strict_types=1);
 
+	if (!defined("SERVER")) {
+		http_response_code(403);
+		die();
+	}
+
+	define("CLEAN_URI", false);
+	define("WEBSITE_ROOT", "/Web-Oxford-Application-Form");
 	define("PAGES_ROOT_URL", "/views");
 	define("FORM_PAGE_URL", PAGES_ROOT_URL . "/forms");
 	define("LAYOUTS_URL", PAGES_ROOT_URL . "/layouts");

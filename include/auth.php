@@ -1,4 +1,13 @@
 <?php 
+	if (!defined("SERVER")) {
+		http_response_code(403);
+		die();
+	}
+
+	require_once(__DIR__ . "/config.php");
+	// require_once(__DIR__ . "/reply.php");
+	require_once(__DIR__ . "/router.php");
+
 	function get_filtered_email_password() {
 		$filters = array(
 			"user-email" => array (
@@ -91,5 +100,13 @@
 		session_start(); // Start the new session
 	
 		Logger::debug("New session started.");
-	}	
+	}
+
+	// TODO: Add other checks
+	function redirect_on_unauthorized(?string $role = null) {
+		if (!CLEAN_URI && !isset($_SESSION["role"]) && ($role && $_SESSION["role"] != $role)) {
+			Logger::debug("LOGGING FROM " . __DIR__);
+			redirect(WEBSITE_ROOT . LOGIN_PAGE_URL);
+		}
+	}
 ?>

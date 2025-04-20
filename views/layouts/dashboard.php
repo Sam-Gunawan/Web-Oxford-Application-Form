@@ -1,6 +1,9 @@
 <?php
 //TODO: temporary data for now. take real data from database later
-
+define("SERVER", true);
+session_start();
+require_once(__DIR__ . "/../../include/auth.php");
+redirect_on_unauthorized(false);
 $user = [
   'id' => 69,
   'name' => 'Cool Guy',

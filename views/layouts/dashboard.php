@@ -5,9 +5,9 @@ session_start();
 require_once(__DIR__ . "/../../include/auth.php");
 redirect_on_unauthorized(false);
 $user = [
-  'id' => 69,
-  'name' => 'Cool Guy',
-  'role' => 'admin'
+  "id" => 69,
+  "name" => "Cool Guy",
+  "role" => "admin"
 ];
 
 ?>
@@ -34,13 +34,13 @@ $user = [
           <img src="../../assets/images/Oxford-University-Circlet.svg.png" alt="Oxford Logo" style="max-height: 100%; max-width: 100%; object-fit: contain;">
         </div>
         <div class="mt-4 nav-content d-flex flex-column flex-grow-1 pt-4 gap-2 w-100">
-            <?php if ($_SESSION["role"] === 'admin'): ?>
+            <?php if ($_SESSION["role"] === "admin"): ?>
                 <a href="?page=applications" class="nav-item border-bottom p-2 text-decoration-none">Application List</a>
                 <a href="?page=users" class="nav-item border-bottom p-2 text-decoration-none">User List</a>
                 <a href="?page=statistics" class="nav-item border-bottom p-2 text-decoration-none">Statistic</a>
-            <?php elseif ($_SESSION["role"] === 'reviewer'): ?>
+            <?php elseif ($_SESSION["role"] === "reviewer"): ?>
                 <a class="nav-item border-bottom p-2 text-decoration-none">Application List</a>
-            <?php elseif ($_SESSION["role"] === 'student'): ?>
+            <?php elseif ($_SESSION["role"] === "student"): ?>
                 <a class="nav-item border-bottom p-2 text-decoration-none">Application List</a>
                 <a class="nav-item border-bottom p-2 text-decoration-none">Application Draft</a>
             <?php endif; ?>
@@ -49,7 +49,7 @@ $user = [
 
     <!-- title section -->
     <div class="grid-title text-dark d-flex align-items-center justify-content-between">
-      <div class="title-text display-3 color-primary">Welcome <?= htmlspecialchars($user['name']) ?></div>
+      <div class="title-text display-3 color-primary">Welcome <?= htmlspecialchars($user["name"]) ?></div>
       <div class="top-nav h-50 d-flex align-items-center gap-3">
         <i class="fa-regular fa-bell fa-3x color-primary"></i>
         <i class="fa-regular fa-circle-user fa-3x color-primary"></i>
@@ -60,29 +60,29 @@ $user = [
     <div class="grid-content bg-secondary d-flex flex-column align-items-star gap-2 overflow-auto"> <!-- content container -->
         <?php
             switch ($_SESSION["role"]) {
-                case 'admin':
-                    $page = $_GET['page'] ?? 'applications';
+                case "admin":
+                    $page = $_GET["page"] ?? "applications";
                     switch ($page) {
-                        case 'applications':
-                            require_once('admin-view/application-list.php');
+                        case "applications":
+                            require_once("admin-view/application-list.php");
                             break;
-                        case 'users':
-                            require_once('admin-view/user-list.php');
+                        case "users":
+                            require_once("admin-view/user-list.php");
                             break;
-                        case 'statistics':
-                            require_once('admin-view/admin-statistic.php');
+                        case "statistics":
+                            require_once("admin-view/admin-statistic.php");
                             break;
                         default:
-                            echo "<div class='p-4'>Admin page not found.</div>";
+                            echo "<div class=\"p-4\">Admin page not found.</div>";
                     }
                     break;
 
-                case 'reviewer':
-                    require_once('reviewer-view/application-list.php');
+                case "reviewer":
+                    require_once("reviewer-view/application-list.php");
                     break;
 
-                case 'student':
-                    require_once('student-view/application-list.php');
+                case "student":
+                    require_once("student-view/application-list.php");
                     break;
 
                 default:

@@ -1,5 +1,8 @@
 <?php 
-	require_once(__DIR__ . "/../../../include/auth.php");
-	forbid();
+	if (!defined("SERVER")) {
+		http_response_code(403);
+		die();
+	}
+
 	// TODO: Add other checks
 ?>

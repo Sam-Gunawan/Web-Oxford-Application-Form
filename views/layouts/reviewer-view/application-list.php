@@ -1,6 +1,9 @@
 <?php
-	require_once(__DIR__ . "/../../../include/auth.php");
-	forbid();
+	if (!defined("SERVER")) {
+		http_response_code(403);
+		die();
+	}
+
 
 //TODO: temporary data for now. take real data from database later
 $applications = [

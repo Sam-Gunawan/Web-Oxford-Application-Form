@@ -1,9 +1,9 @@
 <?php 
 	if (!defined("SERVER")) {
 		http_response_code(403);
-		die('Forbidden');
+		die();
 	}
-	
+
 	require_once(__DIR__ . "/config.php");
 	// require_once(__DIR__ . "/reply.php");
 	require_once(__DIR__ . "/router.php");
@@ -107,13 +107,6 @@
 		if (!CLEAN_URI && !isset($_SESSION["role"]) && ($role && $_SESSION["role"] != $role)) {
 			Logger::debug("LOGGING FROM " . __DIR__);
 			redirect(WEBSITE_ROOT . LOGIN_PAGE_URL);
-		}
-	}
-
-	function forbid() {
-		if (!defined("SERVER")) {
-			http_response_code(403);
-			die();
 		}
 	}
 ?>

@@ -1,8 +1,7 @@
 <?php
-	if (!defined("SERVER")) {
-		http_response_code(403);
-		die();
-	}
-
-
+	require_once(__DIR__ . "/../../../include/auth.php");
+	redirect_on_unauthorized("reviewer");
+	require_once(__DIR__ . "/../../../include/reply.php");
+	reply();
+	
 ?>

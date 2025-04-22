@@ -9,7 +9,8 @@
 	define("CLEAN_URI", false);
 	define("WEBSITE_ROOT", "/Web-Oxford-Application-Form");
 	define("PAGES_ROOT_URL", "/views");
-	define("FORM_PAGE_URL", PAGES_ROOT_URL . "/forms");
+	define("FORM_URL", PAGES_ROOT_URL . "/forms");
+	define("FORM_PAGE_URL", FORM_URL . "/full-form.php");
 	define("LAYOUTS_URL", PAGES_ROOT_URL . "/layouts");
 	define("DASHBOARD_PAGE_URL", LAYOUTS_URL . "/dashboard.php");
 	define("AUTH_PAGES_URL", LAYOUTS_URL . "/auth");

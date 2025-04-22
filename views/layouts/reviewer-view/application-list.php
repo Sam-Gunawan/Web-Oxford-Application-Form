@@ -89,7 +89,7 @@ $actions = [
             <div class="d-flex align-items-center gap-3 w-100 justify-content-end px-5 py-3 border-top border-white">
 				<?php 
 					foreach ($actions as $action => $attrs) {
-						echo "<a ". "href=/views/reply" . $attrs["query"] . " class=\"btn " . $attrs["classes"]. 
+						echo "<a ". "href=" . (CLEAN_URI ? "/views/reply" :( WEBSITE_ROOT . REPLY_PAGE_URL)) . $attrs["query"] . " class=\"btn " . $attrs["classes"]. 
 						"\" style=\"width: 8%; min-width: 16ch;\">" . $action . "</a>";
 					}
 				?>

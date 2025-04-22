@@ -35,9 +35,9 @@ document.getElementById("contactForm").addEventListener("submit", submitForm);
 function submitForm(e) {
   e.preventDefault();
 
-  var name = getElementVal("name");
-  var emailid = getElementVal("emailid");
-  var msgContent = getElementVal("msgContent");
+  let name = getElementVal("name");
+  let emailid = getElementVal("emailid");
+  let msgContent = getElementVal("msgContent");
 
   saveMessages(name, emailid, msgContent);
 
@@ -53,8 +53,12 @@ function submitForm(e) {
   document.getElementById("contactForm").reset();
 }
 
+function handleSubmit(e, p) {
+	
+}
+
 const saveMessages = (name, emailid, msgContent) => {
-  var newContactForm = contactFormDB.push();
+  let newContactForm = contactFormDB.push();
 
   newContactForm.set({
     name: name,

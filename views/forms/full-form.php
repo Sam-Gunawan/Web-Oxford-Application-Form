@@ -1,3 +1,11 @@
+<?php 
+	define("SERVER", 0);
+	session_start();
+	require_once(__DIR__ . "/../../include/auth.php");
+	redirect_on_unauthorized("student");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +22,7 @@
     <p class="text-center">Any errors resulting from failure to do so may delay your application.</p>
     <p class="text-center fw-bold">PLEASE WRITE IN BLOCK CAPITALS USING BLACK INK. COMPLETE ALL SECTIONS.</p>
     
-    <form action="/views/form-submit" method="POST">
+    <form action=<?php echo htmlspecialchars(CLEAN_URI ? "/views/form-submit" : "../layouts/student-view/form-submit.php"); ?> method="POST">
         <fieldset class="border p-4 form-section">
             <legend>SECTION A: ABOUT YOUR COURSE</legend>
             <p><i>This form may only be used to apply for one course. If you wish to apply for more than one course, you must submit a separate application form and pay the £75 application fee each time.</i></p>

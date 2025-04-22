@@ -3,8 +3,9 @@
 	// Include config file
 	require_once(__DIR__ . "/include/auth.php");
 	require_once(__DIR__ . "/include/router.php");
-	if (!CLEAN_URI) {
-		forbid();
+	if (!defined("SERVER")) {
+		http_response_code(403);
+		die();
 	}
 	session_start();
 

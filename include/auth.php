@@ -104,8 +104,8 @@
 
 	// TODO: Add other checks
 	function redirect_on_unauthorized(?string $role = null) {
-		if (!CLEAN_URI && !isset($_SESSION["role"]) && ($role && $_SESSION["role"] != $role)) {
-			Logger::debug("LOGGING FROM " . __DIR__);
+		if (!CLEAN_URI && !isset($_SESSION["role"]) && ($_SESSION["role"] != $role || !$role)) {
+			Logger::debug("LOGGING FROM " . __DIR__); 
 			redirect(WEBSITE_ROOT . LOGIN_PAGE_URL);
 		}
 	}

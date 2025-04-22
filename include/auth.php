@@ -102,6 +102,15 @@
 		Logger::debug("New session started.");
 	}
 
+	function handle_form_submit() {
+		$filters = [
+			
+		];
+		$fields = filter_input_array(INPUT_POST, $filters);
+
+		return $fields;
+	}
+
 	// TODO: Add other checks
 	function redirect_on_unauthorized(?string $role = null) {
 		if (!CLEAN_URI && !isset($_SESSION["role"]) && ($_SESSION["role"] != $role || !$role)) {

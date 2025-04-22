@@ -1,9 +1,8 @@
 <?php 
-	define("SERVER", 0);
-	session_start();
-	require_once(__DIR__ . "/../../include/auth.php");
-	redirect_on_unauthorized("student");
-
+	if (!defined("SERVER")) {
+		http_response_code(403);
+		die();
+	}
 ?>
 
 <!DOCTYPE html>

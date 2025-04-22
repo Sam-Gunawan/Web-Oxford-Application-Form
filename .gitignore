@@ -1,3 +1,4 @@
 /debug
 *.pdf
 /backend/auth/test.php
+/logs

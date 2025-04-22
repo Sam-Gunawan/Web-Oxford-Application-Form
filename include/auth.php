@@ -8,6 +8,45 @@
 	// require_once(__DIR__ . "/reply.php");
 	require_once(__DIR__ . "/router.php");
 
+	use Kreait\Firebase\Factory as FirebaseFactory;
+	use Dompdf\Frame\Factory;
+	use Symfony\Component\Cache\Adapter\FilesystemAdapter;
+	use Symfony\Component\Uid\Ulid;
+	use Symfony\Component\Cache\Psr16Cache;
+	use Monolog\Handler\StreamHandler as StreamHandler;
+	use Monolog\Logger;
+	use \Logger as LocalLogger;
+
+	$auth_cache_pool = new FilesystemAdapter(
+		"firebase_auth_cache", // Namespace for cache keys
+		3600,                     // Default lifetime (1 h)
+		sys_get_temp_dir() . "/firebase_auth_cache_files"
+	);
+	$verifier_cache_pool = new FilesystemAdapter(
+		"firebase_id_token_cache",
+		3600,
+		sys_get_temp_dir() . "/firebase_id_token_cache_files"
+	);
+	$verifier_cache = new Psr16Cache($verifier_cache_pool);
+	$logger = new Logger("http_firebase_logs");
+	$logger->pushHandler(new StreamHandler(WEBSITE_ROOT . "/logs", Monolog\Level::Emergency));
+	$factory = (new FirebaseFactory())
+		->withServiceAccount("/path/to/firebase_credentials.json")
+		->withDatabaseUri("https://my-project-default-rtdb.firebaseio.com")
+		->withAuthTokenCache($auth_cache_pool)
+		->withVerifierCache($verifier_cache)
+		->withHttpLogger($logger);
+
+	$auth = $factory->createAuth();
+	$realtime_database = $factory->createDatabase();
+	$cloud_messaging = $factory->createMessaging();
+	$remote_config = $factory->createRemoteConfig();
+	$cloud_storage = $factory->createStorage();
+	$firestore = $factory->createFirestore();
+
+	$uid = (string)(new Ulid());
+	$customToken = $auth->createCustomToken($uid);
+
 	function get_filtered_email_password() {
 		$filters = array(
 			"user-email" => array (
@@ -23,14 +62,14 @@
 		$email = $filtered_body["user-email"];
 		$password_hash = password_hash($filtered_body["user-password"], PASSWORD_ARGON2ID);
 
-		Logger::debug("E-mail: " . $email);
-		Logger::debug("Password Hash: " . $password_hash);
+		LocalLogger::debug("E-mail: " . $email);
+		LocalLogger::debug("Password Hash: " . $password_hash);
 
 		return ["email" => $email, "password_hash" => $password_hash];
 	}
 
 	function handle_signup_request(): bool {
-		Logger::debug("Handling signup.");
+		LocalLogger::debug("Handling signup.");
 
 		$filter_result = get_filtered_email_password();
 		$email = $filter_result["email"];	
@@ -51,7 +90,7 @@
 	}
 
 	function handle_login_request(): bool {
-		Logger::debug("Handling login.");	
+		LocalLogger::debug("Handling login.");	
 
 		$filter_result = get_filtered_email_password();
 		$email = $filter_result["email"];	
@@ -99,7 +138,7 @@
 		// This will generate a new session ID and cookie
 		session_start(); // Start the new session
 	
-		Logger::debug("New session started.");
+		LocalLogger::debug("New session started.");
 	}
 
 	function handle_form_submit() {
@@ -114,7 +153,7 @@
 	// TODO: Add other checks
 	function redirect_on_unauthorized(?string $role = null) {
 		if (!CLEAN_URI && !isset($_SESSION["role"]) && ($_SESSION["role"] != $role || !$role)) {
-			Logger::debug("LOGGING FROM " . __DIR__); 
+			LocalLogger::debug("LOGGING FROM " . __DIR__); 
 			redirect(WEBSITE_ROOT . LOGIN_PAGE_URL);
 		}
 	}

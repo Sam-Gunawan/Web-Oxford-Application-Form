@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+}
+
+.top-bar {
+    padding: 1em;
+    background-color: #002147;
+}
+
+#top-bar-logo {
+    width: 10rem;
+}
+
+#hero-bg {
+    height: 80vh;
+    width: 100vw;
+    object-fit: cover;
+    object-position: top;
+}

@@ -1,13 +1,14 @@
 {
     "require": {
+        "ext-grpc": "*",
+        "grpc/grpc": "1.57",
+        "kreait/firebase-php": "^7.18",
+        "google/cloud-firestore": "^1.50",
         "dompdf/dompdf": "^3.1",
-        "kreait/firebase-php": "^5.26",
         "symfony/cache": "^7.2",
         "psr/cache": "^3.0",
         "symfony/uid": "^7.2",
-        "kreait/firebase-tokens": "^1.17",
-        "lcobucci/jwt": "4.3.0",
-        "grpc/grpc": "1.57",
-        "google/protobuf": "^3.25"
+        "kreait/firebase-tokens": "^5.2",
+        "google/protobuf": "^4.30"
     }
 }

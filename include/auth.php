@@ -37,12 +37,11 @@
 		3600,                     // Default lifetime (1 h)
 		sys_get_temp_dir() . "/firebase_auth_cache_files"
 	);
-	$verifier_cache_pool = new FilesystemAdapter(
+	$verifier_cache = new FilesystemAdapter(
 		"firebase_id_token_cache",
 		3600,
 		sys_get_temp_dir() . "/firebase_id_token_cache_files"
 	);
-	$verifier_cache = new Psr16Cache($verifier_cache_pool);
 	$logger = new Logger("http_firebase_logs");
 	$logger->pushHandler(new StreamHandler(WEBSITE_ROOT . "/logs", Monolog\Level::Emergency));
 	$factory = (new FirebaseFactory())

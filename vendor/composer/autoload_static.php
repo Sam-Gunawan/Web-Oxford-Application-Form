@@ -4,19 +4,17 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitac2d307f4ed514763a8119f3523066bb
+class ComposerStaticInit28a0b30f787c2894d9a11c36b38327c2
 {
     public static $files = array (
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-        '27592325262b385204a263c2ab632d6e' => __DIR__ . '/..' . '/kreait/clock/src/Clock.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
+        '1232758e40b1d31bb295b6907de02c63' => __DIR__ . '/..' . '/beste/clock/src/Clock.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '06b8a576aaa70a8517a94b7ff6b37e5c' => __DIR__ . '/..' . '/beste/json/src/Json.php',
         'b067bc7112e384b61c701452d53a14a8' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/JmesPath.php',
-        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
-        '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
         '09f6b20656683369174dd6fa83b7e5fb' => __DIR__ . '/..' . '/symfony/polyfill-uuid/bootstrap.php',
     );
 
@@ -24,8 +22,6 @@ class ComposerStaticInitac2d307f4ed514763a8119f3523066bb
         'S' => 
         array (
             'Symfony\\Polyfill\\Uuid\\' => 22,
-            'Symfony\\Polyfill\\Php81\\' => 23,
-            'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Contracts\\Service\\' => 26,
             'Symfony\\Contracts\\Cache\\' => 24,
@@ -33,19 +29,16 @@ class ComposerStaticInitac2d307f4ed514763a8119f3523066bb
             'Symfony\\Component\\Uid\\' => 22,
             'Symfony\\Component\\Cache\\' => 24,
             'Svg\\' => 4,
-            'StellaMaris\\Clock\\' => 18,
             'Sabberworm\\CSS\\' => 15,
         ),
         'R' => 
         array (
             'Rize\\' => 5,
-            'Riverline\\MultiPartParser\\' => 26,
             'Ramsey\\Uuid\\' => 12,
             'Ramsey\\Collection\\' => 18,
         ),
         'P' => 
         array (
-            'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Http\\Client\\' => 16,
@@ -61,13 +54,11 @@ class ComposerStaticInitac2d307f4ed514763a8119f3523066bb
         'L' => 
         array (
             'Lcobucci\\JWT\\' => 13,
-            'Lcobucci\\Clock\\' => 15,
         ),
         'K' => 
         array (
             'Kreait\\Firebase\\JWT\\' => 20,
             'Kreait\\Firebase\\' => 16,
-            'Kreait\\Clock\\' => 13,
         ),
         'J' => 
         array (
@@ -86,6 +77,7 @@ class ComposerStaticInitac2d307f4ed514763a8119f3523066bb
             'Google\\LongRunning\\' => 19,
             'Google\\Iam\\' => 11,
             'Google\\Cloud\\Storage\\' => 21,
+            'Google\\Cloud\\Firestore\\' => 23,
             'Google\\Cloud\\Core\\' => 18,
             'Google\\Cloud\\' => 13,
             'Google\\Auth\\' => 12,
@@ -98,6 +90,7 @@ class ComposerStaticInitac2d307f4ed514763a8119f3523066bb
             'GPBMetadata\\Google\\Longrunning\\' => 31,
             'GPBMetadata\\Google\\Logging\\' => 27,
             'GPBMetadata\\Google\\Iam\\' => 23,
+            'GPBMetadata\\Google\\Firestore\\' => 29,
             'GPBMetadata\\Google\\Cloud\\' => 25,
             'GPBMetadata\\Google\\Api\\' => 23,
             'GPBMetadata\\ApiCore\\' => 20,
@@ -106,7 +99,6 @@ class ComposerStaticInitac2d307f4ed514763a8119f3523066bb
         array (
             'FontLib\\' => 8,
             'Firebase\\JWT\\' => 13,
-            'Firebase\\Auth\\Token\\' => 20,
             'Fig\\Http\\Message\\' => 17,
         ),
         'D' => 
@@ -116,6 +108,8 @@ class ComposerStaticInitac2d307f4ed514763a8119f3523066bb
         'B' => 
         array (
             'Brick\\Math\\' => 11,
+            'Beste\\Clock\\' => 12,
+            'Beste\\Cache\\' => 12,
         ),
     );
 
@@ -123,14 +117,6 @@ class ComposerStaticInitac2d307f4ed514763a8119f3523066bb
         'Symfony\\Polyfill\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-uuid',
-        ),
-        'Symfony\\Polyfill\\Php81\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-php81',
-        ),
-        'Symfony\\Polyfill\\Php80\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
@@ -160,10 +146,6 @@ class ComposerStaticInitac2d307f4ed514763a8119f3523066bb
         array (
             0 => __DIR__ . '/..' . '/dompdf/php-svg-lib/src/Svg',
         ),
-        'StellaMaris\\Clock\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/stella-maris/clock/src',
-        ),
         'Sabberworm\\CSS\\' => 
         array (
             0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/src',
@@ -172,10 +154,6 @@ class ComposerStaticInitac2d307f4ed514763a8119f3523066bb
         array (
             0 => __DIR__ . '/..' . '/rize/uri-template/src/Rize',
         ),
-        'Riverline\\MultiPartParser\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/riverline/multipart-parser/src',
-        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -183,10 +161,6 @@ class ComposerStaticInitac2d307f4ed514763a8119f3523066bb
         'Ramsey\\Collection\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/collection/src',
-        ),
-        'Psr\\SimpleCache\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
         ),
         'Psr\\Log\\' => 
         array (
@@ -225,10 +199,6 @@ class ComposerStaticInitac2d307f4ed514763a8119f3523066bb
         array (
             0 => __DIR__ . '/..' . '/lcobucci/jwt/src',
         ),
-        'Lcobucci\\Clock\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/lcobucci/clock/src',
-        ),
         'Kreait\\Firebase\\JWT\\' => 
         array (
             0 => __DIR__ . '/..' . '/kreait/firebase-tokens/src/JWT',
@@ -236,10 +206,6 @@ class ComposerStaticInitac2d307f4ed514763a8119f3523066bb
         'Kreait\\Firebase\\' => 
         array (
             0 => __DIR__ . '/..' . '/kreait/firebase-php/src/Firebase',
-        ),
-        'Kreait\\Clock\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/kreait/clock/src/Clock',
         ),
         'JmesPath\\' => 
         array (
@@ -289,6 +255,10 @@ class ComposerStaticInitac2d307f4ed514763a8119f3523066bb
         array (
             0 => __DIR__ . '/..' . '/google/cloud-storage/src',
         ),
+        'Google\\Cloud\\Firestore\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/google/cloud-firestore/src',
+        ),
         'Google\\Cloud\\Core\\' => 
         array (
             0 => __DIR__ . '/..' . '/google/cloud-core/src',
@@ -337,6 +307,10 @@ class ComposerStaticInitac2d307f4ed514763a8119f3523066bb
         array (
             0 => __DIR__ . '/..' . '/google/common-protos/metadata/Iam',
         ),
+        'GPBMetadata\\Google\\Firestore\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/google/cloud-firestore/metadata',
+        ),
         'GPBMetadata\\Google\\Cloud\\' => 
         array (
             0 => __DIR__ . '/..' . '/google/common-protos/metadata/Cloud',
@@ -357,10 +331,6 @@ class ComposerStaticInitac2d307f4ed514763a8119f3523066bb
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
         ),
-        'Firebase\\Auth\\Token\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/kreait/firebase-tokens/src/Firebase/Auth/Token',
-        ),
         'Fig\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/fig/http-message-util/src',
@@ -373,11 +343,17 @@ class ComposerStaticInitac2d307f4ed514763a8119f3523066bb
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
         ),
+        'Beste\\Clock\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/beste/clock/src/Clock',
+        ),
+        'Beste\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/beste/in-memory-cache/src',
+        ),
     );
 
     public static $classMap = array (
-        'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
-        'CURLStringFile' => __DIR__ . '/..' . '/symfony/polyfill-php81/Resources/stubs/CURLStringFile.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Dompdf\\Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
         'GPBMetadata\\GrpcGcp' => __DIR__ . '/..' . '/google/grpc-gcp/src/generated/GPBMetadata/GrpcGcp.php',
@@ -386,20 +362,15 @@ class ComposerStaticInitac2d307f4ed514763a8119f3523066bb
         'Grpc\\Gcp\\ApiConfig' => __DIR__ . '/..' . '/google/grpc-gcp/src/generated/Grpc/Gcp/ApiConfig.php',
         'Grpc\\Gcp\\ChannelPoolConfig' => __DIR__ . '/..' . '/google/grpc-gcp/src/generated/Grpc/Gcp/ChannelPoolConfig.php',
         'Grpc\\Gcp\\MethodConfig' => __DIR__ . '/..' . '/google/grpc-gcp/src/generated/Grpc/Gcp/MethodConfig.php',
-        'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
-        'ReturnTypeWillChange' => __DIR__ . '/..' . '/symfony/polyfill-php81/Resources/stubs/ReturnTypeWillChange.php',
-        'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
-        'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
-        'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         '©' => __DIR__ . '/..' . '/symfony/cache/Traits/ValueWrapper.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitac2d307f4ed514763a8119f3523066bb::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitac2d307f4ed514763a8119f3523066bb::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitac2d307f4ed514763a8119f3523066bb::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit28a0b30f787c2894d9a11c36b38327c2::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit28a0b30f787c2894d9a11c36b38327c2::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit28a0b30f787c2894d9a11c36b38327c2::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -9,12 +9,8 @@
 	require_once(__DIR__ . "/router.php");
 	session_start();
 
-	use Firebase\Auth\Token\Exception\ExpiredToken;
-	use Firebase\Auth\Token\Exception\InvalidSignature;
-	use Firebase\Auth\Token\Exception\InvalidToken;
-	use Firebase\Auth\Token\Exception\IssuedInTheFuture;
-	use Firebase\Auth\Token\Exception\UnknownKey;
 	use Kreait\Firebase\Auth\SignIn\FailedToSignIn;
+	use Kreait\Firebase\Exception\Auth\FailedToVerifyToken;
 	use Kreait\Firebase\Exception\Auth\RevokedIdToken;
 	use Kreait\Firebase\Exception\AuthException;
 	use Kreait\Firebase\Exception\FirebaseException;
@@ -45,11 +41,12 @@
 	$logger = new Logger("http_firebase_logs");
 	$logger->pushHandler(new StreamHandler(WEBSITE_ROOT . "/logs", Monolog\Level::Emergency));
 	$factory = (new FirebaseFactory())
-		->withServiceAccount($service_acc)
-		->withDatabaseUri($rdb_uri)
-		->withAuthTokenCache($auth_cache_pool)
-		->withVerifierCache($verifier_cache)
-		->withHttpLogger($logger);
+	->withServiceAccount($service_acc)
+	->withDatabaseUri($rdb_uri)
+	->withAuthTokenCache($auth_cache_pool)
+	->withVerifierCache($verifier_cache)
+	->withHttpLogger($logger);
+	
 	
 	$auth = $factory->createAuth();
 	$realtime_database = $factory->createDatabase();
@@ -148,6 +145,11 @@
 			echo "FailedToSignIn: " . $fsi->getMessage();
 			LocalLogger::error("FailedToSignIn: " . $fsi->getMessage());
 			return false;
+		} catch (FailedToVerifyToken 
+		| RevokedIdToken $te) {
+			echo $te::class . ": " . $te->getMessage();
+			LocalLogger::error($te::class . ": " . $te->getMessage());
+			return false;
 		}
 
 		return $id_verified;
@@ -194,16 +196,13 @@
 	function redirect_on_unauthorized(?string $role = null) {
 		global $auth;
 		try {
-			if (!CLEAN_URI && !isset($_SESSION["role"]) && ($_SESSION["role"] != $role || !$role)) {
+			if (!CLEAN_URI && !isset($_SESSION["role"]) && (($_SESSION["role"] != $role) || !$role)) {
 				LocalLogger::warn("Unauthorized access of " . __FILE__); 
+				$auth->verifyIdToken($_COOKIE["user_session"]);
 				redirect(WEBSITE_ROOT . LOGIN_PAGE_URL);
 			}
 		} catch (InvalidArgumentException 
-		| InvalidToken 
-		| InvalidSignature 
-		| ExpiredToken 
-		| IssuedInTheFuture 
-		| UnknownKey 
+		| FailedToVerifyToken 
 		| RevokedIdToken $e) {
 			if (session_status() === PHP_SESSION_ACTIVE) {
 				session_destroy();

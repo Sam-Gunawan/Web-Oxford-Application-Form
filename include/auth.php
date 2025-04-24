@@ -5,7 +5,7 @@
 	}
 
 	require_once(__DIR__ . "/config.php");
-	require_once(WEBSITE_ROOT . "/vendor/autoload.php");
+	require_once(__DIR__ . "/../vendor/autoload.php");
 	require_once(__DIR__ . "/router.php");
 	session_start();
 
@@ -26,6 +26,12 @@
 	use Monolog\Logger;
 	use \Logger as LocalLogger;
 
+	$env = parse_ini_file(__DIR__ . "/../secret.env");
+	$rdb_uri = $env["REALTIME_DATABASE_URI"];
+	$service_acc = $env["SERVICE_ACCOUNT"];
+	LocalLogger::debug($rdb_uri);
+	LocalLogger::debug($service_acc);
+
 	$auth_cache_pool = new FilesystemAdapter(
 		"firebase_auth_cache", // Namespace for cache keys
 		3600,                     // Default lifetime (1 h)
@@ -40,8 +46,8 @@
 	$logger = new Logger("http_firebase_logs");
 	$logger->pushHandler(new StreamHandler(WEBSITE_ROOT . "/logs", Monolog\Level::Emergency));
 	$factory = (new FirebaseFactory())
-		->withServiceAccount("/path/to/firebase_credentials.json")
-		->withDatabaseUri("https://my-project-default-rtdb.firebaseio.com")
+		->withServiceAccount($service_acc)
+		->withDatabaseUri($rdb_uri)
 		->withAuthTokenCache($auth_cache_pool)
 		->withVerifierCache($verifier_cache)
 		->withHttpLogger($logger);

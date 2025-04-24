@@ -4,18 +4,18 @@
 	require_once(__DIR__ . "/../../../include/config.php");
 	if (!CLEAN_URI) {
 		require_once(__DIR__ . "/../../../include/auth.php");
-		if ($_SERVER["REQUEST_METHOD"] === "POST") {
-			$signup_result = handle_signup_request();
-			if ($signup_result === true) { 
-				Logger::info("Signup successful for user: " . ($_SESSION["user-email"] ?? "N/A"));
-				header("Location: " . WEBSITE_ROOT . DASHBOARD_PAGE_URL, true, 303);
-				exit(); 
+		// if ($_SERVER["REQUEST_METHOD"] === "POST") {
+		// 	$signup_result = handle_signup_request();
+		// 	if ($signup_result === true) { 
+		// 		Logger::info("Signup successful for user: " . ($_SESSION["user-email"] ?? "N/A"));
+		// 		header("Location: " . WEBSITE_ROOT . DASHBOARD_PAGE_URL, true, 303);
+		// 		exit(); 
 				
-			} else {
-				Logger::warn("Signup failed for URL: " . $request_uri . ". Error: " . ($signup_result ?: "Unknown error"));
-				$_SESSION["signup_error_message"] = ($signup_result ?: "Signup failed. Please try again.");
-			}
-		}
+		// 	} else {
+		// 		Logger::warn("Signup failed for URL: " . $request_uri . ". Error: " . ($signup_result ?: "Unknown error"));
+		// 		$_SESSION["signup_error_message"] = ($signup_result ?: "Signup failed. Please try again.");
+		// 	}
+		// }
 	}
 ?>
 
@@ -36,7 +36,8 @@
 			<button type="submit">Submit</button>
 			<button type="reset">Reset</button>
 		</form>
-		<p>Already have an account? <a href="<?php echo htmlspecialchars(CLEAN_URI ? "/views/login" : "/Web-Oxford-Application-Form/views/layouts/auth/login.php"); ?>">Login</a></p>
+		<p>Already have an account? <a href="<?php echo htmlspecialchars(CLEAN_URI ? "/views/login" : WEBSITE_ROOT . LOGIN_PAGE_URL); ?>">Login</a></p>
+		<p>Or <button id="google-login">Continue with Google</button></p>
 	</body>
 	<script type="module">
 		import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
@@ -59,7 +60,7 @@
 
 			fetch (<?php echo WEBSITE_ROOT . "/api/google-login.php";?>, {
 				method: "POST",
-				headers: { "Content-Type": "application/json" },
+				headers: { "Content-Type": "application/json; charset=UTF-8" },
 				body: JSON.stringify({ id_token: idToken })
 			}).then(resp => {
 				// Check if the HTTP status code is OK (2xx)

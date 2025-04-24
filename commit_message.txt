@@ -1,0 +1,9 @@
+1. Go to gRPC github repo latest stable release at https://github.com/grpc/grpc/releases
+2. Choose the latest stable release (1.72.0 at the time of writing)
+3. Download and extract the zip file in the project root directory, then move the inner folder into the outer folder. 
+4. Rename the outer folder to grpc if you haven't already
+5. Add these 2 lines in php.ini file of the chosen php runtime:
+```
+extension=php_grpc.dll // ext-grpc
+extension=php_protobuf.dll // protobuf
+```

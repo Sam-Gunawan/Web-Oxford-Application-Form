@@ -6,6 +6,8 @@
         "psr/cache": "^3.0",
         "symfony/uid": "^7.2",
         "kreait/firebase-tokens": "^1.17",
-        "lcobucci/jwt": "4.3.0"
+        "lcobucci/jwt": "4.3.0",
+        "grpc/grpc": "1.57",
+        "google/protobuf": "^3.25"
     }
 }

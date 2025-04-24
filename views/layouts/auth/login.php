@@ -4,17 +4,17 @@
 	require_once(__DIR__ . "/../../../include/config.php");
 	if (!CLEAN_URI) {
 		require_once(__DIR__ . "/../../../include/auth.php");
-		if ($_SERVER["REQUEST_METHOD"] === "POST") {
-			$login_result = handle_login_request();
-			if ($login_result === true) { 
-				Logger::info("Login successful for user: " . ($_SESSION["user-email"] ?? "N/A"));
-				header("Location: " . WEBSITE_ROOT . DASHBOARD_PAGE_URL, true, 303);
-				exit(); 
-			} else {
-				Logger::warn("Login failed for URL: " . $request_uri . ". Error: " . ($login_result ?: "Unknown error"));
-				$_SESSION["login_error_message"] = ($login_result ?: "Login failed. Please try again.");
-			}
-		}
+	// 	if ($_SERVER["REQUEST_METHOD"] === "POST") {
+	// 		$login_result = handle_login_request();
+	// 		if ($login_result === true) { 
+	// 			Logger::info("Login successful for user: " . ($_SESSION["user-email"] ?? "N/A"));
+	// 			header("Location: " . WEBSITE_ROOT . DASHBOARD_PAGE_URL, true, 303);
+	// 			exit(); 
+	// 		} else {
+	// 			Logger::warn("Login failed for URL: " . $request_uri . ". Error: " . ($login_result ?: "Unknown error"));
+	// 			$_SESSION["login_error_message"] = ($login_result ?: "Login failed. Please try again.");
+	// 		}
+	// 	}
 	}
 ?>
 
@@ -35,7 +35,7 @@
 			<button type="submit">Submit</button>
 			<button type="reset">Reset</button>
 		</form>
-		<p>Don't have an account? <a href="<?php echo htmlspecialchars(CLEAN_URI ? "/views/signup" : "/Web-Oxford-Application-Form/views/layouts/auth/signup.php"); ?>">Sign Up</a></p>
+		<p>Don't have an account? <a href="<?php echo htmlspecialchars(CLEAN_URI ? "/views/signup" : WEBSITE_ROOT . SIGNUP_PAGE_URL); ?>">Sign Up</a></p>
 		<p>Or <button id="google-login">Continue with Google</button></p>
 	</body>
 	<script type="module">
@@ -59,7 +59,7 @@
 
 			fetch (<?php echo WEBSITE_ROOT . "/api/google-login.php";?>, {
 				method: "POST",
-				headers: { "Content-Type": "application/json" },
+				headers: { "Content-Type": "application/json; charset=UTF-8" },
 				body: JSON.stringify({ id_token: idToken })
 			}).then(resp => {
 				// Check if the HTTP status code is OK (2xx)

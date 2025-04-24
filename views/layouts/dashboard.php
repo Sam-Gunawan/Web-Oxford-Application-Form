@@ -4,11 +4,7 @@ define("SERVER", 0);
 session_start();
 require_once(__DIR__ . "/../../include/auth.php");
 redirect_on_unauthorized(false);
-$user = [
-  "id" => 69,
-  "name" => "Cool Guy",
-  "role" => "admin"
-];
+// $user = $auth->getUser($_SESSION[""]);
 
 ?>
 

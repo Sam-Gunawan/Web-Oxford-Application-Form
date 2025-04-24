@@ -38,4 +38,48 @@
 		</form>
 		<p>Already have an account? <a href="<?php echo htmlspecialchars(CLEAN_URI ? "/views/login" : "/Web-Oxford-Application-Form/views/layouts/auth/login.php"); ?>">Login</a></p>
 	</body>
+	<script type="module">
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+		import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+		const app = initializeApp({
+			apiKey: "AIzaSyB1ZErQBrQ3wZrX4seBSKFhQvlAzPiHk1E",
+			authDomain: "oxfordweb-local.firebaseapp.com",
+			projectId: "oxfordweb-local",
+			storageBucket: "oxfordweb-local.firebasestorage.app",
+			messagingSenderId: "502474430288",
+			appId: "1:502474430288:web:6e9dcd638677f0adb6be55",
+			measurementId: "G-YV7FL9Q735"
+		});
+		const auth = getAuth(app);
+		const provider = new GoogleAuthProvider();
+		document.getElementById("google-login").onclick = async function() {
+			const { user } = await signInWithPopup(auth, provider);
+			const idToken = await user.getIdToken();
+
+			fetch (<?php echo WEBSITE_ROOT . "/api/google-login.php";?>, {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ id_token: idToken })
+			}).then(resp => {
+				// Check if the HTTP status code is OK (2xx)
+				if (!resp.ok) {
+					// Server returned an error status code (4xx, 5xx)
+					// Try to parse JSON error body, but handle cases where it might not be JSON
+					return resp.json().catch(() => {    
+						// If parsing JSON fails, create a generic error object
+						throw new Error(`HTTP error! Status: ${resp.status}`);
+					}).then(errorData => {
+						// If JSON parsing succeeded, throw an error with the server's message
+						throw new Error(errorData.message || `HTTP error! Status: ${resp.status}`);
+					});
+				}
+				return response.json();
+			}).catch(err => {
+				alert(err);
+			});
+
+			location.href = <?php echo WEBSITE_ROOT . "/views/layouts/dashboard.php";?>
+		}
+	</script>
 </html>

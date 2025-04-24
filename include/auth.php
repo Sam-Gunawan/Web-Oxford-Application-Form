@@ -5,13 +5,22 @@
 	}
 
 	require_once(__DIR__ . "/config.php");
-	// require_once(__DIR__ . "/reply.php");
+	require_once(WEBSITE_ROOT . "/vendor/autoload.php");
 	require_once(__DIR__ . "/router.php");
+	session_start();
 
+	use Firebase\Auth\Token\Exception\ExpiredToken;
+	use Firebase\Auth\Token\Exception\InvalidSignature;
+	use Firebase\Auth\Token\Exception\InvalidToken;
+	use Firebase\Auth\Token\Exception\IssuedInTheFuture;
+	use Firebase\Auth\Token\Exception\UnknownKey;
+	use Kreait\Firebase\Auth\SignIn\FailedToSignIn;
+	use Kreait\Firebase\Exception\Auth\RevokedIdToken;
+	use Kreait\Firebase\Exception\AuthException;
+	use Kreait\Firebase\Exception\FirebaseException;
+	use Kreait\Firebase\Exception\InvalidArgumentException;
 	use Kreait\Firebase\Factory as FirebaseFactory;
-	use Dompdf\Frame\Factory;
 	use Symfony\Component\Cache\Adapter\FilesystemAdapter;
-	use Symfony\Component\Uid\Ulid;
 	use Symfony\Component\Cache\Psr16Cache;
 	use Monolog\Handler\StreamHandler as StreamHandler;
 	use Monolog\Logger;
@@ -36,16 +45,13 @@
 		->withAuthTokenCache($auth_cache_pool)
 		->withVerifierCache($verifier_cache)
 		->withHttpLogger($logger);
-
+	
 	$auth = $factory->createAuth();
 	$realtime_database = $factory->createDatabase();
 	$cloud_messaging = $factory->createMessaging();
 	$remote_config = $factory->createRemoteConfig();
 	$cloud_storage = $factory->createStorage();
 	$firestore = $factory->createFirestore();
-
-	$uid = (string)(new Ulid());
-	$customToken = $auth->createCustomToken($uid);
 
 	function get_filtered_email_password() {
 		$filters = array(
@@ -60,56 +66,86 @@
 		);
 		$filtered_body = filter_input_array(INPUT_POST, $filters, false);
 		$email = $filtered_body["user-email"];
-		$password_hash = password_hash($filtered_body["user-password"], PASSWORD_ARGON2ID);
+		$password = $filtered_body["user-password"];
 
 		LocalLogger::debug("E-mail: " . $email);
-		LocalLogger::debug("Password Hash: " . $password_hash);
+		LocalLogger::debug("Password: " . $password);
 
-		return ["email" => $email, "password_hash" => $password_hash];
+		return ["email" => $email, "password" => $password];
+	}
+	function verify_id() {
+		global $auth;
+
+		$verification_result = $auth->verifyIdToken($_SESSION["id_token"]);
+		if (time() - $verification_result->claims()->get("auth_time") > 300) {
+			return false;
+		}
+		$uid = $verification_result->claims()->get("sub");
+		$_SESSION["role"] = $verification_result->claims()->get("role");
+		
+		$cookie = $auth->createSessionCookie($_SESSION["id_token"], new DateInterval("P1D"));
+		return setcookie("user_session", $cookie, [
+			"expires" => time() * 3600 * 24,
+			"domain" => "oxfordweb.local",
+			"secure" => true,
+			"httponly" => true,
+			"samesite" => "Lax"
+		]);
 	}
 
 	function handle_signup_request(): bool {
 		LocalLogger::debug("Handling signup.");
-
+		global $auth;
 		$filter_result = get_filtered_email_password();
-		$email = $filter_result["email"];	
-		$password_hash = $filter_result["password_hash"];	
-
-		if ($email === false || $email === null) {
-			$_SESSION["login_error_message"] = "Invalid email";
+		$id_verified = false;
+		try {
+			$email = $filter_result["email"];	
+			$password = $filter_result["password"];
+			$user = $auth->createUser([
+				"email" => $email, 
+				"password" => $password,
+				"emailVerified" => false,
+				"displayName" => substr($email, 0, strrpos($email, '@'))
+			]);
+			$auth->setCustomUserClaims($user->uid, ["role" => "student"]);
+			$signed_in = $auth->signInWithEmailAndPassword($email, $password);
+			$_SESSION["id_token"] = $signed_in->idToken();
+			$id_verified = verify_id();
+		} catch (AuthException $ae) {
+			echo "AuthException: " . $ae->getMessage();
+			LocalLogger::error("AuthException: " . $ae->getMessage());
 			return false;
-		} 
-
-		if ($password_hash === false || $password_hash === null) {
-			$_SESSION["login_error_message"] = "Invalid password";
+		} catch (FailedToSignIn $fsi) {
+			echo "FailedToSignIn: " . $fsi->getMessage();
+			LocalLogger::error("FailedToSignIn: " . $fsi->getMessage());
+			return false;
+		} catch (FirebaseException $fe) {
+			echo "FirebaseException: " . $fe->getMessage();
+			LocalLogger::error("FirebaseException: " . $fe->getMessage());
 			return false;
 		}
-
-		$_SESSION["role"] = "student";
-		return true;
+		return $id_verified;
 	}
 
 	function handle_login_request(): bool {
 		LocalLogger::debug("Handling login.");	
-
+		global $auth;
+		
 		$filter_result = get_filtered_email_password();
 		$email = $filter_result["email"];	
-		$password_hash = $filter_result["password_hash"];
-
-		// TODO: Add more checks (email not found, wrong password)
-		if ($email === false || $email === null) {
-			$_SESSION["login_error_message"] = "Invalid email";
+		$password = $filter_result["password"];
+		$id_verified = false;
+		try {
+			$signIn = $auth->signInWithEmailAndPassword($email, $password);
+			$_SESSION["id_token"] = $signIn->idToken();
+			$id_verified = verify_id();
+		} catch (FailedToSignIn $fsi) {
+			echo "FailedToSignIn: " . $fsi->getMessage();
+			LocalLogger::error("FailedToSignIn: " . $fsi->getMessage());
 			return false;
-		} 
+		}
 
-		if ($password_hash === false || $password_hash === null) {
-			$_SESSION["login_error_message"] = "Invalid password";
-			return false;
-		}		
-
-		// TODO: Determine role based on account
-		$_SESSION["role"] = "reviewer";
-		return true;
+		return $id_verified;
 	}
 
 	function debug_reset_session() {	
@@ -149,11 +185,26 @@
 
 		return $fields;
 	}
-
-	// TODO: Add other checks
+	
 	function redirect_on_unauthorized(?string $role = null) {
-		if (!CLEAN_URI && !isset($_SESSION["role"]) && ($_SESSION["role"] != $role || !$role)) {
-			LocalLogger::debug("LOGGING FROM " . __DIR__); 
+		global $auth;
+		try {
+			if (!CLEAN_URI && !isset($_SESSION["role"]) && ($_SESSION["role"] != $role || !$role)) {
+				LocalLogger::warn("Unauthorized access of " . __FILE__); 
+				redirect(WEBSITE_ROOT . LOGIN_PAGE_URL);
+			}
+		} catch (InvalidArgumentException 
+		| InvalidToken 
+		| InvalidSignature 
+		| ExpiredToken 
+		| IssuedInTheFuture 
+		| UnknownKey 
+		| RevokedIdToken $e) {
+			if (session_status() === PHP_SESSION_ACTIVE) {
+				session_destroy();
+			}
+			LocalLogger::error(get_class($e) . ": " . $e->getMessage());
+			LocalLogger::warn("Unauthorized access of " . __FILE__); 
 			redirect(WEBSITE_ROOT . LOGIN_PAGE_URL);
 		}
 	}

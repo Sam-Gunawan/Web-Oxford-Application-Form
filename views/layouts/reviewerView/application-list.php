@@ -66,9 +66,9 @@ $applications = [
                 </div>
             </div>
             <div class="d-flex align-items-center gap-3 w-100 justify-content-end px-5 py-3 border-top border-white">
-                <button class="btn bg-primary text-white" style="width: 8%;">Message</button>
-                <button class="btn bg-primary text-white" style="width: 8%;">Approve</button>
-                <button class="btn bg-error text-white" style="width: 8%;">Reject</button>
+                <button class="btn bg-primary text-white" style="min-width: 9%;">Message</button>
+                <button class="btn bg-primary text-white" style="min-width: 8%;">Approve</button>
+                <button class="btn bg-error text-white" style="min-width: 8%;">Reject</button>
             </div>
         </div>
 

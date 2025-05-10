@@ -3,7 +3,7 @@
 $user = [
   'id' => 69,
   'name' => 'Cool Guy',
-  'role' => 'reviewer'
+  'role' => 'admin'
 ];
 
 ?>

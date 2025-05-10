@@ -55,10 +55,22 @@ $users = [
 
 ?>
 
+<div class="mb-3 d-flex">
+  <div class="d-flex align-items-center gap-2">
+    <label for="statusFilter" class="form-label m-0 fs-5 fw-bold">Show:</label>
+    <select id="statusFilter" class="form-select bg-white" onchange="filterUser(this.value)">
+        <option value="all">All</option>
+        <option value="reviewer">Reviewer</option>
+        <option value="student">Student</option>
+        <option value="admin">Admin</option>
+    </select>
+  </div>
+</div>
+
 <?php foreach ($users as $user): ?>
     <?php $collapseId = "users" . $user['id']; ?>
     <!-- the card -->
-    <div class="card mb-2 shadow-sm rounded">
+    <div class="card mb-2 shadow-sm rounded user-card" user-role="<?= $user['role'] ?>">
         <div class="content-item  bg-white p-4 d-flex align-items-center justify-content-between w-100">
             <div class="d-flex align-items-center gap-3">
                 <i class="fa-regular fa-circle-user fa-2x"></i>
@@ -103,3 +115,20 @@ $users = [
 
     </div>
 <?php endforeach; ?>
+
+<script>
+    function filterUser(role) {
+
+        var cards = document.querySelectorAll('.user-card');
+
+        cards.forEach(function(card) {
+            var cardStatus = card.getAttribute('user-role');
+
+            if (status === 'all' || cardStatus === role) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>

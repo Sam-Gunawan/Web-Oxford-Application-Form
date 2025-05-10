@@ -14,7 +14,7 @@ $applications = [
       'name' => 'Jane Smith',
       'date' => '2025-04-11',
       'programme' => 'Master of Computing',
-      'status' => 'waitlist',
+      'status' => 'approved',
       'reviewers' => ['Charlie Puth']
   ],
   [
@@ -22,18 +22,35 @@ $applications = [
       'name' => 'Bob Builder',
       'date' => '2025-04-12',
       'programme' => 'Doctor of Philosophy',
-      'status' => 'waitlist',
+      'status' => 'rejected',
       'reviewers' => ['Dana White', 'Evan Aditya', 'Fiona Shrek']
   ]
 ];
 
 ?>
 
+<!-- Buttons to filter applications based on status -->
+<!-- Dropdown to filter applications by status -->
+<div class="mb-3 d-flex">
+  <div class="d-flex align-items-center gap-2">
+    <label for="statusFilter" class="form-label m-0 fs-5 fw-bold">Show:</label>
+    <select id="statusFilter" class="form-select bg-white" onchange="filterApplications(this.value)">
+        <option value="all">All</option>
+        <option value="waitlist">Waitlist</option>
+        <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
+    </select>
+  </div>
+</div>
+
+
+
+<!-- Application List -->
 <?php foreach ($applications as $app): ?>
     <?php $collapseId = "application" . $app['id']; ?>
     <!-- the card -->
-    <div class="card mb-2 shadow-sm rounded">
-        <div class="content-item  bg-white p-4 d-flex align-items-center justify-content-between w-100">
+    <div class="card mb-2 shadow-sm rounded application-card" data-status="<?= $app['status'] ?>">
+        <div class="content-item bg-white p-4 d-flex align-items-center justify-content-between w-100">
             <div class="d-flex align-items-center gap-3">
                 <i class="fa-regular fa-circle-user fa-2x"></i>
                 <span><?= htmlspecialchars($app['name']) ?></span>
@@ -45,7 +62,6 @@ $applications = [
                 </button>
             </div>
         </div>
-
 
         <!-- collapsable dropdown section -->
         <div class="collapse bg-secondary" id="<?= $collapseId ?>">
@@ -71,6 +87,22 @@ $applications = [
                 <button class="btn bg-error text-white" style="width: 8%;">Delete</button>
             </div>
         </div>
-
     </div>
 <?php endforeach; ?>
+
+<script>
+    function filterApplications(status) {
+
+        var cards = document.querySelectorAll('.application-card');
+
+        cards.forEach(function(card) {
+            var cardStatus = card.getAttribute('data-status');
+
+            if (status === 'all' || cardStatus === status) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>

@@ -3,7 +3,7 @@
 $user = [
   'id' => 69,
   'name' => 'Cool Guy',
-  'role' => 'admin'
+  'role' => 'student'
 ];
 
 ?>
@@ -37,8 +37,8 @@ $user = [
             <?php elseif ($user['role'] === 'reviewer'): ?>
                 <a class="nav-item border-bottom p-2 text-decoration-none">Application List</a>
             <?php elseif ($user['role'] === 'student'): ?>
-                <a class="nav-item border-bottom p-2 text-decoration-none">Application List</a>
-                <a class="nav-item border-bottom p-2 text-decoration-none">Application Draft</a>
+                <a  href="?page=applications" class="nav-item border-bottom p-2 text-decoration-none">Application List</a>
+                <a  href="?page=applicationsDraft"class="nav-item border-bottom p-2 text-decoration-none">Application Draft</a>
             <?php endif; ?>
         </div>
     </div>
@@ -78,7 +78,18 @@ $user = [
                     break;
 
                 case 'student':
-                    include('studentView/application-list.php');
+                    $page = $_GET['page'] ?? 'applications';
+                    switch ($page) {
+                        case 'applications':
+                            include('studentView/application-list.php');
+                            break;
+                        case 'applicationsDraft':
+                            include('studentView/application-draft.php');
+                            break;
+                        default:
+                            echo "<div class='p-4'>page not found.</div>";
+                    }
+                    // include('studentView/application-list.php');
                     break;
 
                 default:

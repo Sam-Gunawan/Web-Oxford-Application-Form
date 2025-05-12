@@ -1,0 +1,8 @@
+{
+    "require": {
+        "kreait/firebase-php": "^7.18",
+        "dompdf/dompdf": "^3.1",
+        "google/cloud-firestore": "^1.50",
+        "symfony/cache": "^7.2"
+    }
+}

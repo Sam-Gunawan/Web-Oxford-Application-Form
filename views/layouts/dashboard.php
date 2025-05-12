@@ -10,6 +10,10 @@ $user = [
   'role' => 'admin'
 ];
 
+// Set default session role for debugging
+if (!isset($_SESSION["role"])) {
+    $_SESSION["role"] = 'admin'; // Change 'admin' to 'reviewer' or 'student' as needed
+}
 ?>
 
 <!DOCTYPE html>

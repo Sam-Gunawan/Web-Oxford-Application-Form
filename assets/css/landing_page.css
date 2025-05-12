@@ -2,10 +2,37 @@
     margin: 0;
 }
 
+.top-bar, .top-nav, .top-nav.container {
+    display: flex;
+}
+
 .top-bar {
+    /* flex: 1 1 1; THIS IS WRONG!!! FIX LATER */
     padding: 1em;
     background-color: #002147;
 }
+
+.top-nav {
+    flex: 1;
+    justify-content: center;
+}
+
+.top-nav-container {
+    display: flex;
+    color: white;
+    list-style: none;
+}
+
+.top-nav-container span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-content {
+    display: none;
+}
+
 
 #top-bar-logo {
     width: 10rem;

@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Login Page</title>
+		<title>Signup Page</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 	</head>
 	<body class="d-flex align-items-center justify-content-center h-100" style="width: clamp(400px, 100%, 1600px);">
-		<form id="login-form" style="width: clamp(400px, 50%, 800px);" method="post">
+		<form id="signup-form" style="width: clamp(400px, 50%, 800px);" method="post">
 			<div class="form-group">
 				<label class="form-label" for="user-email">E-mail:</label>
 				<input class="form-control" type="email" name="user-email" id="user-email" required>
@@ -28,22 +28,21 @@
 		</form>
 	</body>
 	<script type="module">
-		import { auth, GoogleAuthProvider, signInWithEmailAndPassword } from "../../firebase.js";
-		const form = document.getElementById("login-form");
+		import { auth, GoogleAuthProvider, createUserWithEmailAndPassword } from "../../firebase.js";
+		const form = document.getElementById("signup-form");
 		const msg = document.getElementById("error-message");
-		async function handleLogin(event) {
+		async function handleSignup(event) {
 			msg.textContent = "";
 			event.preventDefault();
 			try {
 				const data = new FormData(event.target);
 				const email = data.get("user-email");
 				const password = data.get("user-password");
-				const credentials = await signInWithEmailAndPassword(auth, email, password);
+				const credentials = await createUserWithEmailAndPassword(auth, email, password);
 				let user = credentials.user;
 				const idTokenResult = await user.getIdTokenResult();
 				const claims = idTokenResult.claims;
-				user = { ...user, role:claims.role ? claims.role : "student"};
-				// console.log(user);
+				user = { ...user, role:"student" };
 				const response = await fetch("../../api/auth.php", {
 					method: "POST",
 					headers: {
@@ -62,6 +61,6 @@
                 msg.textContent = err.message;
 			}
 		}
-		form.addEventListener("submit", handleLogin);
+		form.addEventListener("submit", handleSignup);
 	</script>
 </html>

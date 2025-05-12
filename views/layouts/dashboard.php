@@ -1,11 +1,8 @@
 <?php
 //TODO: temporary data for now. take real data from database later
-$user = [
-  'id' => 69,
-  'name' => 'Cool Guy',
-  'role' => 'student'
-];
-
+session_start();
+$user = $_SESSION["user"];
+$username = htmlspecialchars($user['displayName'] !== null ? $user["displayName"] : substr($user["email"], 0, strrpos($user["email"], '@')));
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +42,7 @@ $user = [
 
     <!-- title section -->
     <div class="grid-title text-dark d-flex align-items-center justify-content-between">
-      <div class="title-text display-3 color-primary">Welcome <?= htmlspecialchars($user['name']) ?></div>
+      <div class="title-text display-3 color-primary">Welcome <?php echo $username; ?></div>
       <div class="top-nav h-50 d-flex align-items-center gap-3">
         <i class="fa-regular fa-bell fa-3x color-primary"></i>
         <i class="fa-regular fa-circle-user fa-3x color-primary"></i>

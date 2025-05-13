@@ -1,5 +1,5 @@
 import { auth, db } from "../../firebase.js";
-import { collection, getDocs, getDoc, setDoc, deleteDoc, doc, updateDoc, query, where, Timestamp, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { collection, getDocs, getDoc, setDoc, deleteDoc, doc, updateDoc, query, where, Timestamp, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 document.addEventListener("DOMContentLoaded", function (event) {
 	const form = document.getElementById("application-form");
@@ -54,8 +54,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let data = new FormData(form);
 		data.append("pdf-url", pdfUrl);
 		try {
-			const datetime = new Date().toUTCString();
 			const uid = auth.currentUser.uid;
+			const email = auth.currentUser.email;
 			const claims = await auth.currentUser.getIdTokenResult();
 			if (claims.role === "reviewer" || claims.role === "admin") {
 				throw new Error(`User with role ${claims.role} does not have permission to apply.\n`);
@@ -63,10 +63,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
 			if (!uid) {
 				throw new Error("Cannot get UID of current user.\n");
 			}
+			const courseTitle = new FormData(form).get("course-title");
 			const docRef = await addDoc(collection(db, "student_applications"), {
-				submission_date: datetime,
+				submission_date: serverTimestamp(),
 				applicant_uid: uid,
+				applicant_email: email,
 				review_status: "unreviewed",
+				programme: courseTitle ? courseTitle : "Mechanical Engineering",
 				pdf_url: pdfUrl,
 			});
 			resetUploadModal();

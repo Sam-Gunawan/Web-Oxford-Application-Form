@@ -24,6 +24,7 @@ class ComposerStaticInita9cfa8b5d1d5a587bb5e2355faa68ea6
             'Symfony\\Contracts\\Service\\' => 26,
             'Symfony\\Contracts\\Cache\\' => 24,
             'Symfony\\Component\\VarExporter\\' => 30,
+            'Symfony\\Component\\Dotenv\\' => 25,
             'Symfony\\Component\\Cache\\' => 24,
         ),
         'R' => 
@@ -40,6 +41,7 @@ class ComposerStaticInita9cfa8b5d1d5a587bb5e2355faa68ea6
             'Psr\\Container\\' => 14,
             'Psr\\Clock\\' => 10,
             'Psr\\Cache\\' => 10,
+            'PHPMailer\\PHPMailer\\' => 20,
         ),
         'M' => 
         array (
@@ -119,6 +121,10 @@ class ComposerStaticInita9cfa8b5d1d5a587bb5e2355faa68ea6
         array (
             0 => __DIR__ . '/..' . '/symfony/var-exporter',
         ),
+        'Symfony\\Component\\Dotenv\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/dotenv',
+        ),
         'Symfony\\Component\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/cache',
@@ -159,6 +165,10 @@ class ComposerStaticInita9cfa8b5d1d5a587bb5e2355faa68ea6
         'Psr\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'Monolog\\' => 
         array (

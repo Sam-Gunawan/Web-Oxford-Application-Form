@@ -2,6 +2,8 @@
     "require": {
         "kreait/firebase-php": "^7.18",
         "google/cloud-firestore": "^1.50",
-        "symfony/cache": "^7.2"
+        "symfony/cache": "^7.2",
+        "phpmailer/phpmailer": "^6.10",
+        "symfony/dotenv": "^7.2"
     }
 }

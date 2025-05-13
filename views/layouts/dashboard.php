@@ -1,5 +1,6 @@
 <?php
 //TODO: temporary data for now. take real data from database later
+
 $user = [
   'id' => 69,
   'name' => 'Cool Guy',
@@ -18,6 +19,7 @@ $user = [
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
+
   <link rel="stylesheet" href="../../assets/css/adminView.css">
 </head>
 <body>
@@ -30,6 +32,7 @@ $user = [
           <img src="../../assets/images/Oxford-University-Circlet.svg.png" alt="Oxford Logo" style="max-height: 100%; max-width: 100%; object-fit: contain;">
         </div>
         <div class="mt-4 nav-content d-flex flex-column flex-grow-1 pt-4 gap-2 w-100">
+
             <?php if ($user['role'] === 'admin'): ?>
                 <a href="?page=applications" class="nav-item border-bottom p-2 text-decoration-none">Application List</a>
                 <a href="?page=users" class="nav-item border-bottom p-2 text-decoration-none">User List</a>
@@ -67,6 +70,7 @@ $user = [
                             break;
                         case 'statistics':
                             include('adminView/admin-statistic.php');
+
                             break;
                         default:
                             echo "<div class='p-4'>Admin page not found.</div>";
@@ -79,6 +83,7 @@ $user = [
 
                 case 'student':
                     include('studentView/application-list.php');
+
                     break;
 
                 default:
@@ -93,5 +98,6 @@ $user = [
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../../assets/js/adminView.js"></script>
+
 
 </html>

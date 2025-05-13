@@ -15,238 +15,186 @@
 
     <form>
         <fieldset class="border p-4 custom-container">
-            <legend>SECTION I: DETAILS OF CURRENT & PREVIOUS EDUCATION</legend>
-
-            <p class="full-opacity">Please enter your previous and current qualifications, newest first. Include all degree-level and above qualifications.</p>           
-
-            <hr>
-            <h3>Education 1</h3>
-            <div class="row mb-3">
-                <div class="col label-input-group">
-                    <label class="form-label" for="university1">University/Institution attended</label>
-                    <input type="text" class="form-control" id="university1">
+            <legend>Section I: Proposed funding arrangements</legend>
+            <p>If you are not offered a scholarship by the University, please indicate the main source(s) of funding you plan to use to fund your fees and living expenses. This will not affect the assessment of your application in any way. Please do not include any Oxford scholarships.</p>
+            <p class="mb-1 full-opacity">I have information on my alternative funding arrangements.</p>
+            <div class="form-group mb-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="fundingInfo" id="fundingInfoYes" value="yes">
+                    <label class="form-check-label" for="fundingInfoYes">Yes</label>
                 </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="startDate1">Start date (dd/mm/yyyy)</label>
-                    <input type="date" class="form-control" id="startDate1">
-                </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="completionDate1">Completion date (dd/mm/yyyy)</label>
-                    <input type="date" class="form-control" id="completionDate1">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col label-input-group">
-                    <label class="form-label" for="qualification1">Qualification obtained</label>
-                    <input type="text" class="form-control" id="qualification1">
-                </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="subject1">Main subject</label>
-                    <input type="text" class="form-control" id="subject1">
-                </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="result1">Result/expected result</label>
-                    <input type="text" class="form-control" id="result1">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="fundingInfo" id="fundingInfoNo" value="no">
+                    <label class="form-check-label" for="fundingInfoNo">No</label>
                 </div>
             </div>
 
             <hr>
-            <h3>Education 2</h3>
+            <h3>Alternative Funding 1</h3>
             <div class="row mb-3">
-                <div class="col label-input-group">
-                    <label class="form-label" for="university2">University/Institution attended</label>
-                    <input type="text" class="form-control" id="university2">
+                <div class="col-4 label-input-group">
+                    <label class="form-label">Proposed funding sources</label>
+                    <input type="text" class="form-control" placeholder="family, scholarship">
                 </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="startDate2">Start date (dd/mm/yyyy)</label>
-                    <input type="date" class="form-control" id="startDate2">
+                <div class="col-3 label-input-group">
+                    <label class="form-label">Funding (£/year)</label>
+                    <input type="number" class="form-control">
                 </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="completionDate2">Completion date (dd/mm/yyyy)</label>
-                    <input type="date" class="form-control" id="completionDate2">
+                <div class="col-2 label-input-group">
+                    <label class="form-label">Period</label>
+                    <input type="text" class="form-control" placeholder="1 year">
                 </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col label-input-group">
-                    <label class="form-label" for="qualification2">Qualification obtained</label>
-                    <input type="text" class="form-control" id="qualification2">
-                </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="subject2">Main subject</label>
-                    <input type="text" class="form-control" id="subject2">
-                </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="result2">Result/expected result</label>
-                    <input type="text" class="form-control" id="result2">
+                <div class="col-3 label-input-group">
+                    <label class="form-label" for="status1">Status</label>
+                    <select class="form-select" id="status1">
+                        <option value="..." selected>...</option>
+                        <option value="intend">Intend to apply</option>
+                        <option value="applied">Applied for</option>
+                        <option value="secured">Firmly secured</option>
+                    </select>
                 </div>
             </div>
 
             <hr>
-            <h3>Education 3</h3>
+            <h3>Alternative Funding 2</h3>
             <div class="row mb-3">
-                <div class="col label-input-group">
-                    <label class="form-label" for="university3">University/Institution attended</label>
-                    <input type="text" class="form-control" id="university3">
+                <div class="col-4 label-input-group">
+                    <label class="form-label">Proposed funding sources</label>
+                    <input type="text" class="form-control" placeholder="family, scholarship">
                 </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="startDate3">Start date (dd/mm/yyyy)</label>
-                    <input type="date" class="form-control" id="startDate3">
+                <div class="col-3 label-input-group">
+                    <label class="form-label">Funding (£/year)</label>
+                    <input type="number" class="form-control">
                 </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="completionDate3">Completion date (dd/mm/yyyy)</label>
-                    <input type="date" class="form-control" id="completionDate3">
+                <div class="col-2 label-input-group">
+                    <label class="form-label">Period</label>
+                    <input type="text" class="form-control" placeholder="1 year">
                 </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col label-input-group">
-                    <label class="form-label" for="qualification3">Qualification obtained</label>
-                    <input type="text" class="form-control" id="qualification3">
-                </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="subject3">Main subject</label>
-                    <input type="text" class="form-control" id="subject3">
-                </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="result3">Result/expected result</label>
-                    <input type="text" class="form-control" id="result3">
+                <div class="col-3 label-input-group">
+                    <label class="form-label" for="status2">Status</label>
+                    <select class="form-select" id="status2">
+                        <option value="..." selected>...</option>
+                        <option value="intend">Intend to apply</option>
+                        <option value="applied">Applied for</option>
+                        <option value="secured">Firmly secured</option>
+                    </select>
                 </div>
             </div>
 
-            <p class="full-opacity mt-5">If you require a Tier 4 student visa, please give details below of any periods of study (including non-degree level courses), complete or incomplete, undertaken in the UK that are not already listed above.</p>
+            <hr>
+            <h3>Alternative Funding 3</h3>
+            <div class="row mb-3">
+                <div class="col-4 label-input-group">
+                    <label class="form-label">Proposed funding sources</label>
+                    <input type="text" class="form-control" placeholder="family, scholarship">
+                </div>
+                <div class="col-3 label-input-group">
+                    <label class="form-label">Funding (£/year)</label>
+                    <input type="number" class="form-control">
+                </div>
+                <div class="col-2 label-input-group">
+                    <label class="form-label">Period</label>
+                    <input type="text" class="form-control" placeholder="1 year">
+                </div>
+                <div class="col-3 label-input-group">
+                    <label class="form-label" for="status3">Status</label>
+                    <select class="form-select" id="status3">
+                        <option value="..." selected>...</option>
+                        <option value="intend">Intend to apply</option>
+                        <option value="applied">Applied for</option>
+                        <option value="secured">Firmly secured</option>
+                    </select>
+                </div>
+            </div>
+
+            <hr>
+            <h3>Alternative Funding 4</h3>
+            <div class="row mb-5">
+                <div class="col-4 label-input-group">
+                    <label class="form-label">Proposed funding sources</label>
+                    <input type="text" class="form-control" placeholder="family, scholarship">
+                </div>
+                <div class="col-3 label-input-group">
+                    <label class="form-label">Funding (£/year)</label>
+                    <input type="number" class="form-control">
+                </div>
+                <div class="col-2 label-input-group">
+                    <label class="form-label">Period</label>
+                    <input type="text" class="form-control" placeholder="1 year">
+                </div>
+                <div class="col-3 label-input-group">
+                    <label class="form-label" for="status4">Status</label>
+                    <select class="form-select" id="status4">
+                        <option value="..." selected>...</option>
+                        <option value="intend">Intend to apply</option>
+                        <option value="applied">Applied for</option>
+                        <option value="secured">Firmly secured</option>
+                    </select>
+                </div>
+            </div>
+
             
-            <hr>
-            <h3>Period of Study 1</h3>
-            <div class="row mb-3">
-                <div class="col label-input-group">
-                    <label class="form-label" for="universityStudy1">University/Institution attended</label>
-                    <input type="text" class="form-control" id="universityStudy1">
+            <legend>Departmental studentship applications</legend>
+            <p class="mb-1 full-opacity">Are you applying for an advertised studentship(s) competition(s)?</p>
+            <div class="form-group mb-2">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="studentshipApply" id="studentshipApplyYes" value="yes">
+                    <label class="form-check-label" for="studentshipApplyYes">Yes</label>
                 </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="startDateStudy1">Start date (dd/mm/yyyy)</label>
-                    <input type="date" class="form-control" id="startDateStudy1">
-                </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="completionDateStudy1">Completion date (dd/mm/yyyy)</label>
-                    <input type="date" class="form-control" id="completionDateStudy1">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="studentshipApply" id="studentshipApplyNo" value="no">
+                    <label class="form-check-label" for="studentshipApplyNo">No</label>
                 </div>
             </div>
-            <div class="row mb-3">
-                <div class="col label-input-group">
-                    <label class="form-label" for="courseTitle1">Course title</label>
-                    <input type="text" class="form-control" id="courseTitle1">
-                </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="level1">Level</label>
-                    <input type="text" class="form-control" id="level1">
-                </div>
+            <div class="form-group label-input-group mb-5">
+                <label class="form-label" for="referenceCode">If yes, please provide the advertised reference code from the academic department webpages where the studentship is advertised:</label>
+                <input type="text" class="form-control" id="referenceCode">
             </div>
-
-            <hr>
-            <h3>Period of Study 2</h3>
-            <div class="row mb-3">
-                <div class="col label-input-group">
-                    <label class="form-label" for="universityStudy2">University/Institution attended</label>
-                    <input type="text" class="form-control" id="universityStudy2">
-                </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="startDateStudy2">Start date (dd/mm/yyyy)</label>
-                    <input type="date" class="form-control" id="startDateStudy2">
-                </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="completionDateStudy2">Completion date (dd/mm/yyyy)</label>
-                    <input type="date" class="form-control" id="completionDateStudy2">
-                </div>
+        
+            <legend>University of Oxford Scholarships</legend>
+            <p>For many <a href="https://www.graduate.ox.ac.uk/scholarships" target="_blank">Oxford scholarships</a>, all eligible applicants are considered automatically. However, if you are eligible and wish to be considered for one of the six scholarships listed below, you need to tick the relevant box(es). Where a scholarship is marked with a '*', you also need to supply an additional supporting document by attaching it in the Supporting Documents section of this form. You can check the eligibility criteria and requirements for supporting documents by visiting the relevant scholarship links below. Please note that the University reserves the right to consider any eligible candidates for Oxford scholarships.</p>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="hillFoundation">
+                <label class="form-check-label" for="hillFoundation"><a href="https://www.graduate.ox.ac.uk/hill" target="_blank">Hill Foundation</a></label>
             </div>
-            <div class="row mb-3">
-                <div class="col label-input-group">
-                    <label class="form-label" for="courseTitle2">Course title</label>
-                    <input type="text" class="form-control" id="courseTitle2">
-                </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="level2">Level</label>
-                    <input type="text" class="form-control" id="level2">
-                </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="ertegun">
+                <label class="form-check-label" for="ertegun"><a href="https://www.graduate.ox.ac.uk/ertegun" target="_blank">Mica and Ahmet Ertegun Postgraduate Scholarships in the Humanities*</a></label>
             </div>
-
-            <hr>
-            <h3>Period of Study 3</h3>
-            <div class="row mb-3">
-                <div class="col label-input-group">
-                    <label class="form-label" for="universityStudy3">University/Institution attended</label>
-                    <input type="text" class="form-control" id="universityStudy3">
-                </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="startDateStudy3">Start date (dd/mm/yyyy)</label>
-                    <input type="date" class="form-control" id="startDateStudy3">
-                </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="completionDateStudy3">Completion date (dd/mm/yyyy)</label>
-                    <input type="date" class="form-control" id="completionDateStudy3">
-                </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="ocis">
+                <label class="form-check-label" for="ocis"><a href="https://www.graduate.ox.ac.uk/ocis" target="_blank">Oxford Centre for Islamic Studies*</a></label>
             </div>
-            <div class="row mb-3">
-                <div class="col label-input-group">
-                    <label class="form-label" for="courseTitle3">Course title</label>
-                    <input type="text" class="form-control" id="courseTitle3">
-                </div>
-                <div class="col label-input-group">
-                    <label class="form-label" for="level3">Level</label>
-                    <input type="text" class="form-control" id="level3">
-                </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="weidenfeld">
+                <label class="form-check-label" for="weidenfeld"><a href="https://www.graduate.ox.ac.uk/weidenfeld" target="_blank">Weidenfeld-Hoffmann Scholarships and Leadership Programme*</a></label>
             </div>
-
-            <p class="mb-1 mt-5 full-opacity">Have you undertaken degree-level study at any institution, which you have not completed, excluding any qualification you are currently working towards?</p>
-            <div class="d-flex mb-2">
-                <div class="form-check col-1">
-                    <input class="form-check-input" type="radio" name="incompleteDegree" id="incompleteDegreeYes" value="yes">
-                    <label class="form-check-label" for="incompleteDegreeYes">Yes</label>
-                </div>
-                <div class="form-check col-1">
-                    <input class="form-check-input" type="radio" name="incompleteDegree" id="incompleteDegreeNo" value="no">
-                    <label class="form-check-label" for="incompleteDegreeNo">No</label>
-                </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="oocdtp">
+                <label class="form-check-label" for="oocdtp"><a href="https://www.oocdtp.ac.uk/" target="_blank">AHRC: OOC DTP*</a></label>
             </div>
-            <div class="mb-3 label-input-group">
-                <label class="form-label" for="incompleteDetails">If "Yes", please state the course(s) and the institution(s) and the reason(s) the qualification was not completed:</label>
-                <textarea class="form-control" id="incompleteDetails"></textarea>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="granduniondtp">
+                <label class="form-check-label" for="granduniondtp"><a href="https://www.granduniondtp.ac.uk/how-apply" target="_blank">Grand Union DTP *</a></label>
             </div>
-
-            <p class="mb-1 full-opacity">Are you planning to begin, or to continue studying for, a degree at any institution, at the same time as you would also be studying at Oxford for the course for which you are now applying?</p>
-            <div class="d-flex mb-2">
-                <div class="form-check col-1">
-                    <input class="form-check-input" type="radio" name="dualStudy" id="dualStudyYes" value="yes">
-                    <label class="form-check-label" for="dualStudyYes">Yes</label>
-                </div>
-                <div class="form-check col-1">
-                    <input class="form-check-input" type="radio" name="dualStudy" id="dualStudyNo" value="no">
-                    <label class="form-check-label" for="dualStudyNo">No</label>
-                </div>
-            </div>
-
-            <div class="mb-3 label-input-group">
-                <label class="form-label" for="dualStudyDetails">If "Yes", please provide details of the course and the institution and how you believe it will be possible to pursue both courses at the same time:</label>
-                <textarea class="form-control" id="dualStudyDetails"></textarea>
-            </div>
-        </fieldset>
         </fieldset>
     </form>
 
     <footer>
         <div class="container mt-4">
             <div class="progress rounded-pill">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: 52.9%;" aria-valuenow="9" aria-valuemin="0" aria-valuemax="17"></div>
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 69.2%;" aria-valuenow="13" aria-valuemin="0" aria-valuemax="17"></div>
             </div>
             <div class="d-flex justify-content-between align-items-center mt-3">
                 <a href="section_h.html" class="btn btn-outline-danger rounded-pill">
                     <span class="bi bi-arrow-left"></span>
                 </a>
-                <p class="mb-0">9 of 17</p>
+                <p class="mb-0">9 of 13</p>
                 <a href="section_j.html" class="btn btn-outline-primary rounded-pill">
                     <span class="bi bi-arrow-right"></span>
                 </a>
             </div>
         </div>
     </footer>
-
 </body>
 </html>

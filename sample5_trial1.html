@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxford Graduate Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="d-flex justify-content-center align-items-center p-3">
+        <a href="index.html" data-bs-toggle="tooltip" title="Back to Home"><img src="./assets/Oxford-University-Circlet.svg.png" alt="University of Oxford Logo" width="100"></a>
+    </header>
+
+    <!-- SECTION A -->
+    <form action="" id="personal_detail">
+        <fieldset class="border p-4 custom-container">
+            <!-- TEMPAT ISI FORMNYA, COPAS DARI <legend>-->
+            <legend>SECTION A: PERSONAL DETAILS</legend>
+            <p>Please enter your name exactly as it appears on your passport or other official document, including middle names. If you go by a name that is not listed on your official document(s), you can enter this in the Preferred Name field.</p>
+            <div class="mb-3 label-input-group col">
+                <label for="givenName" class="form-label">Given name (forename)</label>
+                <input type="text" class="form-control" id="givenName" required>
+            </div>
+            <div class="mb-3 label-input-group">
+                <label for="preferredName" class="form-label">Preferred name</label>
+                <input type="text" class="form-control" id="preferredName">
+            </div>
+            <div class="mb-3 label-input-group">
+                <label for="middleNames" class="form-label">Middle name(s)</label>
+                <input type="text" class="form-control" id="middleNames">
+            </div>
+        </fieldset>
+    <!-- </form> -->
+
+    <footer>
+        <div class="container mt-4">
+            <div class="progress rounded-pill">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 100%;" aria-valuenow="17" aria-valuemin="0" aria-valuemax="17"></div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <a href="section_l.html" class="btn btn-outline-danger rounded-pill">
+                    <span class="bi bi-arrow-left"></span>
+                </a>
+                <p class="mb-0">13 of 13</p>
+                <button type="submit" form="personal_detail">Submit</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="./mail.js"></script>
+
+</body>
+</html>

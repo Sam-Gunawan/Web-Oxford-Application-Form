@@ -1,85 +1,34 @@
 
-// Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-// import { getDatabase, ref, push, set } from "firebase/database"
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
-// Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
-
-
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCdzaCYqLgUGhsSKUsG2bVHIgeLq7AFWOQ",
-  authDomain: "oxfordform2.firebaseapp.com",
-  databaseURL: "https://oxfordform2-default-rtdb.firebaseio.com",
-  projectId: "oxfordform2",
-  storageBucket: "oxfordform2.firebasestorage.app",
-  messagingSenderId: "570492980550",
-  appId: "1:570492980550:web:dfbc14f380cd7fcf4d6947",
-  measurementId: "G-P3JLGDW0SN"
-};
-
-
-// initialize firebase
-firebase.initializeApp(firebaseConfig);
-
-// reference your database
-var OxfordFormDB = firebase.database().ref("OxfordForm");
-
-document.getElementById("personal_detail").addEventListener("submit", submitForm);
-
-function submitForm(e) {
-  e.preventDefault();
-
-  var givenName = getElementVal("givenName");
-  var preferredName = getElementVal("preferredName");
-  var middleNames = getElementVal("middleNames");
-  var familyName = getElementVal("familyName");
-
-  saveMessages(givenName, preferredName, middleNames, familyName);
-
-  // //   enable alert
-  // document.querySelector(".alert").style.display = "block";
-
-  // //   remove the alert
-  // setTimeout(() => {
-  //   document.querySelector(".alert").style.display = "none";
-  // }, 3000);
-
-  //   reset the form
-  document.getElementById("personal_detail").reset();
-}
-
-const saveMessages = (givenName, preferredName, middleNames, familyName) => {
-  var newContactForm = OxfordFormDB.push();
-
-  newContactForm.set({
-    Name: givenName,
-    PreferredName: preferredName,
-    MiddleNames: middleNames,
-    FamilyName: familyName,
-  });
-};
-
-const getElementVal = (id) => {
-  return document.getElementById(id).value;
-};
 
 
 
 
 
 
+// !!! BUAT REALTIME DATABASE
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
+
+// // Import the functions you need from the SDKs you need
+// // import { initializeApp } from "firebase/app";
+// // import { getAnalytics } from "firebase/analytics";
+// // import { getDatabase, ref, push, set } from "firebase/database"
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
+
+// // Your web app's Firebase configuration
+// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+// // Initialize Firebase
+// // const app = initializeApp(firebaseConfig);
+// // const analytics = getAnalytics(app);
 
 
 
@@ -100,41 +49,188 @@ const getElementVal = (id) => {
 // firebase.initializeApp(firebaseConfig);
 
 // // reference your database
-// var contactFormDB = firebase.database().ref("contactForm");
+// var OxfordFormDB = firebase.database().ref("OxfordForm");
 
-// document.getElementById("contactForm").addEventListener("submit", submitForm);
+// document.getElementById("personal_detail").addEventListener("submit", submitForm);
 
 // function submitForm(e) {
 //   e.preventDefault();
 
-//   var name = getElementVal("name");
-//   var emailid = getElementVal("emailid");
-//   var msgContent = getElementVal("msgContent");
+//   // sec - A
+//   var givenName = getElementVal("givenName");
+//   var preferredName = getElementVal("preferredName");
+//   var middleNames = getElementVal("middleNames");
+//   // var familyName = getElementVal("familyName");
+//   // var user_title = getElementVal("user_title");
+//   // var gender = getElementVal("gender");
+//   // var dob = getElementVal("dob");
+//   // var prevFamilyName = getElementVal("prevFamilyName");
+//   // var prevGivenName = getElementVal("prevGivenName");
+//   // var effectiveFrom1 = getElementVal("effectiveFrom1");
+//   // var effectiveTo1 = getElementVal("effectiveTo1");
 
-//   saveMessages(name, emailid, msgContent);
+//   // Sec - B
+//   // var homeAddress = getElementVal("homeAddress");
+//   // var correspondenceAddress = getElementVal("correspondenceAddress");
+//   // var city1 = getElementVal("city1");
+//   // var city2 = getElementVal("city2");
+//   // var postcode1 = getElementVal("postcode1");
+//   // var postcode2 = getElementVal("postcode2");
+//   // var state1 = getElementVal("state1");
+//   // var state2 = getElementVal("state2");
+//   // var country1 = getElementVal("country1");
+//   // var country2 = getElementVal("country2");
+//   // var effectiveFrom = getElementVal("effectiveFrom");
+//   // var effectiveTo = getElementVal("effectiveTo");
+//   // var countryCode = getElementVal("countrycode");
+//   // var areaCode = getElementVal("areaCode");
+//   // var phoneNumber = getElementVal("phoneNumber");
+//   // var altPhoneNumber = getElementVal("altPhoneNumber");
+//   // var emailAddress = getElementVal("emailAddress");
+//   // var altEmailAddress = getElementVal("altEmailAddress");
 
-//   //   enable alert
-//   document.querySelector(".alert").style.display = "block";
+//   saveMessages(givenName, preferredName, middleNames);
 
-//   //   remove the alert
-//   setTimeout(() => {
-//     document.querySelector(".alert").style.display = "none";
-//   }, 3000);
+//   // //   enable alert
+//   // document.querySelector(".alert").style.display = "block";
+
+//   // //   remove the alert
+//   // setTimeout(() => {
+//   //   document.querySelector(".alert").style.display = "none";
+//   // }, 3000);
 
 //   //   reset the form
-//   document.getElementById("contactForm").reset();
+//   document.getElementById("personal_detail").reset();
 // }
 
-// const saveMessages = (name, emailid, msgContent) => {
-//   var newContactForm = contactFormDB.push();
+// const saveMessages = (givenName, preferredName, middleNames) => {
+//   var newContactForm = OxfordFormDB.push();
 
 //   newContactForm.set({
-//     name: name,
-//     emailid: emailid,
-//     msgContent: msgContent,
+//     Name: givenName,
+//     PreferredName: preferredName,
+//     MiddleNames: middleNames,
+
 //   });
 // };
 
 // const getElementVal = (id) => {
 //   return document.getElementById(id).value;
 // };
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// !!! BUAT FIRESTORE
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCdzaCYqLgUGhsSKUsG2bVHIgeLq7AFWOQ",
+  authDomain: "oxfordform2.firebaseapp.com",
+  projectId: "oxfordform2",
+  storageBucket: "oxfordform2.firebasestorage.app",
+  messagingSenderId: "570492980550",
+  appId: "1:570492980550:web:dfbc14f380cd7fcf4d6947",
+  measurementId: "G-P3JLGDW0SN"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Initialize Firestore
+const db = firebase.firestore();
+
+// Get a reference to the form and add event listener
+document.getElementById("personal_detail").addEventListener("submit", submitForm);
+
+// Handle form submission
+function submitForm(e) {
+  e.preventDefault();
+
+  // Get values from the form
+  var givenName = getElementVal("givenName");
+  var preferredName = getElementVal("preferredName");
+  var middleNames = getElementVal("middleNames");
+
+  // Save data to Firestore
+  saveMessages(givenName, preferredName, middleNames);
+
+  // Reset the form after submission
+  document.getElementById("personal_detail").reset();
+}
+
+// Save data to Firestore
+const saveMessages = (givenName, preferredName, middleNames) => {
+  // Reference to your Firestore collection
+  db.collection("OxfordForm").add({
+    Name: givenName,
+    PreferredName: preferredName,
+    MiddleNames: middleNames,
+    timestamp: firebase.firestore.FieldValue.serverTimestamp()  // Automatically adds the timestamp
+  })
+  .then(() => {
+    console.log("Document successfully written!");
+  })
+  .catch((error) => {
+    console.error("Error adding document: ", error);
+  });
+};
+
+// Helper function to get values from form
+const getElementVal = (id) => {
+  return document.getElementById(id).value;
+};
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////

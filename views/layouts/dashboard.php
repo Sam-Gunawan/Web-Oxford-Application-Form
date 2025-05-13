@@ -1,7 +1,5 @@
 <?php
 //TODO: temporary data for now. take real data from database later
-define("SERVER", true);
-session_start();
 
 $user = [
   'id' => 69,
@@ -21,7 +19,8 @@ $user = [
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="../../assets/css/admin-view.css">
+
+  <link rel="stylesheet" href="../../assets/css/adminView.css">
 </head>
 <body>
 
@@ -33,13 +32,14 @@ $user = [
           <img src="../../assets/images/Oxford-University-Circlet.svg.png" alt="Oxford Logo" style="max-height: 100%; max-width: 100%; object-fit: contain;">
         </div>
         <div class="mt-4 nav-content d-flex flex-column flex-grow-1 pt-4 gap-2 w-100">
-            <?php if ($_SESSION["role"] === 'admin'): ?>
+
+            <?php if ($user['role'] === 'admin'): ?>
                 <a href="?page=applications" class="nav-item border-bottom p-2 text-decoration-none">Application List</a>
                 <a href="?page=users" class="nav-item border-bottom p-2 text-decoration-none">User List</a>
                 <a href="?page=statistics" class="nav-item border-bottom p-2 text-decoration-none">Statistic</a>
-            <?php elseif ($_SESSION["role"] === 'reviewer'): ?>
+            <?php elseif ($user['role'] === 'reviewer'): ?>
                 <a class="nav-item border-bottom p-2 text-decoration-none">Application List</a>
-            <?php elseif ($_SESSION["role"] === 'student'): ?>
+            <?php elseif ($user['role'] === 'student'): ?>
                 <a class="nav-item border-bottom p-2 text-decoration-none">Application List</a>
                 <a class="nav-item border-bottom p-2 text-decoration-none">Application Draft</a>
             <?php endif; ?>
@@ -58,18 +58,19 @@ $user = [
     <!-- content section  -->
     <div class="grid-content bg-secondary d-flex flex-column align-items-star gap-2 overflow-auto"> <!-- content container -->
         <?php
-            switch ($_SESSION["role"]) {
+            switch ($user['role']) {
                 case 'admin':
                     $page = $_GET['page'] ?? 'applications';
                     switch ($page) {
                         case 'applications':
-                            require_once('admin-view/application-list.php');
+                            include('adminView/application-list.php');
                             break;
                         case 'users':
-                            require_once('admin-view/user-list.php');
+                            include('adminView/user-list.php');
                             break;
                         case 'statistics':
-                            require_once('admin-view/admin-statistic.php');
+                            include('adminView/admin-statistic.php');
+
                             break;
                         default:
                             echo "<div class='p-4'>Admin page not found.</div>";
@@ -77,11 +78,12 @@ $user = [
                     break;
 
                 case 'reviewer':
-                    require_once('reviewer-view/application-list.php');
+                    include('reviewerView/application-list.php');
                     break;
 
                 case 'student':
-                    require_once('student-view/application-list.php');
+                    include('studentView/application-list.php');
+
                     break;
 
                 default:
@@ -95,6 +97,7 @@ $user = [
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../../assets/js/admin-view.js"></script>
+<script src="../../assets/js/adminView.js"></script>
+
 
 </html>

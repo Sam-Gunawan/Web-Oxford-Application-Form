@@ -1,3 +1,2 @@
-/debug
-*.pdf
-/backend/auth/test.php
+
+.DS_Store

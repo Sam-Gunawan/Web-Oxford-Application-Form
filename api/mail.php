@@ -60,6 +60,7 @@ try {
 } catch (Exception $e) {
 	http_response_code(400);
 	$response = ["success" => false, "error" => $e->getMessage()];	
-	echo json_encode($response);
 }
+header("Content-Type: application/json; charset=utf-8");
+echo json_encode($response);
 ?>

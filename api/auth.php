@@ -8,6 +8,8 @@ use Google\Rpc\BadRequest;
 
 $_SESSION["user"] = $user;
 
+
+
 if (!isset($user["uid"]) || !isset($user["role"])) {
 	http_response_code(400);
 	$response = ["success" => false, "error" => "Bad Request (no uid/role object)"];	

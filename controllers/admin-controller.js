@@ -74,12 +74,12 @@ export async function getAllUsers() {
 
 // --- Delete an Application ---
 export async function deleteApplication(applicationId) {
-  await deleteDoc(doc(db, "applications", applicationId));
+  await deleteDoc(doc(db, "student_applications", applicationId));
 }
 
 // // --- Edit an Application ---
 export async function editApplication(applicationId, data) {
-  await updateDoc(doc(db, "applications", applicationId), data);
+  await updateDoc(doc(db, "student_applications", applicationId), data);
 }
 
 // --- Delete a User ---
@@ -91,13 +91,6 @@ export async function deleteUser(userId) {
 export async function editUser(userId, data) {
   await updateDoc(doc(db, "users", userId), data);
 }
-
-
-
-
-
-
-
 
 // async function insertDummyData() {
 //   const now = Timestamp.now();

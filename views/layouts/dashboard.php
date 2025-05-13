@@ -23,28 +23,26 @@ $username = htmlspecialchars($user['displayName'] !== null ? $user["displayName"
 			import { auth, db } from "../../firebase.js";
 			import { collection, getDocs, getDoc, setDoc, deleteDoc, doc, updateDoc, query, where, Timestamp, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"; 
 			async function message(email, msg) {
-				await fetch("../../api/mail.php", {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json"
-					},
-					body: JSON.stringify({
-						email:email, 
-						msg:msg
+				try {
+					const response = await fetch("../../api/mail.php", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json"
+						},
+						body: JSON.stringify({
+							email:email, 
+							msg:msg
+						})
 					})
-				}).then(async (response) => {
-					const result_text = await response.text();
-					console.log(result_text);
-					
-					alert(response.ok ? "Successfully sent email" : `Failed to send email (${result_text})`);
-				}).catch((err) => {
+					const result_text = await response.json();
+					return true;
+				} catch (err) {
 					console.error(err);
-				})
+					return false;
+				}
 			}
 			async function approve(event) {
-				console.log(event);
 				const appId = event.target.dataset.applicationId;
-				console.log(appId);
 				const email = event.target.dataset.email;
 				const msg = "approved";
 				try {
@@ -53,15 +51,15 @@ $username = htmlspecialchars($user['displayName'] !== null ? $user["displayName"
 						review_status: "approved",
 						review_message: msg
 					});
-					message(email, msg);
+					if (message(email, msg)) {
+						event.target.parentElement.parentElement.getElementsByClassName("review-status")[0].innerHTML = "<p style=\"color: green;\">approved</p>";
+					}
 				} catch (e) {
 					console.error(e);
 				}
 			}
 			async function reject(event) {
-				console.log(event);
 				const appId = event.target.dataset.applicationId;
-				console.log(appId);
 				const email = event.target.dataset.email;
 				const msg = "rejected";
 				try {
@@ -70,7 +68,9 @@ $username = htmlspecialchars($user['displayName'] !== null ? $user["displayName"
 						review_status: "rejected",
 						review_message: email
 					});
-					message(email, email);
+					if (message(email, msg)) {
+						event.target.parentElement.parentElement.getElementsByClassName("review-status")[0].innerHTML = "<p style=\"color: red;\">rejected</p>";
+					}
 				} catch (e) {
 					console.error(e);
 				}
@@ -103,7 +103,6 @@ $username = htmlspecialchars($user['displayName'] !== null ? $user["displayName"
 							} else {
 								let htmlContent = '';
 								applicationsData.forEach(app => {
-									console.log(app);
 									const collapseId = `application${app.id}`; // Construct collapse ID using JS
 									htmlContent += `
 										<div class="card mb-2 shadow-sm rounded" data-application-id="${escapeHTML(app.id)}"> 
@@ -127,7 +126,7 @@ $username = htmlspecialchars($user['displayName'] !== null ? $user["displayName"
 														<strong>Application Info</strong>
 														<div>${ escapeHTML(app.submission_date.toDate() || 'N/A') }</div>
 														<div>${ escapeHTML(app.programme || 'N/A') }</div>
-														<div class="fw-bold">${ escapeHTML(app.review_status || 'N/A') }</div>
+														<div class="fw-bold review-status">${ escapeHTML(app.review_status || 'N/A') === "approved" ? `<p style="color: green;">${escapeHTML(app.review_status || 'N/A')}` : `<p style="color: red;">${escapeHTML(app.review_status || 'N/A')}` }</p></div>
 													</div>
 													<div class="content-info d-flex flex-column gap-2">
 														<strong>Reviewer</strong>
@@ -220,10 +219,6 @@ $username = htmlspecialchars($user['displayName'] !== null ? $user["displayName"
 								default:
 									echo "<div class='p-4'>Admin page not found.</div>";
 							}
-							break;
-
-						case 'reviewer':
-							include('reviewerView/application-list.php');
 							break;
 
 						case 'student':

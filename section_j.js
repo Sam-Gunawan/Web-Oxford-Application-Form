@@ -15,10 +15,10 @@
 
 
 // Key used to save this section's data in localStorage
-const storageKey = "form_section_a";
+const storageKey = "form_section_j";
 
 // Form ID
-const formId = "personal_detail";
+const formId = "supporting_document";
 
 // Load saved data on page load
 window.addEventListener("DOMContentLoaded", () => {
@@ -56,5 +56,5 @@ document.getElementById("nextBtn").addEventListener("click", (e) => {
   localStorage.setItem(storageKey, JSON.stringify(data));
 
   // Navigate to the next section
-  window.location.href = "section_b.html";
+  window.location.href = "section_k.html";
 });

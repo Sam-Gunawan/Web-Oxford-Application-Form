@@ -1,8 +1,9 @@
 <?php
-//TODO: temporary data for now. take real data from database later
+
 session_start();
 $user = $_SESSION["user"];
 $username = htmlspecialchars($user['displayName'] !== null ? $user["displayName"] : substr($user["email"], 0, strrpos($user["email"], '@')));
+
 ?>
 
 <!DOCTYPE html>

@@ -1,16 +1,5 @@
 import { db } from '../firebase.js';
-import {
-  collection,
-  getDocs,
-  getDoc,
-  setDoc,
-  deleteDoc,
-  doc,
-  updateDoc,
-  query,
-  where,
-  Timestamp
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { collection, getDocs, getDoc, setDoc, deleteDoc, doc, updateDoc, query, where, Timestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 // --- Get all Applications ---
 export async function getAllApplications() {

@@ -43,7 +43,6 @@
 				const idTokenResult = await user.getIdTokenResult();
 				const claims = idTokenResult.claims;
 				user = { ...user, role:claims.role ? claims.role : "student"};
-				// console.log(user);
 				const response = await fetch("../../api/auth.php", {
 					method: "POST",
 					headers: {

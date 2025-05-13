@@ -1,31 +1,6 @@
 <?php
-//TODO: temporary data for now. take real data from database later
-$applications = [
-  [
-      'id' => 1,
-      'name' => 'John Doe',
-      'date' => '2025-04-10',
-      'programme' => 'Master of Nursing',
-      'status' => 'waitlist',
-      'reviewers' => ['Alice Wonderland', 'Brian Griffin']
-  ],
-  [
-      'id' => 2,
-      'name' => 'Jane Smith',
-      'date' => '2025-04-11',
-      'programme' => 'Master of Computing',
-      'status' => 'waitlist',
-      'reviewers' => ['Charlie Puth']
-  ],
-  [
-      'id' => 3,
-      'name' => 'Bob Builder',
-      'date' => '2025-04-12',
-      'programme' => 'Doctor of Philosophy',
-      'status' => 'waitlist',
-      'reviewers' => ['Dana White', 'Evan Aditya', 'Fiona Shrek']
-  ]
-];
+
+
 
 ?>
 
@@ -45,7 +20,6 @@ $applications = [
                 </button>
             </div>
         </div>
-
 
         <!-- collapsable dropdown section -->
         <div class="collapse bg-secondary" id="<?= $collapseId ?>">

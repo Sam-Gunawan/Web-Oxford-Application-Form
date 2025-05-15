@@ -31,7 +31,9 @@
       <div class="title-text display-3 color-primary">Welcome <span id="userName"></span></div>
       <div class="top-nav h-50 d-flex align-items-center gap-4">
         <i class="fa-regular fa-bell fa-3x color-primary"></i>
-        <i class="fa-solid fa-right-from-bracket fa-3x color-primary"></i>
+        <button id="logoutBtn" class="btn p-0 border-0 bg-transparent">
+            <i class="fa-solid fa-right-from-bracket fa-3x color-primary"></i>
+        </button>
       </div>
     </div>
 
@@ -183,4 +185,9 @@ window.filterUser = function(role) {
         }
     });
 };
+
+document.getElementById("logoutBtn").addEventListener("click", () => {
+  localStorage.removeItem("user");
+  window.location.href = "../../../index.html"; // change to your actual login path
+});
 </script>

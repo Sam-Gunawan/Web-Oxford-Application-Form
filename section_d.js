@@ -14,21 +14,100 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+// // Key used to save this section's data in localStorage
+// const storageKey = "form_section_d";
+
+// // Form ID
+// const formId = "Nationality";
+
+// // Load saved data on page load
+// window.addEventListener("DOMContentLoaded", () => {
+//   const savedData = localStorage.getItem(storageKey);
+//   if (savedData) {
+//     const formData = JSON.parse(savedData);
+//     Object.keys(formData).forEach((key) => {
+//       const input = document.getElementById(key);
+//       if (input) {
+//         input.value = formData[key];
+//       }
+//     });
+//   }
+// });
+
+// // Save form data on any input change
+// document.getElementById(formId).addEventListener("input", () => {
+//   const inputs = document.querySelectorAll(`#${formId} input, #${formId} textarea, #${formId} select`);
+//   const data = {};
+//   inputs.forEach((input) => {
+//     data[input.id] = input.value;
+//   });
+//   localStorage.setItem(storageKey, JSON.stringify(data));
+// });
+
+// // Save data and navigate when "Next" button (as <a>) is clicked
+// document.getElementById("nextBtn").addEventListener("click", (e) => {
+//   e.preventDefault(); // Prevent the <a> from navigating right away
+
+//   const inputs = document.querySelectorAll(`#${formId} input, #${formId} textarea, #${formId} select`);
+//   const data = {};
+//   inputs.forEach((input) => {
+//     data[input.id] = input.value;
+//   });
+//   localStorage.setItem(storageKey, JSON.stringify(data));
+
+//   // Navigate to the next section
+//   window.location.href = "section_e.html";
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Key used to save this section's data in localStorage
 const storageKey = "form_section_d";
 
 // Form ID
 const formId = "Nationality";
 
+
 // Load saved data on page load
 window.addEventListener("DOMContentLoaded", () => {
   const savedData = localStorage.getItem(storageKey);
   if (savedData) {
     const formData = JSON.parse(savedData);
-    Object.keys(formData).forEach((key) => {
-      const input = document.getElementById(key);
-      if (input) {
-        input.value = formData[key];
+    const inputs = document.querySelectorAll(`#${formId} input, #${formId} textarea, #${formId} select`);
+    inputs.forEach((input) => {
+      if (input.type === "radio") {
+        if (formData[input.name] === input.value) {
+          input.checked = true;
+        }
+      } else {
+        input.value = formData[input.id] || "";
       }
     });
   }
@@ -39,22 +118,32 @@ document.getElementById(formId).addEventListener("input", () => {
   const inputs = document.querySelectorAll(`#${formId} input, #${formId} textarea, #${formId} select`);
   const data = {};
   inputs.forEach((input) => {
-    data[input.id] = input.value;
+    if (input.type === "radio") {
+      if (input.checked) {
+        data[input.name] = input.value; // Save radio by group name
+      }
+    } else {
+      data[input.id] = input.value;
+    }
   });
   localStorage.setItem(storageKey, JSON.stringify(data));
 });
 
-// Save data and navigate when "Next" button (as <a>) is clicked
+// Save data and navigate when "Next" button is clicked
 document.getElementById("nextBtn").addEventListener("click", (e) => {
-  e.preventDefault(); // Prevent the <a> from navigating right away
+  e.preventDefault();
 
   const inputs = document.querySelectorAll(`#${formId} input, #${formId} textarea, #${formId} select`);
   const data = {};
   inputs.forEach((input) => {
-    data[input.id] = input.value;
+    if (input.type === "radio") {
+      if (input.checked) {
+        data[input.name] = input.value;
+      }
+    } else {
+      data[input.id] = input.value;
+    }
   });
   localStorage.setItem(storageKey, JSON.stringify(data));
-
-  // Navigate to the next section
-  window.location.href = "section_e.html";
+    window.location.href = "section_e.html";
 });

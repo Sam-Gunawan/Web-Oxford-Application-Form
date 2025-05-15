@@ -301,6 +301,7 @@ document.getElementById("submitBtn").addEventListener("click", async (e) => {
     const combinedData = {};
 
     // Collect and merge all section data
+    
     // sectionKeys.forEach((key) => {
     //   const sectionData = JSON.parse(localStorage.getItem(key)) || {};
     //   Object.assign(combinedData, sectionData);

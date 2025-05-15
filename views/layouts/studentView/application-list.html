@@ -37,44 +37,15 @@
     </div>
 
     <!-- content section  -->
-    <div class="grid-content bg-secondary d-flex flex-column align-items-star gap-2 overflow-auto"> <!-- content container -->
-
-            
-        <div class="h-100 w-100 d-flex flex-column px-4 pt-4 justify-content-evenly">
-            <div class="bg-white rounded w-100 p-5 overflow-auto" style="height: 90%;">
-                <table border="1" cellspacing="0" cellpadding="8">
-                    <thead>
-                        <tr>
-                        <th>Date Created</th>
-                        <th>Application Number</th>
-                        <th>Programme</th>
-                        <th>Application Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                            <tr>
-                                <td>the date created</td>
-                                <td>the application id</td>
-                                <td>the programme</td>
-                                <td class="color-error">the status</td>
-                            </tr>
-                        
-                    </tbody>
-                </table>
-            </div>
-            <div class="d-flex w-100 justify-content-end align-items-center" style="height: 25%;">
-                <button class="btn bg-white color-primary fs-4" style="height: 50%; width: 25%;">Create Application</button>
-            </div>
-        </div>
-
-        
-    </div>
+    <div class="grid-content bg-secondary d-flex flex-column align-items-star gap-2 overflow-auto" id="content"></div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../../../assets/js/adminView.js"></script>
 
 <script type="module">
+	import { db } from "../../../firebase.js";
+	import { doc, collection, getDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
     const user = JSON.parse(localStorage.getItem("user"));
     document.getElementById("userName").textContent = user.name;
 
@@ -82,4 +53,71 @@
         localStorage.removeItem("user");
         window.location.href = "../../../index.html"; // change to your actual login path
     });
+
+	const content = document.getElementById("content");
+	document.addEventListener("DOMContentLoaded", async function () {
+		const userApps = await getDocs(query(collection(db, "applications"), where("applicant_id", "==", user.uid)));
+		console.log(userApps.docs);
+		if (userApps.docs.length === 0) {
+			content.innerHTML = 
+			`<div class="h-100 w-100 d-flex flex-column px-4 pt-4 justify-content-evenly">
+				<div class="bg-white rounded w-100 p-5 overflow-auto" style="height: 90%;">
+					<table border="1" cellspacing="0" cellpadding="8">
+						<thead>
+							<tr>
+							<th>Application ID</th>
+							<th>Date Created</th>
+							<th>Programme</th>
+							<th>Application Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td> - </td>
+								<td> - </td>
+								<td> - </td>
+								<td> - </td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="d-flex w-100 justify-content-end align-items-center" style="height: 25%;">
+					<button class="btn bg-white color-primary fs-4" style="height: 50%; width: 25%;">Create Application</button>
+				</div>
+			</div>`
+		} else {
+			let entries = ""; 
+			userApps.forEach((app, idx) => {
+				console.log(app);
+				entries += 
+				`<tr>
+					<td>${app.id}</td>
+					<td>${app.created_at}</td>
+					<td>${app.programme}</td>
+					<td>${app.review_status}</td>
+				</tr>`
+			});
+			content.innerHTML = 
+			`<div class="h-100 w-100 d-flex flex-column px-4 pt-4 justify-content-evenly">
+				<div class="bg-white rounded w-100 p-5 overflow-auto" style="height: 90%;">
+					<table border="1" cellspacing="0" cellpadding="8">
+						<thead>
+							<tr>
+							<th>Application ID</th>
+							<th>Date Created</th>
+							<th>Programme</th>
+							<th>Application Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							${entries}
+						</tbody>
+					</table>
+				</div>
+				<div class="d-flex w-100 justify-content-end align-items-center" style="height: 25%;">
+					<button class="btn bg-white color-primary fs-4" style="height: 50%; width: 25%;">Create Application</button>
+				</div>
+			</div>`;
+		}
+	});
 </script>

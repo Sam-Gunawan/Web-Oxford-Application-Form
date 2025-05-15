@@ -72,6 +72,7 @@
 
     const user = JSON.parse(localStorage.getItem("user"));
     document.getElementById("userName").textContent = user.name;
+    console.log(user.uid);
 
     document.getElementById("logoutBtn").addEventListener("click", () => {
         localStorage.removeItem("user");
@@ -90,14 +91,15 @@
 				<td> - </td>
 				<td> - </td>
 			</tr>`;
-		} 
-		userApps.forEach((app, idx) => {
+		}
+		userApps.docs.forEach((app, idx) => {
+			const appData = app.data();
 			entries += 
 			`<tr>
 				<td>${app.id}</td>
-				<td>${app.created_at}</td>
-				<td>${app.programme}</td>
-				<td>${app.review_status}</td>
+				<td>${appData.created_at.toDate()}</td>
+				<td>${appData.programme}</td>
+				<td>${appData.review_status}</td>
 			</tr>`;
 		});
 		content.innerHTML = entries;

@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     // Count application statuses
     const statusData = applications.reduce((acc, app) => {
-        acc[app.status] = (acc[app.status] || 0) + 1;
+        acc[app.review_status] = (acc[app.review_status] || 0) + 1;
         return acc;
     }, {});
 
@@ -122,15 +122,16 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Find assigned reviewers from applications
     let assignedReviewers = [];
     applications.forEach(app => {
-        if (Array.isArray(app.reviewer_names)) {
-            assignedReviewers.push(...app.reviewer_names);
+        if (app.reviewer_name) {
+            assignedReviewers.push(app.reviewer_name);
         }
     });
     assignedReviewers = [...new Set(assignedReviewers)];
 
     // Reviewers who are not assigned to any application
     const idleReviewers = allReviewerNames.filter(name => !assignedReviewers.includes(name));
-
+	console.log("idle: ", idleReviewers);
+	console.log("assigned: ", assignedReviewers);
     const reviewerData = {
         Assigned: assignedReviewers.length,
         Idle: idleReviewers.length
@@ -141,13 +142,12 @@ document.addEventListener('DOMContentLoaded', async function () {
     reviewers.forEach(rev => reviewerAssignments[rev.name] = []);
 
     applications.forEach(app => {
-        if (Array.isArray(app.reviewer_names)) {
-            app.reviewer_names.forEach(revName => {
-                if (!reviewerAssignments[revName]) {
-                    reviewerAssignments[revName] = [];
-                }
-                reviewerAssignments[revName].push(app.applicant_name || '(No name)');
-            });
+		const revName = app.reviewer_name;
+        if (revName) {
+			if (!reviewerAssignments[revName]) {
+				reviewerAssignments[revName] = [];
+			}
+			reviewerAssignments[revName].push(app.applicant_name);
         }
     });
 

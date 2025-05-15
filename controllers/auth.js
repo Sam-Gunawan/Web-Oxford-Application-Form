@@ -39,7 +39,7 @@ registerBtn.addEventListener("click", async (e) => {
     });
 
     alert("Registration successful!");
-    window.location.href = "index.html"; // or wherever
+    window.location.href = "../views/layouts/studentView/application-list.html"; // or wherever
   } catch (err) {
     console.error(err);
     alert(err.message);

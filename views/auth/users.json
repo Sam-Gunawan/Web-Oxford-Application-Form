@@ -1,0 +1,14 @@
+{
+  "uid_abc123": {
+    "name": "John Doe",
+    "role": "admin"
+  },
+  "uid_def456": {
+    "name": "Jane Reviewer",
+    "role": "reviewer"
+  },
+  "uid_ghi789": {
+    "name": "Student Cool",
+    "role": "student"
+  }
+}

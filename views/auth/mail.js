@@ -4,13 +4,23 @@ import { getFirestore, collection, addDoc } from "https://www.gstatic.com/fireba
 
 // Firebase config
 const firebaseConfig = {
+
   apiKey: "AIzaSyCdzaCYqLgUGhsSKUsG2bVHIgeLq7AFWOQ",
+
   authDomain: "oxfordform2.firebaseapp.com",
+
+  databaseURL: "https://oxfordform2-default-rtdb.firebaseio.com",
+
   projectId: "oxfordform2",
-  storageBucket: "oxfordform2.appspot.com",
+
+  storageBucket: "oxfordform2.firebasestorage.app",
+
   messagingSenderId: "570492980550",
+
   appId: "1:570492980550:web:dfbc14f380cd7fcf4d6947",
+
   measurementId: "G-P3JLGDW0SN"
+
 };
 
 // Initialize Firebase and Firestore
@@ -48,6 +58,8 @@ document.getElementById("submitBtn").addEventListener("click", async (e) => {
       }
     });
     
+
+    data.student_id = user.uid;
 
     // Upload to Firestore
     await addDoc(collection(db, "OxfordForm"), combinedData);

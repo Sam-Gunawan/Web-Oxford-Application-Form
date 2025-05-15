@@ -1,11 +1,15 @@
 <?php
 //TODO: temporary data for now. take real data from database later
 
-$user = [
-  'id' => 69,
-  'name' => 'Cool Guy',
-  'role' => 'admin'
-];
+session_start();
+
+if (!isset($_SESSION['user'])) {
+    header('Location: ../.  ./views/auth/login.html');
+    exit;
+}
+
+$user = $_SESSION['user'];
+
 
 ?>
 

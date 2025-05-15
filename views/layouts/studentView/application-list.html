@@ -17,7 +17,7 @@
     <!-- nav section -->
     <div class="d-flex flex-column grid-nav bg-primary text-white d-flex align-items-center justify-content-center"> <!-- the nav container -->
         <div class="bg-white p-3 d-flex rounded align-items-center justify-content-center" style="max-height: 33.3%; width: 100%;">
-          <img src="../../../assets/images/Oxford-University-Circlet.svg.png" alt="Oxford Logo" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+			<img src="../../../assets/images/Oxford-University-Circlet.svg.png" alt="Oxford Logo" style="max-height: 100%; max-width: 100%; object-fit: contain;">
         </div>
         <div class="mt-4 nav-content d-flex flex-column flex-grow-1 pt-4 gap-2 w-100">
             <a href="application-list.html" class="nav-item border-bottom p-2 text-decoration-none">Application List</a>
@@ -35,7 +35,6 @@
         </button>
       </div>
     </div>
-
     <!-- content section  -->
     <div class="grid-content bg-secondary d-flex flex-column align-items-star gap-2 overflow-auto" id="content"></div>
 </div>
@@ -57,67 +56,48 @@
 	const content = document.getElementById("content");
 	document.addEventListener("DOMContentLoaded", async function () {
 		const userApps = await getDocs(query(collection(db, "applications"), where("applicant_id", "==", user.uid)));
-		console.log(userApps.docs);
+		let entries = "";
 		if (userApps.docs.length === 0) {
-			content.innerHTML = 
-			`<div class="h-100 w-100 d-flex flex-column px-4 pt-4 justify-content-evenly">
-				<div class="bg-white rounded w-100 p-5 overflow-auto" style="height: 90%;">
-					<table border="1" cellspacing="0" cellpadding="8">
-						<thead>
-							<tr>
+			entries = 
+			`<tr>
+				<td> - </td>
+				<td> - </td>
+				<td> - </td>
+				<td> - </td>
+			</tr>`;
+		} 
+		userApps.forEach((app, idx) => {
+			entries += 
+			`<tr>
+				<td>${app.id}</td>
+				<td>${app.created_at}</td>
+				<td>${app.programme}</td>
+				<td>${app.review_status}</td>
+			</tr>`;
+		});
+		content.innerHTML = 
+		`<div class="h-100 w-100 d-flex flex-column px-4 pt-4 justify-content-evenly">
+			<div class="bg-white rounded w-100 p-5 overflow-auto" style="height: 90%;">
+				<table border="1" cellspacing="0" cellpadding="8">
+					<thead>
+						<tr>
 							<th>Application ID</th>
 							<th>Date Created</th>
 							<th>Programme</th>
 							<th>Application Status</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td> - </td>
-								<td> - </td>
-								<td> - </td>
-								<td> - </td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="d-flex w-100 justify-content-end align-items-center" style="height: 25%;">
-					<button class="btn bg-white color-primary fs-4" style="height: 50%; width: 25%;">Create Application</button>
-				</div>
-			</div>`
-		} else {
-			let entries = ""; 
-			userApps.forEach((app, idx) => {
-				console.log(app);
-				entries += 
-				`<tr>
-					<td>${app.id}</td>
-					<td>${app.created_at}</td>
-					<td>${app.programme}</td>
-					<td>${app.review_status}</td>
-				</tr>`
-			});
-			content.innerHTML = 
-			`<div class="h-100 w-100 d-flex flex-column px-4 pt-4 justify-content-evenly">
-				<div class="bg-white rounded w-100 p-5 overflow-auto" style="height: 90%;">
-					<table border="1" cellspacing="0" cellpadding="8">
-						<thead>
-							<tr>
-							<th>Application ID</th>
-							<th>Date Created</th>
-							<th>Programme</th>
-							<th>Application Status</th>
-							</tr>
-						</thead>
-						<tbody>
-							${entries}
-						</tbody>
-					</table>
-				</div>
-				<div class="d-flex w-100 justify-content-end align-items-center" style="height: 25%;">
-					<button class="btn bg-white color-primary fs-4" style="height: 50%; width: 25%;">Create Application</button>
-				</div>
-			</div>`;
-		}
+						</tr>
+					</thead>
+					<tbody>
+						${entries}
+					</tbody>
+				</table>
+			</div>
+			<div class="d-flex w-100 justify-content-end align-items-center" style="height: 25%;">
+				<button id="create-app" class="btn bg-white color-primary fs-4" style="height: 50%; width: 25%;">Create Application</button>
+			</div>
+		</div>`;
+		document.getElementById("create-app").addEventListener("click", function () {
+			window.location.href = "../../forms/section_a.html";
+		});
 	});
 </script>

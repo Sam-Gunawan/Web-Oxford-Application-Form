@@ -54,12 +54,52 @@ export const getApplicationsByReviewer = async (reviewerId) => {
 
 export const approveApplication = async (applicationId) => {
   const appRef = doc(db, 'applications', applicationId);
-  await updateDoc(appRef, { review_status: 'approved' });
+  try {
+	const app = await getDoc(appRef).then((app) => {
+		return app.data();
+	})
+	await updateDoc(appRef, { review_status: 'approved' });
+	const response = await fetch("../../../api/mail.php", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify({
+			email: app.email,
+			msg: "approved"
+		})
+	});
+	const result = await response.json();
+	console.log(result.success ? "Sent approval email" : "Failed to send approval email");
+  } catch (e) {
+	return { message: 'Failed to approve. (' + e + ")" };
+  }
+
   return { message: 'Application approved.' };
 };
 
 export const rejectApplication = async (applicationId) => {
   const appRef = doc(db, 'applications', applicationId);
-  await updateDoc(appRef, { review_status: 'rejected' });
+  try {
+	const app = await getDoc(appRef).then((app) => {
+		return app.data();
+	})
+	await updateDoc(appRef, { review_status: 'rejected' });
+	const response = await fetch("../../../api/mail.php", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify({
+			email: app.email,
+			msg: "rejected"
+		})
+	});
+	const result = await response.json();
+	console.log("result: ", result);
+	console.log(result.success ? "Sent rejection email" : "Failed to send rejection email");
+  } catch (e) {
+	return { message: 'Failed to reject. (' + e + ")" };
+  }
   return { message: 'Application rejected.' };
 };

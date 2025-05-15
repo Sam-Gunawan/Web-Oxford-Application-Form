@@ -1,7 +1,7 @@
 
 // Import Firebase modules
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
 
 // Firebase config
 const firebaseConfig = {
@@ -52,8 +52,17 @@ document.getElementById("submitBtn").addEventListener("click", async (e) => {
     
 
     // Upload to Firestore
-    await addDoc(collection(db, "OxfordForm"), combinedData);
-
+    const docref = await addDoc(collection(db, "OxfordForm"), combinedData);
+	const user = JSON.parse(localStorage.getItem("user"));
+	await addDoc(collection(db, "applications"), {
+		applicant_id: user.uid,
+		created_at: serverTimestamp(),
+		form_content_id: docref.id,
+		programme: combinedData["major"],
+		review_status: "unreviewed",
+		submitted_at: null,
+		reviewer_id: null,
+	});
     // Clear localStorage
     sectionKeys.forEach((key) => localStorage.removeItem(key));
 

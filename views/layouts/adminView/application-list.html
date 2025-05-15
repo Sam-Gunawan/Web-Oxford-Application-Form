@@ -91,10 +91,10 @@ document.getElementById("userName").textContent = user.name;
 function renderAppCard(app){
     const collapseId = "app" + app.id;
     return `
-    <div class="card mb-2 shadow-sm rounded app-card" app-status="${app.status}" data-app-id="${app.id}">
+    <div class="card mb-2 shadow-sm rounded app-card" app-status="${app.review_status}" data-app-id="${app.id}">
         <div class="content-item bg-white p-4 d-flex align-items-center justify-content-between w-100">
             <div class="d-flex align-items-center gap-3">
-                <i class="fa-regular fa-circleApplication-2x"></i>
+                <i class="fa-regular fa-circle-user fa-2x"></i>
                 <span>${app.applicant_name}</span>
             </div>
 
@@ -113,15 +113,15 @@ function renderAppCard(app){
                     <strong>Application Info</strong>
                     <div>${formatDate(app.created_at)}</div>
                     <input type="text" class="form-control form-control-sm editable-programme bg-white" value="${app.programme}" readonly>
-                    <input type="text" class="form-control form-control-sm editable-status bg-white" value="${app.status}" readonly>
+                    <input type="text" class="form-control form-control-sm editable-status bg-white" value="${app.review_status}" readonly>
                 </div>
                 <!-- Reviewer Info -->
                 <div class="content-info d-flex flex-column gap-2">
                     <strong>Reviewer</strong>
                    ${
-                    app.reviewer_names && app.reviewer_names.length > 0
-                        ? app.reviewer_names.map(r => `<div>${r}</div>`).join('')
-                        : '<div>No reviewers</div>'
+                    app.reviewer_name
+                        ? `<p>${app.reviewer_name}</p>`
+                        : '<p>No reviewers</p>'
                     }
                 </div>
             </div>
@@ -136,10 +136,11 @@ function renderAppCard(app){
     `;
 }
 
-async function loadApps() {
+async function loadApplications() {
     try {
         const container = document.getElementById('app-container');
         const apps = await getAllApplications();
+		console.log(apps);
         container.innerHTML = apps.map(renderAppCard).join('');
     } catch (err) {
         console.error("Failed to load apps:", err);
@@ -147,7 +148,7 @@ async function loadApps() {
     }
 }
 
-loadApps();
+loadApplications();
 
 window.handleDelete = async function(appId) {
     const confirmDelete = confirm("Are you sure you want to delete this Appplication?");
@@ -156,7 +157,7 @@ window.handleDelete = async function(appId) {
     try {
         await deleteApplication(appId);
         alert("Application deleted successfully.");
-        loadApps(); // Reload list after deletion
+        loadApplications(); // Reload list after deletion
     } catch (error) {
         console.error("Error deleting application:", error);
         alert("Failed to delete Application.");
@@ -182,8 +183,8 @@ document.addEventListener('click', async function (e) {
         
 
                 // Validate the role value
-        if (!['submitted', 'approved', 'rejected', 'draft'].includes(status.toLowerCase())) {
-            alert("Invalid status! status must be 'submitted', 'approved', 'rejected', or 'draft'");
+        if (!['reviewed', 'approved', 'rejected', 'draft'].includes(status.toLowerCase())) {
+            alert("Invalid status! status must be 'reviewed', 'approved', 'rejected', or 'draft'");
             return;  // Prevent saving if the role is invalid
         }
 
@@ -217,10 +218,10 @@ window.openAssignModal = async function(appId) {
             div.className = 'form-check';
 
             const input = document.createElement('input');
-            input.type = 'checkbox';
+            input.type = 'radio';
             input.className = 'form-check-input';
             input.name = 'reviewer';
-            input.value = r.id;
+			input.dataset.reviewerId = r.id;
             input.id = `reviewer-${r.id}`;
 
             const label = document.createElement('label');
@@ -247,19 +248,20 @@ window.closeAssignModal = function () {
 
 
 window.submitReviewerAssignments = async function() {
-    const checkedBoxes = document.querySelectorAll('input[name="reviewer"]:checked');
-    const reviewerIds = Array.from(checkedBoxes).map(box => box.value);
-
-    if (reviewerIds.length === 0) {
+    const chosenReviewer = document.querySelector('input[name="reviewer"]:checked');
+    const reviewerId = chosenReviewer.dataset.reviewerId;
+	console.info("chosenReviewer: ", chosenReviewer);
+	console.info("reviewerId: ", reviewerId);
+    if (reviewerId === null) {
         alert('Please select at least one reviewer.');
         return;
     }
 
     try {
-        await assignReviewersToApp(selectedAppId, reviewerIds); // controller function
+        await assignReviewersToApp(selectedAppId, reviewerId); // controller function
         closeAssignModal();
         alert('Reviewers assigned successfully!');
-        loadApps(); // refresh the list
+        loadApplications(); // refresh the list
     } catch (err) {
         console.error('Failed to assign reviewers:', err);
         alert('Failed to assign reviewers.');

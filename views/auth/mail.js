@@ -1,7 +1,7 @@
 
 // Import Firebase modules
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 // Firebase config
 const firebaseConfig = {
@@ -17,6 +17,8 @@ const firebaseConfig = {
 // Initialize Firebase and Firestore
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+
+export { app };
 
 // List of section keys to collect
 const sectionKeys = [
@@ -49,14 +51,14 @@ document.getElementById("submitBtn").addEventListener("click", async (e) => {
         }
       }
     });
-    
 
     // Upload to Firestore
+	const timestamp = serverTimestamp();
     const docref = await addDoc(collection(db, "OxfordForm"), combinedData);
 	const user = JSON.parse(localStorage.getItem("user"));
 	await addDoc(collection(db, "applications"), {
 		applicant_id: user.uid,
-		created_at: serverTimestamp(),
+		created_at: timestamp,
 		form_content_id: docref.id,
 		programme: combinedData["major"],
 		review_status: "unreviewed",
@@ -65,8 +67,8 @@ document.getElementById("submitBtn").addEventListener("click", async (e) => {
 	});
     // Clear localStorage
     sectionKeys.forEach((key) => localStorage.removeItem(key));
-
     alert("Form submitted successfully!");
+
     window.location.href = "submitted_form.html"; // Optional redirect
   } catch (error) {
     console.error("Error submitting form:", error);

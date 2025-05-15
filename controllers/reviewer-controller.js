@@ -18,7 +18,6 @@ export const getApplicationsByReviewer = async (reviewerId) => {
 
   for (const docSnap of snapshot.docs) {
     const appData = docSnap.data();
-	console.log("appData: ", appData);
     // Get applicant name
     let applicantName = null;
     if (appData.applicant_id) {

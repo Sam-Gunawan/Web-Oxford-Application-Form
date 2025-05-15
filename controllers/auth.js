@@ -1,41 +1,14 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import {
-  getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword
-} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import {
-  getFirestore,
-  collection,
   setDoc,
   doc,
   serverTimestamp
-} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
-
-// Firebase config
-const firebaseConfig = {
-
-  apiKey: "AIzaSyCdzaCYqLgUGhsSKUsG2bVHIgeLq7AFWOQ",
-
-  authDomain: "oxfordform2.firebaseapp.com",
-
-  databaseURL: "https://oxfordform2-default-rtdb.firebaseio.com",
-
-  projectId: "oxfordform2",
-
-  storageBucket: "oxfordform2.firebasestorage.app",
-
-  messagingSenderId: "570492980550",
-
-  appId: "1:570492980550:web:dfbc14f380cd7fcf4d6947",
-
-  measurementId: "G-P3JLGDW0SN"
-
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { app, auth, db } from '../firebase.js';
 
 const form = document.getElementById("authForm");
 const registerBtn = document.getElementById("registerBtn");
@@ -85,7 +58,7 @@ loginBtn.addEventListener("click", async (e) => {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const uid = userCredential.user.uid;
 
-    const userDoc = await (await import("https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js")).getDoc(
+    const userDoc = await (await import("https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js")).getDoc(
       doc(db, "users", uid)
     );
 

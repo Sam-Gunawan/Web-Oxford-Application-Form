@@ -1,23 +1,8 @@
 // Firebase modules
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
-import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
-
-// Your Firebase config (✅ make sure it's correct!)
-const firebaseConfig = {
-  apiKey: "AIzaSyCdzaCYqLgUGhsSKUsG2bVHIgeLq7AFWOQ",
-  authDomain: "oxfordform2.firebaseapp.com",
-  projectId: "oxfordform2",
-  storageBucket: "oxfordform2.appspot.com",
-  messagingSenderId: "570492980550",
-  appId: "1:570492980550:web:dfbc14f380cd7fcf4d6947",
-  measurementId: "G-P3JLGDW0SN"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { app, auth, db } from '../firebase.js';
 
 // Register user
 document.getElementById("registerForm").addEventListener("submit", async (e) => {

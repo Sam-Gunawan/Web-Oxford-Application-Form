@@ -1,19 +1,8 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
-import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import {signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { auth, db } from '../firebase.js';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCdzaCYqLgUGhsSKUsG2bVHIgeLq7AFWOQ",
-  authDomain: "oxfordform2.firebaseapp.com",
-  projectId: "oxfordform2",
-  storageBucket: "oxfordform2.appspot.com",
-  messagingSenderId: "570492980550",
-  appId: "1:570492980550:web:dfbc14f380cd7fcf4d6947"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
 
 document.getElementById("loginForm").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -41,13 +30,13 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     // 🔁 Redirect based on role
     switch (role) {
       case "admin":
-        window.location.href = "admin-dashboard.html";
+        window.location.href = "../layouts/adminView/application-list.html";
         break;
       case "reviewer":
-        window.location.href = "reviewer-dashboard.html";
+        window.location.href = "../layouts/reviewerView/application-list.html";
         break;
       case "student":
-        window.location.href = "student-dashboard.html";
+        window.location.href = "../layouts/studentView/application-list.html";
         break;
       default:
         throw new Error("Unknown user role.");

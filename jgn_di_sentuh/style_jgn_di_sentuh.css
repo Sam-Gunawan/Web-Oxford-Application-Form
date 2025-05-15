@@ -30,10 +30,11 @@ body {
   padding: 12px 20px;
   border-radius: 10px;
   font-size: 15px;
+  font-weight: 600;
   text-transform: uppercase;
   background-color: #fec913;
   border: 1px solid transparent;
-  color: #fff;
+  color: #464646;
   transition: all 0.3s ease 0s;
 }
 
@@ -185,6 +186,7 @@ a:focus {
   display: flex;
   padding-top: 50px;
   padding-bottom: 75px;
+  padding-right: 100px;
 }
 
 .hero_detail-box {

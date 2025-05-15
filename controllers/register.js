@@ -33,7 +33,7 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
     });
 
     alert("Account created successfully!");
-    window.location.href = "../layouts/dashboard.php";
+    window.location.href = "../layouts/studentView/application-list.html"; // Redirect to application list page
   } catch (error) {
     console.error("Registration error:", error);
     alert("Error: " + error.message);

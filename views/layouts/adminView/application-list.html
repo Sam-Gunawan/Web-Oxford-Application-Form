@@ -111,9 +111,9 @@ function renderAppCard(app){
                 <!-- Application Info -->
                 <div class="content-info d-flex flex-column gap-2">
                     <strong>Application Info</strong>
-                    <div>${formatDate(app.created_at)}</div>
-                    <input type="text" class="form-control form-control-sm editable-programme bg-white" value="${app.programme}" readonly>
-                    <input type="text" class="form-control form-control-sm editable-status bg-white" value="${app.review_status}" readonly>
+                    <div><b>Date created:</b> ${formatDate(app.created_at)}</div>
+                    <span><b>Programme</b><input type="text" class="form-control form-control-sm editable-programme bg-white" value="${app.programme}" readonly></span>
+                    <span><b>Status</b><input type="text" class="form-control form-control-sm editable-status bg-white" value="${app.review_status}" readonly></span>
                 </div>
                 <!-- Reviewer Info -->
                 <div class="content-info d-flex flex-column gap-2">
@@ -301,4 +301,3 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
 
 
 </script>
-

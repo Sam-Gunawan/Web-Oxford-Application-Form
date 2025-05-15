@@ -2,7 +2,7 @@ body {
   font-family: 'Poppins', sans-serif;
 
   color: #48494a;
-  background-image: url(./assets/images/Untitled-5.png);
+  background-image: url(../assets/images/Untitled-5.png);
 }
 
 .layout_padding {
@@ -116,7 +116,7 @@ a:focus {
   position: absolute;
   width: 48%;
   height: 100%;
-  background: url(./assets/images/hero-bg.png);
+  background: url(../assets/images/hero-bg.png);
   background-size: cover;
   background-position: right bottom;
   background-repeat: no-repeat;
@@ -143,7 +143,7 @@ a:focus {
 
 
 .custom_nav-container .nav_search-btn {
-  background-image: url(../images/search-icon.png);
+  background-image: url(../assets/images/search-icon.png);
   background-size: 22px;
   background-repeat: no-repeat;
   background-position-y: 7px;
@@ -174,7 +174,7 @@ a:focus {
 }
 
 .custom_nav-container .navbar-toggler .navbar-toggler-icon {
-  background-image: url(../images/menu.png);
+  background-image: url(../assets/images/menu.png);
   background-size: 40px;
 }
 

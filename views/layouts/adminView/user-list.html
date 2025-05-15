@@ -86,7 +86,6 @@ function renderUserCard(user) {
                     <div class="fw-bold">id</div>
                     <div class="fw-bold">name</div>
                     <div class="fw-bold">email</div>
-                    <div class="fw-bold">password</div>
                     <div class="fw-bold">role</div>
                 </div>
                 <div class="content-info d-flex flex-column gap-2">
@@ -94,7 +93,6 @@ function renderUserCard(user) {
                     <div>${user.id}</div>
                     <input type="text" class="form-control form-control-sm editable-name bg-white" value="${user.name}" readonly>
                     <input type="text" class="form-control form-control-sm editable-email bg-white" value="${user.email}" readonly>
-                    <input type="text" class="form-control form-control-sm editable-password bg-white" value="${user.password}" readonly>
                     <input type="text" class="form-control form-control-sm editable-role bg-white" value="${user.role}" readonly>
                 </div>
             </div>
@@ -150,7 +148,6 @@ document.addEventListener('click', async function (e) {
     if (e.target.classList.contains('save-btn')) {
         const name = card.querySelector('.editable-name').value;
         const email = card.querySelector('.editable-email').value;
-        const password = card.querySelector('.editable-password').value;
         const role = card.querySelector('.editable-role').value;
 
                 // Validate the role value
@@ -160,7 +157,7 @@ document.addEventListener('click', async function (e) {
         }
 
         try {
-            await editUser(userId, { name, email, password, role });
+            await editUser(userId, { name, email, role });
             alert("User updated successfully.");
 
             // Lock the inputs again

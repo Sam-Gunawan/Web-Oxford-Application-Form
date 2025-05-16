@@ -31,7 +31,11 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
       role,
       created_at: serverTimestamp()
     });
-
+	localStorage.setItem("user", JSON.stringify({
+      uid: uid,
+      name: name,
+      role: role
+    }));
     alert("Account created successfully!");
     window.location.href = "../layouts/studentView/application-list.html"; // Redirect to application list page
   } catch (error) {

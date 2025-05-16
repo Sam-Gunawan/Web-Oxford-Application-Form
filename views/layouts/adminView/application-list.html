@@ -48,7 +48,7 @@
                 <label for="statusFilter" class="form-label m-0 fs-5 fw-bold">Show:</label>
                 <select id="statusFilter" class="form-select bg-white" onchange="filterApplications(this.value)">
                     <option value="all">All</option>
-                    <option value="waitlist">Waitlist</option>
+                    <option value="unreviewed">Unreviewed</option>
                     <option value="approved">Approved</option>
                     <option value="rejected">Rejected</option>
                 </select>
@@ -183,8 +183,8 @@ document.addEventListener('click', async function (e) {
         
 
                 // Validate the role value
-        if (!['reviewed', 'approved', 'rejected', 'draft'].includes(status.toLowerCase())) {
-            alert("Invalid status! status must be 'reviewed', 'approved', 'rejected', or 'draft'");
+        if (!['unreviewed', 'approved', 'rejected'].includes(status.toLowerCase())) {
+            alert("Invalid status! status must be 'unreviewed', 'approved', or 'rejected'");
             return;  // Prevent saving if the role is invalid
         }
 

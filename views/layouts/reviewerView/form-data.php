@@ -60,7 +60,7 @@
 						<input id="country-of-birth" name="country-of-birth" class="form-control col" style="max-width: 600px; min-width: 300px;" type="text" readonly value="<?php echo htmlspecialchars($user["countryOfBirth"]); ?>">
 					</div>
 					<div class="form-group row w-100">
-						<label for="major" class="form-label col-sm-2">Major</label>
+						<label for="major" class="form-label col-sm-2">Programme</label>
 						<input id="major" name="major" class="form-control col" style="max-width: 600px; min-width: 300px;" type="text" readonly value="<?php echo htmlspecialchars($user["major"]); ?>">
 					</div>
 					<div class="form-group row w-100">
